@@ -2,25 +2,73 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a;
+
+  --pixelorid-green: #16a34a;
+  --pixelorid-green-hover: #15803d;
+  --pixelorid-dark-green: #166534;
+  --pixelorid-light-green: #f0fdf4;
+
+  --pixelorid-teal: #0d9488;
+  --pixelorid-dark-teal: #115e59;
+  --pixelorid-light-teal: #f0fdfa;
+
+  --pixelorid-slate: #475569;
+  --pixelorid-border: #e2e8f0;
+  --pixelorid-surface: #f8fafc;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --font-sans: var(--font-manrope);
+
+  --color-pixel-green: var(--pixelorid-green);
+  --color-pixel-green-hover: var(--pixelorid-green-hover);
+  --color-pixel-dark-green: var(--pixelorid-dark-green);
+  --color-pixel-light-green: var(--pixelorid-light-green);
+
+  --color-pixel-teal: var(--pixelorid-teal);
+  --color-pixel-dark-teal: var(--pixelorid-dark-teal);
+  --color-pixel-light-teal: var(--pixelorid-light-teal);
+
+  --color-pixel-slate: var(--pixelorid-slate);
+  --color-pixel-border: var(--pixelorid-border);
+  --color-pixel-surface: var(--pixelorid-surface);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/*
+  Dibungkus dengan @layer base supaya class Tailwind seperti
+  text-white / text-pixel-green tetap bisa "menang" dibanding
+  reset di bawah ini (kalau tidak dibungkus, tulisan di dalam
+  tag <a> akan selalu ikut warna teks sekitarnya, bukan warna
+  yang diset lewat class).
+*/
+@layer base {
+  * {
+    box-sizing: border-box;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-manrope), Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }

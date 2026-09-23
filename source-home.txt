@@ -1,113 +1,27 @@
-import HeroSlider from "./components/HeroSlider";
-
+﻿=== app/page.tsx ===
 const products = [
   {
     name: "Pixelorid POS",
-    category: "SaaS · Food Business",
+    category: "SaaS Â· Food Business",
     description:
       "A practical point-of-sale and business management solution designed for food trucks and mobile food businesses.",
     href: "/products/pixelorid-pos",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-6 w-6"
-      >
-        <path d="M3 9l1.5-5h15L21 9" />
-        <path d="M4 9h16l-1.1 10.1a1 1 0 0 1-1 .9H6.1a1 1 0 0 1-1-.9L4 9z" />
-        <path d="M9 13a3 3 0 0 0 6 0" />
-      </svg>
-    ),
   },
   {
     name: "Pixelorid Loop",
-    category: "SaaS · Service Business",
+    category: "SaaS",
     description:
-      "A web-based client follow-up app built for small service businesses — track every lead and client, know who to follow up with, and never let a conversation go cold.",
+      "Simple business technology designed to help growing businesses manage their workflows more efficiently.",
     href: "/products/pixelorid-loop",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-6 w-6"
-      >
-        <path d="M17 2l4 4-4 4" />
-        <path d="M3 11V9a4 4 0 0 1 4-4h14" />
-        <path d="M7 22l-4-4 4-4" />
-        <path d="M21 13v2a4 4 0 0 1-4 4H3" />
-      </svg>
-    ),
   },
 ];
 
-const iconProps = {
-  viewBox: "0 0 24 24",
-  fill: "none",
-  stroke: "currentColor",
-  strokeWidth: "1.8",
-  strokeLinecap: "round" as const,
-  strokeLinejoin: "round" as const,
-};
-
 const businessTypes = [
-  {
-    label: "Food Businesses",
-    icon: (
-      <svg {...iconProps} className="h-5 w-5">
-        <path d="M3 2v7a2 2 0 0 0 4 0V2" />
-        <path d="M7 2v20" />
-        <path d="M17 2c-1.1 0-2 1.3-2 3v4c0 1.7.9 3 2 3s2-1.3 2-3V5c0-1.7-.9-3-2-3z" />
-        <path d="M17 12v10" />
-      </svg>
-    ),
-  },
-  {
-    label: "Beauty Businesses",
-    icon: (
-      <svg {...iconProps} className="h-5 w-5">
-        <circle cx="6" cy="6" r="3" />
-        <circle cx="6" cy="18" r="3" />
-        <line x1="20" y1="4" x2="8.12" y2="15.88" />
-        <line x1="14.47" y1="14.48" x2="20" y2="20" />
-        <line x1="8.12" y1="8.12" x2="12" y2="12" />
-      </svg>
-    ),
-  },
-  {
-    label: "Retail Businesses",
-    icon: (
-      <svg {...iconProps} className="h-5 w-5">
-        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-        <path d="M3 6h18" />
-        <path d="M16 10a4 4 0 0 1-8 0" />
-      </svg>
-    ),
-  },
-  {
-    label: "Service Businesses",
-    icon: (
-      <svg {...iconProps} className="h-5 w-5">
-        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-      </svg>
-    ),
-  },
-  {
-    label: "Growing Businesses",
-    icon: (
-      <svg {...iconProps} className="h-5 w-5">
-        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-        <polyline points="17 6 23 6 23 12" />
-      </svg>
-    ),
-  },
+  "Food Businesses",
+  "Beauty Businesses",
+  "Retail Businesses",
+  "Service Businesses",
+  "Growing Businesses",
 ];
 
 const benefits = [
@@ -115,45 +29,21 @@ const benefits = [
     title: "Simple",
     description:
       "Easy-to-understand tools without unnecessary complexity.",
-    icon: (
-      <svg {...iconProps} className="h-6 w-6">
-        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-        <polyline points="22 4 12 14.01 9 11.01" />
-      </svg>
-    ),
   },
   {
     title: "Practical",
     description:
       "Built around real business needs and everyday workflows.",
-    icon: (
-      <svg {...iconProps} className="h-6 w-6">
-        <circle cx="12" cy="12" r="3" />
-        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
-      </svg>
-    ),
   },
   {
     title: "Accessible",
     description:
       "Technology designed with growing businesses in mind.",
-    icon: (
-      <svg {...iconProps} className="h-6 w-6">
-        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-        <path d="M7 11V7a5 5 0 0 1 9.9-1" />
-      </svg>
-    ),
   },
   {
     title: "Built to Grow",
     description:
       "Solutions that evolve with your business as your needs change.",
-    icon: (
-      <svg {...iconProps} className="h-6 w-6">
-        <line x1="7" y1="17" x2="17" y2="7" />
-        <polyline points="7 7 17 7 17 17" />
-      </svg>
-    ),
   },
 ];
 
@@ -234,7 +124,125 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <HeroSlider />
+      <section className="relative overflow-hidden bg-slate-50">
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 py-20 lg:grid-cols-2 lg:px-8 lg:py-28">
+          <div>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-green-800">
+              <span className="h-2 w-2 rounded-full bg-pixel-green" />
+              Technology for growing businesses
+            </div>
+
+            <h1 className="max-w-3xl text-5xl font-extrabold leading-[1.05] tracking-tight text-slate-950 sm:text-6xl">
+              Simple Technology for{" "}
+              <span className="text-pixel-green">Growing Businesses.</span>
+            </h1>
+
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
+              Pixelorid builds simple, practical SaaS tools designed to help
+              small businesses manage their work, operate efficiently, and
+              grow with confidence.
+            </p>
+
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="/products"
+                className="inline-flex h-12 items-center justify-center rounded-xl bg-pixel-green px-6 font-bold text-white transition hover:bg-pixel-green-hover"
+              >
+                Explore Products
+              </a>
+
+              <a
+                href="#about"
+                className="inline-flex h-12 items-center justify-center rounded-xl border border-slate-300 bg-white px-6 font-bold text-slate-800 transition hover:border-slate-400 hover:bg-slate-50"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+
+          {/* Product visual */}
+          <div className="relative">
+            <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-xl shadow-slate-200/50">
+              <div className="mb-5 flex items-center justify-between">
+                <div>
+                  <div className="text-xs font-semibold text-slate-400">
+                    BUSINESS OVERVIEW
+                  </div>
+                  <div className="mt-1 text-lg font-bold text-slate-900">
+                    Your Business
+                  </div>
+                </div>
+
+                <div className="rounded-lg bg-green-50 px-3 py-2 text-xs font-bold text-green-700">
+                  Growing
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3">
+                <div className="rounded-2xl bg-slate-50 p-4">
+                  <div className="text-xs text-slate-500">Revenue</div>
+                  <div className="mt-2 text-xl font-extrabold text-slate-900">
+                    $12.8K
+                  </div>
+                  <div className="mt-1 text-xs font-semibold text-green-600">
+                    +18.4%
+                  </div>
+                </div>
+
+                <div className="rounded-2xl bg-green-50 p-4">
+                  <div className="text-xs text-green-700">Orders</div>
+                  <div className="mt-2 text-xl font-extrabold text-slate-900">
+                    428
+                  </div>
+                  <div className="mt-1 text-xs font-semibold text-green-700">
+                    +12.8%
+                  </div>
+                </div>
+
+                <div className="rounded-2xl bg-teal-50 p-4">
+                  <div className="text-xs text-teal-700">Growth</div>
+                  <div className="mt-2 text-xl font-extrabold text-slate-900">
+                    24%
+                  </div>
+                  <div className="mt-1 text-xs font-semibold text-teal-700">
+                    This month
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-4 rounded-2xl border border-slate-200 p-5">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-bold text-slate-800">
+                    Business activity
+                  </span>
+                  <span className="text-xs text-slate-400">Last 30 days</span>
+                </div>
+
+                <div className="mt-7 flex h-28 items-end gap-2">
+                  {[35, 48, 42, 65, 58, 74, 68, 86, 78, 94, 82, 100].map(
+                    (height, index) => (
+                      <div
+                        key={index}
+                        className="flex-1 rounded-t-md bg-green-200"
+                        style={{ height: `${height}%` }}
+                      />
+                    ),
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute -bottom-6 -left-5 hidden rounded-2xl border border-slate-200 bg-white p-4 shadow-lg sm:block">
+              <div className="text-xs font-semibold text-slate-400">
+                SIMPLE TOOLS
+              </div>
+              <div className="mt-1 font-bold text-slate-900">
+                Built for real work.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Brand intro */}
       <section id="about" className="bg-white">
@@ -251,7 +259,7 @@ export default function Home() {
 
           <p className="mx-auto mt-3 max-w-3xl text-lg leading-8 text-slate-600">
             Pixelorid creates practical technology for businesses at different
-            stages of growth — from getting started with limited resources to
+            stages of growth â€” from getting started with limited resources to
             managing a growing operation.
           </p>
         </div>
@@ -278,8 +286,8 @@ export default function Home() {
                 key={product.name}
                 className="rounded-3xl border border-slate-200 bg-white p-8 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/50"
               >
-                <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-2xl bg-green-50 text-pixel-green">
-                  {product.icon}
+                <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-2xl bg-green-50 text-xl text-pixel-green">
+                  âœ¦
                 </div>
 
                 <p className="text-sm font-bold text-pixel-green">
@@ -298,7 +306,7 @@ export default function Home() {
                   href={product.href}
                   className="mt-7 inline-flex font-bold text-pixel-green transition hover:text-pixel-green-hover"
                 >
-                  Explore {product.name} →
+                  Explore {product.name} â†’
                 </a>
               </article>
             ))}
@@ -318,7 +326,7 @@ export default function Home() {
               href="/products"
               className="font-bold text-pixel-green hover:text-pixel-green-hover"
             >
-              View All Products →
+              View All Products â†’
             </a>
           </div>
         </div>
@@ -345,23 +353,15 @@ export default function Home() {
             <div className="grid gap-3 sm:grid-cols-2">
               {businessTypes.map((business, index) => (
                 <div
-                  key={business.label}
+                  key={business}
                   className={`rounded-2xl border p-5 ${
                     index === businessTypes.length - 1
                       ? "border-green-200 bg-green-50"
                       : "border-slate-200 bg-white"
                   }`}
                 >
-                  <div
-                    className={`mb-3 flex h-9 w-9 items-center justify-center rounded-xl ${
-                      index === businessTypes.length - 1
-                        ? "bg-white text-pixel-green"
-                        : "bg-slate-100 text-slate-700"
-                    }`}
-                  >
-                    {business.icon}
-                  </div>
-                  <p className="font-bold text-slate-900">{business.label}</p>
+                  <div className="mb-3 h-9 w-9 rounded-xl bg-slate-100" />
+                  <p className="font-bold text-slate-900">{business}</p>
                 </div>
               ))}
             </div>
@@ -385,9 +385,7 @@ export default function Home() {
                 key={benefit.title}
                 className="rounded-2xl border border-slate-200 bg-white p-7"
               >
-                <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-xl bg-green-50 text-pixel-green">
-                  {benefit.icon}
-                </div>
+                <div className="mb-6 h-11 w-11 rounded-xl bg-green-50" />
 
                 <h3 className="text-lg font-extrabold text-slate-950">
                   {benefit.title}
@@ -440,7 +438,7 @@ export default function Home() {
           </div>
 
           <p className="mt-10 text-sm font-semibold text-slate-500">
-            Available on Etsy · Gumroad · Payhip
+            Available on Etsy Â· Gumroad Â· Payhip
           </p>
         </div>
       </section>
@@ -472,7 +470,7 @@ export default function Home() {
                 </div>
 
                 {index < 3 && (
-                  <span className="hidden text-slate-600 sm:block">→</span>
+                  <span className="hidden text-slate-600 sm:block">â†’</span>
                 )}
               </div>
             ))}
@@ -581,10 +579,122 @@ export default function Home() {
           </div>
 
           <div className="mt-12 border-t border-slate-200 pt-7 text-sm text-slate-500">
-            © 2026 Pixelorid. All rights reserved.
+            Â© 2026 Pixelorid. All rights reserved.
           </div>
         </div>
       </footer>
     </main>
   );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=== app/layout.tsx ===
+import type { Metadata } from "next";
+import { Manrope } from "next/font/google";
+import "./globals.css";
+
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: {
+    default: "Pixelorid â€” Simple Technology for Growing Businesses",
+    template: "%s | Pixelorid",
+  },
+  description:
+    "Pixelorid builds simple, practical SaaS tools and digital products for growing small businesses.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className={manrope.variable}>
+      <body>{children}</body>
+    </html>
+  );
+}
+
+=== app/globals.css ===
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+
+  --pixelorid-green: #16a34a;
+  --pixelorid-green-hover: #15803d;
+  --pixelorid-dark-green: #166534;
+  --pixelorid-light-green: #f0fdf4;
+
+  --pixelorid-teal: #0d9488;
+  --pixelorid-dark-teal: #115e59;
+  --pixelorid-light-teal: #f0fdfa;
+
+  --pixelorid-slate: #475569;
+  --pixelorid-border: #e2e8f0;
+  --pixelorid-surface: #f8fafc;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-manrope);
+
+  --color-pixel-green: var(--pixelorid-green);
+  --color-pixel-green-hover: var(--pixelorid-green-hover);
+  --color-pixel-dark-green: var(--pixelorid-dark-green);
+  --color-pixel-light-green: var(--pixelorid-light-green);
+
+  --color-pixel-teal: var(--pixelorid-teal);
+  --color-pixel-dark-teal: var(--pixelorid-dark-teal);
+  --color-pixel-light-teal: var(--pixelorid-light-teal);
+
+  --color-pixel-slate: var(--pixelorid-slate);
+  --color-pixel-border: var(--pixelorid-border);
+  --color-pixel-surface: var(--pixelorid-surface);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }

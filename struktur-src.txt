@@ -1,0 +1,15 @@
+﻿
+FullName                                                          
+--------                                                          
+D:\WEBSITE PIXELORID\pixelorid-website\.vscode                    
+D:\WEBSITE PIXELORID\pixelorid-website\app                        
+D:\WEBSITE PIXELORID\pixelorid-website\app\about                  
+D:\WEBSITE PIXELORID\pixelorid-website\app\digital-products       
+D:\WEBSITE PIXELORID\pixelorid-website\app\pricing                
+D:\WEBSITE PIXELORID\pixelorid-website\app\products               
+D:\WEBSITE PIXELORID\pixelorid-website\app\products\pixelorid-loop
+D:\WEBSITE PIXELORID\pixelorid-website\app\products\pixelorid-pos 
+D:\WEBSITE PIXELORID\pixelorid-website\app\support                
+D:\WEBSITE PIXELORID\pixelorid-website\public                     
+
+
