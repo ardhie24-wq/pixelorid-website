@@ -9,6 +9,9 @@ type HeroSlide = {
   description: string;
   ctaText: string;
   ctaHref: string;
+  secondaryCtaText: string;
+  secondaryCtaHref: string;
+  secondaryExternal?: boolean;
 };
 
 // Ganti nilai "image" di bawah ini sesuai nama file gambar
@@ -22,6 +25,8 @@ const slides: HeroSlide[] = [
       "Pixelorid POS helps food trucks and mobile food businesses manage orders, sales, and operations in one simple system.",
     ctaText: "Explore Pixelorid POS",
     ctaHref: "/products/pixelorid-pos",
+    secondaryCtaText: "View All Products",
+    secondaryCtaHref: "/products",
   },
   {
     image: "/hero-pixelorid-loop.png",
@@ -31,6 +36,9 @@ const slides: HeroSlide[] = [
       "Pixelorid Loop is a web-based follow-up app built for small service businesses — track every client, log every conversation, and know exactly who to reach out to next.",
     ctaText: "Explore Pixelorid Loop",
     ctaHref: "/products/pixelorid-loop",
+    secondaryCtaText: "Try Pixelorid Loop Free",
+    secondaryCtaHref: "https://loop.pixelorid.biz.id/register",
+    secondaryExternal: true,
   },
   {
     image: "/hero-digital-products.png",
@@ -40,6 +48,8 @@ const slides: HeroSlide[] = [
       "Business templates, calculators, trackers, and guides available on Etsy, Gumroad, and Payhip.",
     ctaText: "Explore Digital Products",
     ctaHref: "/digital-products",
+    secondaryCtaText: "View All Products",
+    secondaryCtaHref: "/products",
   },
 ];
 
@@ -107,10 +117,13 @@ export default function HeroSlider() {
               </a>
 
               <a
-                href="/products"
+                href={slide.secondaryCtaHref}
+                {...(slide.secondaryExternal
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
                 className="inline-flex h-12 items-center justify-center rounded-xl border-2 border-white bg-transparent px-6 font-bold text-white transition hover:bg-white hover:text-slate-900"
               >
-                View All Products
+                {slide.secondaryCtaText}
               </a>
             </div>
           </div>

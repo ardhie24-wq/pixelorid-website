@@ -1,4 +1,4 @@
-﻿const capabilities = [
+const capabilities = [
   {
     title: "Business Workflows",
     description:
@@ -44,12 +44,23 @@ export default function PixeloridLoopPage() {
             />
           </a>
 
-          <a
-            href="/products"
-            className="text-sm font-semibold text-slate-600 transition hover:text-pixel-green"
-          >
-            ← All Products
-          </a>
+          <div className="flex items-center gap-6">
+            <a
+              href="/products"
+              className="text-sm font-semibold text-slate-600 transition hover:text-pixel-green"
+            >
+              ← All Products
+            </a>
+
+            <a
+              href="https://loop.pixelorid.biz.id/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-bold text-pixel-teal transition hover:text-pixel-dark-teal"
+            >
+              Login
+            </a>
+          </div>
         </div>
       </header>
 
@@ -76,19 +87,30 @@ export default function PixeloridLoopPage() {
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="#capabilities"
+                  href="https://loop.pixelorid.biz.id/register"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-xl bg-pixel-teal px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-dark-teal"
                 >
-                  Explore Capabilities
+                  Try Pixelorid Loop Free
                 </a>
 
                 <a
-                  href="/products"
-                  className="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-slate-700 transition hover:border-pixel-teal hover:text-pixel-teal"
+                  href="https://loop.pixelorid.biz.id/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-xl border border-pixel-teal bg-white px-6 py-3.5 text-sm font-bold text-pixel-teal transition hover:bg-pixel-light-teal"
                 >
-                  View All Products
+                  Login
                 </a>
               </div>
+
+              <a
+                href="#capabilities"
+                className="mt-5 inline-flex text-sm font-bold text-slate-500 underline-offset-4 transition hover:text-pixel-teal hover:underline"
+              >
+                See what it does ↓
+              </a>
             </div>
 
             <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-xl">
@@ -293,12 +315,23 @@ export default function PixeloridLoopPage() {
             structure to the way they manage everyday work.
           </p>
 
-          <a
-            href="/products"
-            className="mt-8 inline-flex items-center justify-center rounded-xl bg-pixel-teal px-7 py-4 text-sm font-bold text-white transition hover:bg-pixel-dark-teal"
-          >
-            Explore Pixelorid Products →
-          </a>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href="https://loop.pixelorid.biz.id/register"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-xl bg-pixel-teal px-7 py-4 text-sm font-bold text-white transition hover:bg-pixel-dark-teal"
+            >
+              Try Pixelorid Loop Free
+            </a>
+
+            <a
+              href="/products"
+              className="inline-flex items-center justify-center rounded-xl border border-slate-600 bg-transparent px-7 py-4 text-sm font-bold text-white transition hover:bg-white hover:text-slate-900"
+            >
+              Explore Other Products
+            </a>
+          </div>
         </div>
       </section>
 
