@@ -112,7 +112,16 @@ const marketplaces = [
   },
 ];
 
-export default function DigitalProductsPage() {
+async function getGumroadProducts() {
+  const res = await fetch("http://localhost:3000/api/gumroad-products", {
+    cache: "no-store",
+  });
+  const data = await res.json();
+  return data.products ?? [];
+}
+
+export default async function DigitalProductsPage() {
+  const products = await getGumroadProducts();
   return (
     <main className="min-h-screen bg-white">
       <header className="border-b border-slate-200 bg-white">
@@ -133,6 +142,8 @@ export default function DigitalProductsPage() {
           </Link>
         </div>
       </header>
+
+
 
       <section className="relative overflow-hidden bg-gradient-to-br from-pixel-light-green via-white to-pixel-light-teal px-6 py-20 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
@@ -177,6 +188,9 @@ export default function DigitalProductsPage() {
                     <p className="mt-2 text-2xl font-extrabold text-slate-900">
                       Digital Products
                     </p>
+                    <p className="mt-1 text-xs font-semibold text-pixel-green">
+                      {products.length} Products Live on Gumroad
+                    </p>
                   </div>
 
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-pixel-light-green text-pixel-green">
@@ -196,17 +210,22 @@ export default function DigitalProductsPage() {
                   </div>
                 </div>
 
-                <div className="mt-8 grid grid-cols-2 gap-3">
-                  {categories.slice(0, 4).map((category) => (
-                    <div key={category.title} className="rounded-xl bg-white p-4">
-                      <p className="text-xs font-semibold text-slate-500">
-                        {category.title}
-                      </p>
-                      <p className="mt-1 text-sm font-extrabold text-pixel-green">
-                        Available
-                      </p>
-                    </div>
-                  ))}
+                <div className="mt-8 grid grid-cols-4 gap-2 sm:grid-cols-5">
+                  {products
+                    .filter((product: any) => product.thumbnail)
+                    .slice(0, 20)
+                    .map((product: any) => (
+                      <div
+                        key={product.id}
+                        className="overflow-hidden rounded-lg bg-white"
+                      >
+                        <img
+                          src={product.thumbnail}
+                          alt={product.name}
+                          className="h-12 w-full object-cover"
+                        />
+                      </div>
+                    ))}
                 </div>
 
                 <div className="mt-5 rounded-xl bg-white p-5">
@@ -215,7 +234,7 @@ export default function DigitalProductsPage() {
                       Marketplaces
                     </span>
                     <span className="text-sm font-bold text-pixel-green">
-                      3 Stores
+                      {marketplaces.length} Stores
                     </span>
                   </div>
 
@@ -301,15 +320,15 @@ export default function DigitalProductsPage() {
                   href={marketplace.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-1 hover:border-pixel-green hover:shadow-lg"
+                  className="group rounded-2xl border border-pixel-green bg-pixel-green p-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
                 >
-                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-pixel-green">
+                  <h3 className="text-lg font-bold text-white">
                     {marketplace.name}
                   </h3>
-                  <p className="mt-2 text-sm text-slate-500">
+                  <p className="mt-2 text-sm text-white/80">
                     {marketplace.description}
                   </p>
-                  <p className="mt-3 text-sm font-bold text-pixel-green opacity-0 transition group-hover:opacity-100">
+                  <p className="mt-3 text-sm font-bold text-white opacity-0 transition group-hover:opacity-100">
                     Visit store →
                   </p>
                 </a>
@@ -336,6 +355,37 @@ export default function DigitalProductsPage() {
         >
           Explore Pixelorid SaaS →
         </Link>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+        <h2 className="text-2xl font-bold text-slate-900 mb-6">
+          Available Products
+        </h2>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {products.map((product: any) => (
+            <a
+              key={product.id}
+              href={product.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl border border-slate-200 p-4 transition hover:shadow-md"
+            >
+              {product.thumbnail && (
+                <img
+                  src={product.thumbnail}
+                  alt={product.name}
+                  className="mb-4 h-40 w-full rounded-lg object-cover"
+                />
+              )}
+              <h3 className="text-sm font-semibold text-slate-800">
+                {product.name}
+              </h3>
+              <p className="mt-2 text-pixel-green font-bold">
+                ${product.price}
+              </p>
+            </a>
+          ))}
+        </div>
       </section>
 
       <footer className="border-t border-slate-200 bg-white">
