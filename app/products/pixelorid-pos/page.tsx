@@ -1,43 +1,114 @@
+const iconProps = {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "1.8",
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+};
+
 const features = [
   {
     title: "Point of Sale",
     description:
       "Take orders quickly and keep your daily sales organized from one simple workspace.",
+    icon: (
+      <svg {...iconProps} className="h-6 w-6">
+        <rect x="1" y="4" width="22" height="16" rx="2" />
+        <line x1="1" y1="10" x2="23" y2="10" />
+      </svg>
+    ),
   },
   {
     title: "Product & Menu Management",
     description:
       "Manage products, categories, prices, costs, and menu information in one place.",
+    icon: (
+      <svg {...iconProps} className="h-6 w-6">
+        <line x1="8" y1="6" x2="21" y2="6" />
+        <line x1="8" y1="12" x2="21" y2="12" />
+        <line x1="8" y1="18" x2="21" y2="18" />
+        <line x1="3" y1="6" x2="3.01" y2="6" />
+        <line x1="3" y1="12" x2="3.01" y2="12" />
+        <line x1="3" y1="18" x2="3.01" y2="18" />
+      </svg>
+    ),
   },
   {
     title: "Order Management",
     description:
       "Keep orders organized from the moment they are created through payment completion.",
+    icon: (
+      <svg {...iconProps} className="h-6 w-6">
+        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4" />
+        <circle cx="9" cy="21" r="1" />
+        <circle cx="20" cy="21" r="1" />
+      </svg>
+    ),
   },
   {
     title: "Payment Tracking",
     description:
       "Track completed payments and keep your transaction records organized.",
+    icon: (
+      <svg {...iconProps} className="h-6 w-6">
+        <rect x="2" y="6" width="20" height="12" rx="2" />
+        <circle cx="12" cy="12" r="2" />
+        <path d="M6 12h.01M18 12h.01" />
+      </svg>
+    ),
   },
   {
     title: "Receipt Printing",
     description:
       "Connect supported thermal printers and print customer receipts after payment.",
+    icon: (
+      <svg {...iconProps} className="h-6 w-6">
+        <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z" />
+        <line x1="8" y1="8" x2="16" y2="8" />
+        <line x1="8" y1="12" x2="16" y2="12" />
+        <line x1="8" y1="16" x2="12" y2="16" />
+      </svg>
+    ),
   },
   {
     title: "Sales Reports",
     description:
       "Understand your daily business activity with practical sales reporting.",
+    icon: (
+      <svg {...iconProps} className="h-6 w-6">
+        <line x1="12" y1="20" x2="12" y2="10" />
+        <line x1="18" y1="20" x2="18" y2="4" />
+        <line x1="6" y1="20" x2="6" y2="16" />
+      </svg>
+    ),
   },
   {
     title: "Cost & Profit Tracking",
     description:
       "Track product costs, operating expenses, and profit instead of looking at sales alone.",
+    icon: (
+      <svg {...iconProps} className="h-6 w-6">
+        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+        <polyline points="17 6 23 6 23 12" />
+      </svg>
+    ),
   },
   {
     title: "Offline-first",
     description:
       "Designed around food truck workflows where reliable connectivity cannot always be guaranteed.",
+    icon: (
+      <svg {...iconProps} className="h-6 w-6">
+        <line x1="1" y1="1" x2="23" y2="23" />
+        <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55" />
+        <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39" />
+        <path d="M10.71 5.05A16 16 0 0 1 22.58 9" />
+        <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88" />
+        <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
+        <line x1="12" y1="20" x2="12.01" y2="20" />
+      </svg>
+    ),
   },
 ];
 
@@ -142,8 +213,20 @@ export default function PixeloridPOSPage() {
                     </p>
                   </div>
 
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-pixel-light-green text-xl font-extrabold text-pixel-green">
-                    $
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-pixel-light-green text-pixel-green">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-6 w-6"
+                    >
+                      <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4" />
+                      <path d="M3 5v14a2 2 0 0 0 2 2h16v-5" />
+                      <path d="M18 12a2 2 0 0 0 0 4h4v-4Z" />
+                    </svg>
                   </div>
                 </div>
 
@@ -256,8 +339,8 @@ export default function PixeloridPOSPage() {
                 key={feature.title}
                 className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-pixel-light-green text-lg font-extrabold text-pixel-green">
-                  ✓
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-pixel-light-green text-pixel-green">
+                  {feature.icon}
                 </div>
 
                 <h3 className="mt-5 text-lg font-extrabold text-slate-900">

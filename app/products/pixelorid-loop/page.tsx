@@ -1,33 +1,82 @@
+const iconProps = {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "1.8",
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+};
+
 const capabilities = [
   {
     title: "Business Workflows",
     description:
       "Organize everyday business workflows in a structured and accessible workspace.",
+    icon: (
+      <svg {...iconProps} className="h-6 w-6">
+        <path d="M6 3v12" />
+        <circle cx="18" cy="6" r="3" />
+        <circle cx="6" cy="18" r="3" />
+        <path d="M18 9a9 9 0 0 1-9 9" />
+      </svg>
+    ),
   },
   {
     title: "Task & Process Organization",
     description:
       "Keep important tasks and business processes organized so work is easier to follow.",
+    icon: (
+      <svg {...iconProps} className="h-6 w-6">
+        <path d="M3 6h.01M3 12h.01M3 18h.01" />
+        <path d="M8 6h13" />
+        <path d="M8 12h13" />
+        <path d="M8 18h13" />
+      </svg>
+    ),
   },
   {
     title: "Business Tracking",
     description:
       "Keep track of important business activities and information from one central workspace.",
+    icon: (
+      <svg {...iconProps} className="h-6 w-6">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+      </svg>
+    ),
   },
   {
     title: "Centralized Information",
     description:
       "Bring relevant business information together instead of managing everything across disconnected tools.",
+    icon: (
+      <svg {...iconProps} className="h-6 w-6">
+        <ellipse cx="12" cy="5" rx="9" ry="3" />
+        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+      </svg>
+    ),
   },
   {
     title: "Support Communication",
     description:
       "Keep support conversations organized through structured chat threads and file attachments.",
+    icon: (
+      <svg {...iconProps} className="h-6 w-6">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+      </svg>
+    ),
   },
   {
     title: "Web-Based Access",
     description:
       "Access your business workspace through the web without depending on a single device.",
+    icon: (
+      <svg {...iconProps} className="h-6 w-6">
+        <circle cx="12" cy="12" r="10" />
+        <line x1="2" y1="12" x2="22" y2="12" />
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+      </svg>
+    ),
   },
 ];
 
@@ -125,8 +174,21 @@ export default function PixeloridLoopPage() {
                     </p>
                   </div>
 
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-pixel-light-teal text-xl font-extrabold text-pixel-teal">
-                    L
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-pixel-light-teal text-pixel-teal">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-6 w-6"
+                    >
+                      <path d="M17 2l4 4-4 4" />
+                      <path d="M3 11V9a4 4 0 0 1 4-4h14" />
+                      <path d="M7 22l-4-4 4-4" />
+                      <path d="M21 13v2a4 4 0 0 1-4 4H3" />
+                    </svg>
                   </div>
                 </div>
 
@@ -226,8 +288,8 @@ export default function PixeloridLoopPage() {
                 key={capability.title}
                 className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-pixel-light-teal text-lg font-extrabold text-pixel-teal">
-                  ✓
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-pixel-light-teal text-pixel-teal">
+                  {capability.icon}
                 </div>
 
                 <h3 className="mt-5 text-lg font-extrabold text-slate-900">
