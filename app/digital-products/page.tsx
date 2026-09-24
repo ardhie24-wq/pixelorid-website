@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 const categories = [
   {
@@ -30,6 +30,24 @@ const categories = [
     title: "Business Resources",
     description:
       "Useful digital resources created to simplify planning, organization, and business management.",
+  },
+];
+
+const marketplaces = [
+  {
+    name: "Etsy",
+    description: "Digital templates & resources",
+    href: "https://pixelorid.etsy.com",
+  },
+  {
+    name: "Gumroad",
+    description: "Digital business products",
+    href: "https://pixelorid.gumroad.com/",
+  },
+  {
+    name: "Payhip",
+    description: "Business resources",
+    href: "https://payhip.com/pixelorid",
   },
 ];
 
@@ -69,6 +87,20 @@ export default function DigitalProductsPage() {
             Ready-to-use digital products designed to help business owners
             plan, organize, track, and improve their everyday operations.
           </p>
+
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            {marketplaces.map((marketplace) => (
+              <a
+                key={marketplace.name}
+                href={marketplace.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-xl bg-pixel-green px-6 py-3 text-sm font-bold text-white transition hover:bg-pixel-green-hover"
+              >
+                Shop on {marketplace.name}
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -131,26 +163,25 @@ export default function DigitalProductsPage() {
             </div>
 
             <div className="grid gap-4 sm:grid-cols-3">
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-                <h3 className="text-lg font-bold text-slate-900">Etsy</h3>
-                <p className="mt-2 text-sm text-slate-500">
-                  Digital templates & resources
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-                <h3 className="text-lg font-bold text-slate-900">Gumroad</h3>
-                <p className="mt-2 text-sm text-slate-500">
-                  Digital business products
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-                <h3 className="text-lg font-bold text-slate-900">Payhip</h3>
-                <p className="mt-2 text-sm text-slate-500">
-                  Business resources
-                </p>
-              </div>
+              {marketplaces.map((marketplace) => (
+                <a
+                  key={marketplace.name}
+                  href={marketplace.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-1 hover:border-pixel-green hover:shadow-lg"
+                >
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-pixel-green">
+                    {marketplace.name}
+                  </h3>
+                  <p className="mt-2 text-sm text-slate-500">
+                    {marketplace.description}
+                  </p>
+                  <p className="mt-3 text-sm font-bold text-pixel-green opacity-0 transition group-hover:opacity-100">
+                    Visit store →
+                  </p>
+                </a>
+              ))}
             </div>
           </div>
         </div>
