@@ -1,5 +1,11 @@
 ﻿import Link from "next/link";
 
+export const metadata = {
+  title: "Tentang Kami",
+  description: "Kenali lebih dekat Pixelorid dan tim di baliknya.",
+}
+
+
 const principles = [
   {
     title: "Simple",

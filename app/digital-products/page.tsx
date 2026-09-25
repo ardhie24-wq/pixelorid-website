@@ -1,4 +1,10 @@
-import Link from "next/link";
+﻿import Link from "next/link";
+
+export const metadata = {
+  title: "Produk Digital",
+  description: "Jelajahi produk digital Pixelorid yang tersedia di Etsy, Gumroad, dan Payhip.",
+}
+
 
 const iconProps = {
   viewBox: "0 0 24 24",
@@ -162,7 +168,7 @@ export default async function DigitalProductsPage() {
             href="/"
             className="text-sm font-semibold text-slate-600 transition hover:text-pixel-green"
           >
-            ← Back to Home
+            â† Back to Home
           </Link>
         </div>
       </header>
@@ -356,7 +362,7 @@ export default async function DigitalProductsPage() {
                     {marketplace.description}
                   </p>
                   <p className="mt-3 text-sm font-bold text-white opacity-0 transition group-hover:opacity-100">
-                    Visit store →
+                    Visit store â†’
                   </p>
                 </a>
               ))}
@@ -380,7 +386,7 @@ export default async function DigitalProductsPage() {
           href="/products"
           className="mt-8 inline-flex rounded-xl bg-pixel-green px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover"
         >
-          Explore Pixelorid SaaS →
+          Explore Pixelorid SaaS â†’
         </Link>
       </section>
 
@@ -449,7 +455,7 @@ export default async function DigitalProductsPage() {
           </div>
 
           <div className="mt-8 border-t border-slate-200 pt-6 text-sm text-slate-500">
-            © 2026 Pixelorid. All rights reserved.
+            Â© 2026 Pixelorid. All rights reserved.
           </div>
         </div>
       </footer>
