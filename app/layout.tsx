@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 
@@ -9,7 +9,7 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: {
-    default: "Pixelorid â€” Simple Technology for Growing Businesses",
+    default: "Pixelorid — Simple Technology for Growing Businesses",
     template: "%s | Pixelorid",
   },
   description:
