@@ -1,6 +1,6 @@
-﻿export const metadata = {
+export const metadata = {
   title: "Pixelorid Loop",
-  description: "Pixelorid Loop â€” solusi langganan (subscription) untuk bisnis Anda.",
+  description: "Pixelorid Loop — solusi langganan (subscription) untuk bisnis Anda.",
 }
 
 const iconProps = {
@@ -103,7 +103,7 @@ export default function PixeloridLoopPage() {
               href="/products"
               className="text-sm font-semibold text-slate-600 transition hover:text-pixel-green"
             >
-              â† All Products
+              ← All Products
             </a>
 
             <a
@@ -123,7 +123,7 @@ export default function PixeloridLoopPage() {
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <div>
               <span className="inline-flex rounded-full bg-white px-4 py-2 text-sm font-bold text-pixel-teal shadow-sm ring-1 ring-pixel-teal/10">
-                SaaS Â· Business Management
+                SaaS · Business Management
               </span>
 
               <h1 className="mt-6 text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
@@ -163,7 +163,7 @@ export default function PixeloridLoopPage() {
                 href="#capabilities"
                 className="mt-5 inline-flex text-sm font-bold text-slate-500 underline-offset-4 transition hover:text-pixel-teal hover:underline"
               >
-                See what it does â†“
+                See what it does ↓
               </a>
             </div>
 
@@ -411,7 +411,7 @@ export default function PixeloridLoopPage() {
           />
 
           <p className="text-sm text-slate-500">
-            Â© 2026 Pixelorid. All rights reserved.
+            © 2026 Pixelorid. All rights reserved.
           </p>
         </div>
       </footer>

@@ -1,4 +1,4 @@
-﻿export const metadata = {
+export const metadata = {
   title: "Produk",
   description: "Semua produk Pixelorid: POS, Loop, dan lainnya.",
 }
@@ -46,7 +46,7 @@ const checkIcon = (
 const products = [
   {
     name: "Pixelorid POS",
-    category: "SaaS Â· Food Business",
+    category: "SaaS · Food Business",
     description:
       "A practical point-of-sale and business management solution designed for food trucks and mobile food businesses.",
     icon: posIcon,
@@ -66,7 +66,7 @@ const products = [
   },
   {
     name: "Pixelorid Loop",
-    category: "SaaS Â· Business Management",
+    category: "SaaS · Business Management",
     description:
       "Simple business technology designed to help growing businesses manage their workflows more efficiently.",
     icon: loopIcon,
@@ -100,7 +100,7 @@ export default function ProductsPage() {
             href="/"
             className="text-sm font-semibold text-slate-600 transition hover:text-pixel-green"
           >
-            â† Back to Home
+            ← Back to Home
           </a>
         </div>
       </header>
@@ -170,7 +170,7 @@ export default function ProductsPage() {
                   href={product.href}
                   className="mt-8 inline-flex w-full items-center justify-center rounded-xl bg-pixel-green px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover"
                 >
-                  Explore {product.name} â†’
+                  Explore {product.name} →
                 </a>
               </article>
             ))}
@@ -217,7 +217,7 @@ export default function ProductsPage() {
               href="/digital-products"
               className="mt-8 inline-flex w-full items-center justify-center rounded-xl bg-pixel-green px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover"
             >
-              Explore Digital Products â†’
+              Explore Digital Products →
             </a>
           </article>
           <section className="mt-16 rounded-3xl border border-pixel-light-green bg-pixel-light-green p-8 text-center lg:p-12">
