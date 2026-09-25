@@ -113,11 +113,29 @@ const marketplaces = [
 ];
 
 async function getGumroadProducts() {
-  const res = await fetch("http://localhost:3000/api/gumroad-products", {
-    cache: "no-store",
-  });
-  const data = await res.json();
-  return data.products ?? [];
+  try {
+    const token = process.env.GUMROAD_ACCESS_TOKEN;
+    const res = await fetch(
+      `https://api.gumroad.com/v2/products?access_token=${token}`,
+      { next: { revalidate: 3600 } }
+    );
+
+    if (!res.ok) return [];
+
+    const data = await res.json();
+
+    return (data.products ?? []).map((p: any) => ({
+      id: p.id,
+      name: p.name,
+      price: (p.price / 100).toFixed(2),
+      currency: p.currency,
+      url: p.short_url,
+      thumbnail: p.thumbnail_url ?? null,
+      salesCount: p.sales_count,
+    }));
+  } catch {
+    return [];
+  }
 }
 
 export default async function DigitalProductsPage() {
