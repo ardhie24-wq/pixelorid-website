@@ -1,31 +1,78 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 export const metadata = {
   title: "Tentang Kami",
   description: "Kenali lebih dekat Pixelorid dan tim di baliknya.",
 }
 
+const iconProps = {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "1.8",
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+};
+
+const missionIcon = (
+  <svg {...iconProps} className="h-7 w-7">
+    <circle cx="12" cy="12" r="9" />
+    <circle cx="12" cy="12" r="5" />
+    <circle cx="12" cy="12" r="1" />
+  </svg>
+);
+
+const simpleIcon = (
+  <svg {...iconProps} className="h-6 w-6">
+    <path d="M12 2l1.8 5.4L19 9l-5.2 1.6L12 16l-1.8-5.4L5 9l5.2-1.6L12 2z" />
+  </svg>
+);
+
+const practicalIcon = (
+  <svg {...iconProps} className="h-6 w-6">
+    <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2 2.3-2.3z" />
+  </svg>
+);
+
+const accessibleIcon = (
+  <svg {...iconProps} className="h-6 w-6">
+    <circle cx="12" cy="12" r="9" />
+    <circle cx="12" cy="9.5" r="2.3" />
+    <path d="M7.8 17.5a4.4 4.4 0 0 1 8.4 0" />
+  </svg>
+);
+
+const growIcon = (
+  <svg {...iconProps} className="h-6 w-6">
+    <path d="M3 17l6-6 4 4 8-8" />
+    <path d="M15 7h6v6" />
+  </svg>
+);
 
 const principles = [
   {
     title: "Simple",
     description:
       "Technology should be easy to understand and practical to use, without unnecessary complexity.",
+    icon: simpleIcon,
   },
   {
     title: "Practical",
     description:
       "We focus on real business needs and everyday workflows that help owners get things done.",
+    icon: practicalIcon,
   },
   {
     title: "Accessible",
     description:
       "Useful technology should be approachable for businesses at different stages of growth.",
+    icon: accessibleIcon,
   },
   {
     title: "Built to Grow",
     description:
       "Our products are designed around the changing needs of businesses as they grow and evolve.",
+    icon: growIcon,
   },
 ];
 
@@ -102,8 +149,8 @@ export default function AboutPage() {
           </div>
 
           <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8 lg:p-10">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-pixel-light-green text-2xl font-extrabold text-pixel-green">
-              P
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-pixel-light-green text-pixel-green">
+              {missionIcon}
             </div>
 
             <h3 className="mt-7 text-2xl font-extrabold text-slate-900">
@@ -141,8 +188,8 @@ export default function AboutPage() {
                 key={principle.title}
                 className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm"
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-pixel-light-green font-extrabold text-pixel-green">
-                  {principle.title.charAt(0)}
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-pixel-light-green text-pixel-green">
+                  {principle.icon}
                 </div>
 
                 <h3 className="mt-5 text-xl font-bold text-slate-900">

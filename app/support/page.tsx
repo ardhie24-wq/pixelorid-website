@@ -1,10 +1,39 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 export const metadata = {
   title: "Dukungan",
   description: "Butuh bantuan? Hubungi tim support Pixelorid.",
 }
 
+const iconProps = {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "1.8",
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+};
+
+const productSupportIcon = (
+  <svg {...iconProps} className="h-7 w-7">
+    <circle cx="12" cy="12" r="9" />
+    <path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1.2.9-1.2 1.7v.5" />
+    <line x1="12" y1="17" x2="12.01" y2="17" />
+  </svg>
+);
+
+const digitalSupportIcon = (
+  <svg {...iconProps} className="h-7 w-7">
+    <path d="M6 8h12l-1 12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 8z" />
+    <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+  </svg>
+);
+
+const generalQuestionsIcon = (
+  <svg {...iconProps} className="h-7 w-7">
+    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+  </svg>
+);
 
 const supportOptions = [
   {
@@ -13,6 +42,9 @@ const supportOptions = [
       "Need help understanding a Pixelorid product? Visit the relevant product page to learn more about its features and capabilities.",
     href: "/products",
     button: "Explore Products",
+    icon: productSupportIcon,
+    iconBg: "bg-pixel-light-green",
+    iconColor: "text-pixel-green",
   },
   {
     title: "Digital Product Support",
@@ -20,6 +52,9 @@ const supportOptions = [
       "For digital products purchased through Etsy, Gumroad, or Payhip, please use the support channel provided by the marketplace.",
     href: "/digital-products",
     button: "View Digital Products",
+    icon: digitalSupportIcon,
+    iconBg: "bg-pixel-light-teal",
+    iconColor: "text-pixel-teal",
   },
   {
     title: "General Questions",
@@ -27,6 +62,9 @@ const supportOptions = [
       "Have a question about Pixelorid, our products, or future solutions? Get in touch with our team.",
     href: "mailto:support@pixelorid.biz.id",
     button: "Contact Support",
+    icon: generalQuestionsIcon,
+    iconBg: "bg-pixel-light-green",
+    iconColor: "text-pixel-green",
   },
 ];
 
@@ -99,8 +137,10 @@ export default function SupportPage() {
               key={option.title}
               className="flex flex-col rounded-2xl border border-slate-200 bg-white p-7 shadow-sm"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-pixel-light-green text-xl font-extrabold text-pixel-green">
-                {option.title.charAt(0)}
+              <div
+                className={`flex h-12 w-12 items-center justify-center rounded-xl ${option.iconBg} ${option.iconColor}`}
+              >
+                {option.icon}
               </div>
 
               <h2 className="mt-6 text-xl font-bold text-slate-900">
