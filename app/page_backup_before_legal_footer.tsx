@@ -1,4 +1,4 @@
-﻿import HeroSlider from "./components/HeroSlider";
+import HeroSlider from "./components/HeroSlider";
 
 const products = [
   {
@@ -575,21 +575,6 @@ export default function Home() {
                 </a>
                 <a className="block hover:text-pixel-green" href="/support">
                   Support
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-bold text-slate-950">Legal</h3>
-              <div className="mt-4 space-y-3 text-sm text-slate-600">
-                <a className="block hover:text-pixel-green" href="/terms">
-                  Terms of Service
-                </a>
-                <a className="block hover:text-pixel-green" href="/privacy">
-                  Privacy Policy
-                </a>
-                <a className="block hover:text-pixel-green" href="/refund">
-                  Refund Policy
                 </a>
               </div>
             </div>
