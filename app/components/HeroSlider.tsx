@@ -35,9 +35,9 @@ const slides: HeroSlide[] = [
     description:
       "Pixelorid Loop is a web-based follow-up app built for small service businesses — track every client, log every conversation, and know exactly who to reach out to next.",
     ctaText: "Explore Pixelorid Loop",
-    ctaHref: "/products/pixelorid-loop",
+    ctaHref: "https://loop.pixelorid.biz.id",
     secondaryCtaText: "Try Pixelorid Loop Free",
-    secondaryCtaHref: "https://loop.pixelorid.biz.id/register",
+    secondaryCtaHref: "https://loop.pixelorid.biz.id",
     secondaryExternal: true,
   },
   {
