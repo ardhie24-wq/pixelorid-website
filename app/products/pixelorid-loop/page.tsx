@@ -1,3 +1,5 @@
+import LoopHeroSlider from "../../components/LoopHeroSlider";
+
 export const metadata = {
   title: "Pixelorid Loop",
   description: "Pixelorid Loop — solusi langganan (subscription) untuk bisnis Anda.",
@@ -167,82 +169,7 @@ export default function PixeloridLoopPage() {
               </a>
             </div>
 
-            <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-xl">
-              <div className="rounded-2xl bg-slate-50 p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-semibold text-slate-500">
-                      Business Workspace
-                    </p>
-                    <p className="mt-2 text-2xl font-extrabold text-slate-900">
-                      Pixelorid Loop
-                    </p>
-                  </div>
-
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-pixel-light-teal text-pixel-teal">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-6 w-6"
-                    >
-                      <path d="M17 2l4 4-4 4" />
-                      <path d="M3 11V9a4 4 0 0 1 4-4h14" />
-                      <path d="M7 22l-4-4 4-4" />
-                      <path d="M21 13v2a4 4 0 0 1-4 4H3" />
-                    </svg>
-                  </div>
-                </div>
-
-                <div className="mt-8 space-y-3">
-                  <div className="rounded-xl bg-white p-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-bold text-slate-800">
-                        Business Workflow
-                      </span>
-                      <span className="text-xs font-bold text-pixel-teal">
-                        Active
-                      </span>
-                    </div>
-                    <div className="mt-3 h-2 rounded-full bg-slate-100">
-                      <div className="h-2 w-4/5 rounded-full bg-pixel-teal" />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="rounded-xl bg-white p-4">
-                      <p className="text-xs font-semibold text-slate-500">
-                        Tasks
-                      </p>
-                      <p className="mt-1 text-2xl font-extrabold text-slate-900">
-                        Organized
-                      </p>
-                    </div>
-
-                    <div className="rounded-xl bg-white p-4">
-                      <p className="text-xs font-semibold text-slate-500">
-                        Support
-                      </p>
-                      <p className="mt-1 text-2xl font-extrabold text-pixel-teal">
-                        Connected
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="rounded-xl bg-white p-4">
-                    <p className="text-xs font-semibold text-slate-500">
-                      Centralized Information
-                    </p>
-                    <p className="mt-2 text-sm font-bold text-slate-800">
-                      Keep business information in one organized workspace.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <LoopHeroSlider />
           </div>
         </div>
       </section>
