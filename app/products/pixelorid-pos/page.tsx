@@ -1,3 +1,5 @@
+import PosHeroImage from "../../components/PosHeroImage";
+
 export const metadata = {
   title: "Pixelorid POS",
   description: "Pixelorid POS — sistem kasir modern untuk bisnis Anda.",
@@ -206,85 +208,7 @@ export default function PixeloridPOSPage() {
               </a>
             </div>
 
-            <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-xl">
-              <div className="rounded-2xl bg-slate-50 p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-semibold text-slate-500">
-                      Today's Sales
-                    </p>
-                    <p className="mt-2 text-3xl font-extrabold text-slate-900">
-                      $2,480.00
-                    </p>
-                  </div>
-
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-pixel-light-green text-pixel-green">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-6 w-6"
-                    >
-                      <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4" />
-                      <path d="M3 5v14a2 2 0 0 0 2 2h16v-5" />
-                      <path d="M18 12a2 2 0 0 0 0 4h4v-4Z" />
-                    </svg>
-                  </div>
-                </div>
-
-                <div className="mt-8 grid grid-cols-3 gap-3">
-                  <div className="rounded-xl bg-white p-4">
-                    <p className="text-xs font-semibold text-slate-500">
-                      Orders
-                    </p>
-                    <p className="mt-1 text-xl font-extrabold text-slate-900">
-                      84
-                    </p>
-                  </div>
-
-                  <div className="rounded-xl bg-white p-4">
-                    <p className="text-xs font-semibold text-slate-500">
-                      Items
-                    </p>
-                    <p className="mt-1 text-xl font-extrabold text-slate-900">
-                      126
-                    </p>
-                  </div>
-
-                  <div className="rounded-xl bg-white p-4">
-                    <p className="text-xs font-semibold text-slate-500">
-                      Profit
-                    </p>
-                    <p className="mt-1 text-xl font-extrabold text-pixel-green">
-                      $740
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-5 rounded-xl bg-white p-5">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-semibold text-slate-600">
-                      Daily performance
-                    </span>
-                    <span className="text-sm font-bold text-pixel-green">
-                      +18.4%
-                    </span>
-                  </div>
-
-                  <div className="mt-4 flex h-28 items-end gap-2">
-                    <div className="h-10 flex-1 rounded-t-lg bg-pixel-green/20" />
-                    <div className="h-16 flex-1 rounded-t-lg bg-pixel-green/30" />
-                    <div className="h-12 flex-1 rounded-t-lg bg-pixel-green/40" />
-                    <div className="h-20 flex-1 rounded-t-lg bg-pixel-green/50" />
-                    <div className="h-24 flex-1 rounded-t-lg bg-pixel-green/60" />
-                    <div className="h-28 flex-1 rounded-t-lg bg-pixel-green" />
-                  </div>
-                </div>
-              </div>
-            </div>
+            <PosHeroImage />
           </div>
         </div>
       </section>
