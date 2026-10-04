@@ -29,6 +29,18 @@ const slides: HeroSlide[] = [
     secondaryCtaHref: "/products",
   },
   {
+    image: "/hero-pixelorid-resto.png",
+    title: "Simple Restaurant Software for",
+    highlight: "Growing Businesses",
+    description:
+      "Pixelorid Resto brings orders, tables, reservations, staff and reports into one practical system, for one branch or many.",
+    ctaText: "Explore Pixelorid Resto",
+    ctaHref: "/products/pixelorid-resto",
+    secondaryCtaText: "Get Started",
+    secondaryCtaHref: "https://resto.pixelorid.biz.id/register",
+    secondaryExternal: true,
+  },
+  {
     image: "/hero-pixelorid-loop.png",
     title: "Never Miss a",
     highlight: "Client Follow-Up",
