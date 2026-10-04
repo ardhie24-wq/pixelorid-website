@@ -2,7 +2,7 @@ import PosHeroImage from "../../components/PosHeroImage";
 
 export const metadata = {
   title: "Pixelorid POS",
-  description: "Pixelorid POS — sistem kasir modern untuk bisnis Anda.",
+  description: "Pixelorid POS — point of sale and business management for food trucks.",
 }
 
 const iconProps = {

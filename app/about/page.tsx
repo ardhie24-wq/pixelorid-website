@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Tentang Kami",
-  description: "Kenali lebih dekat Pixelorid dan tim di baliknya.",
+  title: "About",
+  description: "Learn more about Pixelorid and the team behind it.",
 }
 
 const iconProps = {

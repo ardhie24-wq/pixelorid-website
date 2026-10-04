@@ -1,8 +1,8 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 export const metadata = {
-  title: "Harga",
-  description: "Lihat paket harga Pixelorid POS dan Pixelorid Loop.",
+  title: "Pricing",
+  description: "See pricing for Pixelorid products and digital resources.",
 }
 
 

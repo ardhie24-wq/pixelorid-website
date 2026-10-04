@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Produk",
-  description: "Semua produk Pixelorid: POS, Loop, dan lainnya.",
+  title: "Products",
+  description: "All Pixelorid products: POS, Loop, and more.",
 }
 
 const iconProps = {
@@ -66,9 +66,9 @@ const products = [
   },
   {
     name: "Pixelorid Loop",
-    category: "SaaS · Business Management",
+    category: "SaaS · Service Business",
     description:
-      "Simple business technology designed to help growing businesses manage their workflows more efficiently.",
+      "A web-based client follow-up app built for small service businesses — track every lead and client, know who to follow up with, and never let a conversation go cold.",
     icon: loopIcon,
     iconBg: "bg-pixel-light-teal",
     iconColor: "text-pixel-teal",

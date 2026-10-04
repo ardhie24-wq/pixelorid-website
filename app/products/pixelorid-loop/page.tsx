@@ -2,7 +2,7 @@ import LoopHeroSlider from "../../components/LoopHeroSlider";
 
 export const metadata = {
   title: "Pixelorid Loop",
-  description: "Pixelorid Loop — solusi langganan (subscription) untuk bisnis Anda.",
+  description: "Pixelorid Loop — a web-based client follow-up app for small service businesses.",
 }
 
 const iconProps = {

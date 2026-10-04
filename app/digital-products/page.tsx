@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Produk Digital",
-  description: "Jelajahi produk digital Pixelorid yang tersedia di Etsy, Gumroad, dan Payhip.",
+  title: "Digital Products",
+  description: "Explore Pixelorid digital products available on Etsy, Gumroad, and Payhip.",
 }
 
 
