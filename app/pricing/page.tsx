@@ -114,6 +114,51 @@ export default function PricingPage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-5xl px-6 pb-20 lg:px-8">
+        <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
+          <p className="text-sm font-bold uppercase tracking-widest text-pixel-green">
+            Pixelorid Resto
+          </p>
+          <h2 className="mt-3 text-2xl font-extrabold text-slate-900 sm:text-3xl">
+            Simple pricing for restaurants
+          </h2>
+          <p className="mt-3 leading-7 text-slate-600">
+            Every plan includes all features. Choose the number of branches you need.
+          </p>
+
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            <div className="rounded-2xl border border-slate-200 p-6">
+              <h3 className="text-lg font-extrabold text-slate-900">Basic</h3>
+              <p className="mt-3 flex items-baseline gap-2">
+                <span className="text-4xl font-extrabold text-slate-900">$20</span>
+                <span className="text-sm text-slate-500">USD / month</span>
+              </p>
+              <p className="mt-1 text-sm font-bold text-pixel-green">Up to 2 branches</p>
+            </div>
+
+            <div className="rounded-2xl border border-slate-200 p-6">
+              <h3 className="text-lg font-extrabold text-slate-900">Pro</h3>
+              <p className="mt-3 flex items-baseline gap-2">
+                <span className="text-4xl font-extrabold text-slate-900">$210</span>
+                <span className="text-sm text-slate-500">USD / month</span>
+              </p>
+              <p className="mt-1 text-sm font-bold text-pixel-green">Up to 10 branches</p>
+            </div>
+          </div>
+
+          <p className="mt-5 text-sm text-slate-500">
+            Prices are in US dollars and billed monthly.
+          </p>
+
+          <Link
+            href="/products/pixelorid-resto"
+            className="mt-6 inline-flex items-center justify-center rounded-xl bg-pixel-green px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover"
+          >
+            View Pixelorid Resto &rarr;
+          </Link>
+        </div>
+      </section>
+
       <section className="bg-slate-50">
         <div className="mx-auto max-w-4xl px-6 py-20 text-center lg:px-8">
           <p className="text-sm font-bold uppercase tracking-widest text-pixel-green">
