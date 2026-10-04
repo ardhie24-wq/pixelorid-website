@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Products",
-  description: "All Pixelorid products: POS, Loop, and more.",
+  description: "All Pixelorid products: POS, Resto, Loop, and more.",
 }
 
 const iconProps = {
@@ -26,6 +26,15 @@ const loopIcon = (
     <path d="M3 11V9a4 4 0 0 1 4-4h14" />
     <path d="M7 22l-4-4 4-4" />
     <path d="M21 13v2a4 4 0 0 1-4 4H3" />
+  </svg>
+);
+
+const restoIcon = (
+  <svg {...iconProps} className="h-7 w-7">
+    <path d="M3 2v7a2 2 0 0 0 4 0V2" />
+    <path d="M7 2v20" />
+    <path d="M17 2c-1.1 0-2 1.3-2 3v4c0 1.7.9 3 2 3s2-1.3 2-3V5c0-1.7-.9-3-2-3z" />
+    <path d="M17 12v10" />
   </svg>
 );
 
@@ -63,6 +72,26 @@ const products = [
       "Offline-first operation",
     ],
     href: "/products/pixelorid-pos",
+  },
+  {
+    name: "Pixelorid Resto",
+    category: "SaaS · Restaurant Management",
+    description:
+      "Pixelorid Resto brings orders, tables, reservations, staff and reports into one practical system, for one branch or many.",
+    icon: restoIcon,
+    iconBg: "bg-pixel-light-green",
+    iconColor: "text-pixel-green",
+    features: [
+      "Fast POS and orders",
+      "Cash and QR payments",
+      "Tables & Reservations",
+      "Customers",
+      "Menu & COGS Calculator",
+      "Staff & Roles",
+      "Reports & Dashboard",
+      "Multiple Branches",
+    ],
+    href: "/products/pixelorid-resto",
   },
   {
     name: "Pixelorid Loop",
@@ -122,7 +151,7 @@ export default function ProductsPage() {
             </p>
           </div>
 
-          <div className="mt-16 grid gap-8 lg:grid-cols-2">
+          <div className="mt-16 grid gap-8 lg:grid-cols-2 xl:grid-cols-3">
             {products.map((product) => (
               <article
                 key={product.name}
