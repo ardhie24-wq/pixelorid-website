@@ -1,4 +1,4 @@
-﻿import HeroSlider from "./components/HeroSlider";
+import HeroSlider from "./components/HeroSlider";
 
 const products = [
   {
@@ -20,6 +20,29 @@ const products = [
         <path d="M3 9l1.5-5h15L21 9" />
         <path d="M4 9h16l-1.1 10.1a1 1 0 0 1-1 .9H6.1a1 1 0 0 1-1-.9L4 9z" />
         <path d="M9 13a3 3 0 0 0 6 0" />
+      </svg>
+    ),
+  },
+  {
+    name: "Pixelorid Resto",
+    category: "SaaS · Restaurant Management",
+    description:
+      "Pixelorid Resto brings orders, tables, reservations, staff and reports into one practical system, for one branch or many.",
+    href: "/products/pixelorid-resto",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-6 w-6"
+      >
+        <path d="M3 2v7a2 2 0 0 0 4 0V2" />
+        <path d="M7 2v20" />
+        <path d="M17 2c-1.1 0-2 1.3-2 3v4c0 1.7.9 3 2 3s2-1.3 2-3V5c0-1.7-.9-3-2-3z" />
+        <path d="M17 12v10" />
       </svg>
     ),
   },
@@ -272,7 +295,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {products.map((product) => (
               <article
                 key={product.name}
@@ -526,6 +549,8 @@ export default function Home() {
               <h3 className="font-bold text-slate-950">Products</h3>
               <div className="mt-4 space-y-3 text-sm text-slate-600">
                 <a className="block hover:text-pixel-green" href="/products/pixelorid-pos">Pixelorid POS
+                </a>
+                <a className="block hover:text-pixel-green" href="/products/pixelorid-resto">Pixelorid Resto
                 </a>
                 <a className="block hover:text-pixel-green" href="/products/pixelorid-loop">Pixelorid Loop
                 </a>
