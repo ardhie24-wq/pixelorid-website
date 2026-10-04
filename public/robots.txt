@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pixelorid.biz.id/sitemap.xml
+Sitemap: https://www.pixelorid.biz.id/sitemap.xml

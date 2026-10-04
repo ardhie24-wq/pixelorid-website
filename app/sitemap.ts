@@ -1,7 +1,8 @@
 import type { MetadataRoute } from 'next'
 
-// TODO: ganti dengan domain asli Anda (tanpa trailing slash)
-const BASE_URL = 'https://pixelorid.biz.id'
+const BASE_URL = 'https://www.pixelorid.biz.id'
+// Ubah tanggal ini setiap kali isi halaman benar-benar berubah
+const LAST_UPDATED = new Date('2026-10-05')
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
@@ -18,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return routes.map((route) => ({
     url: `${BASE_URL}${route}`,
-    lastModified: new Date(),
+    lastModified: LAST_UPDATED,
     changeFrequency: route === '' ? 'daily' : 'weekly',
     priority: route === '' ? 1 : 0.7,
   }))

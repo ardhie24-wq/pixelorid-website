@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
+import JsonLd from "./_components/JsonLd";
+
+const SITE_URL = "https://www.pixelorid.biz.id";
+const DEFAULT_TITLE = "Pixelorid \u2014 Simple Technology for Growing Businesses";
+const DEFAULT_DESCRIPTION =
+  "Pixelorid builds simple, practical SaaS tools and digital products for growing small businesses.";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -8,12 +14,53 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Pixelorid — Simple Technology for Growing Businesses",
+    default: DEFAULT_TITLE,
     template: "%s | Pixelorid",
   },
-  description:
-    "Pixelorid builds simple, practical SaaS tools and digital products for growing small businesses.",
+  description: DEFAULT_DESCRIPTION,
+  applicationName: "Pixelorid",
+  alternates: { canonical: "./" },
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "website",
+    siteName: "Pixelorid",
+    locale: "en_US",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+  },
+};
+
+const siteJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "Pixelorid",
+      url: SITE_URL,
+      logo: `${SITE_URL}/pixelorid-logo.png`,
+      description: DEFAULT_DESCRIPTION,
+      sameAs: [
+        "https://pixelorid.etsy.com",
+        "https://pixelorid.gumroad.com/",
+        "https://payhip.com/pixelorid",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "Pixelorid",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -23,7 +70,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={manrope.variable}>
-      <body>{children}</body>
+      <body>
+        <JsonLd data={siteJsonLd} />
+        {children}
+      </body>
     </html>
   );
 }
