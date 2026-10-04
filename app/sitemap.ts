@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/products',
     '/products/pixelorid-loop',
     '/products/pixelorid-pos',
+    '/products/pixelorid-resto',
     '/support',
   ]
 
