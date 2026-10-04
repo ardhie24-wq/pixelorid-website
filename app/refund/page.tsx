@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Refund Policy",
-  description: "Refund Policy for Pixelorid — all sales are final.",
+  description: "Refund Policy for Pixelorid — 7-day refunds for SaaS subscriptions via Paddle; digital products are final.",
 };
 
 export default function RefundPage() {
@@ -33,78 +33,86 @@ export default function RefundPage() {
             Refund <span className="text-[#16a34a]">Policy</span>
           </h1>
           <p className="text-sm text-[#475569]">
-            Last updated: September 27, 2026 &nbsp;·&nbsp; Operated by{" "}
+            Last updated: October 4, 2026 &nbsp;·&nbsp; Operated by{" "}
             <strong className="text-[#0f172a]">Ardiyanto</strong>, Klaten, Central Java, Indonesia
           </p>
         </div>
 
-        {/* Big policy banner */}
+        {/* Policy banner */}
         <div className="mb-6 rounded-2xl bg-[#0f172a] px-8 py-10 text-center">
-          <div className="mb-4 text-4xl">🚫</div>
           <span className="mb-4 inline-block rounded-full bg-[#16a34a] px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
-            Our Policy
+            Refund Policy at a Glance
           </span>
-          <h2 className="mb-3 mt-3 text-2xl font-extrabold tracking-tight text-white">
-            All Sales Are Final
-          </h2>
-          <p className="mx-auto max-w-md text-sm leading-relaxed text-[#94a3b8]">
-            All purchases of Pixelorid products — SaaS subscriptions and digital products — are
-            final and non-refundable. We do not offer refunds, credits, or exchanges for any reason.
-          </p>
+          <div className="mt-6 grid gap-4 text-left sm:grid-cols-2">
+            <div className="rounded-xl bg-[#1e293b] px-5 py-5">
+              <h2 className="mb-2 text-lg font-extrabold text-white">SaaS Subscriptions</h2>
+              <p className="text-sm leading-relaxed text-[#94a3b8]">
+                Pixelorid POS, Resto, Loop and future SaaS products:{" "}
+                <strong className="text-white">7-day refund window</strong>, handled by Paddle.
+              </p>
+            </div>
+            <div className="rounded-xl bg-[#1e293b] px-5 py-5">
+              <h2 className="mb-2 text-lg font-extrabold text-white">Digital Products</h2>
+              <p className="text-sm leading-relaxed text-[#94a3b8]">
+                Templates sold on Etsy, Gumroad and Payhip:{" "}
+                <strong className="text-white">all sales are final</strong>, no refunds.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="space-y-4">
 
-          <Section num="1" title="No-Refund Policy">
+          <Section num="1" title="SaaS Subscriptions">
             <p>
-              All Pixelorid products are sold on a <strong>strictly non-refundable basis</strong>.
-              Once a payment is processed, it cannot be reversed, credited, or applied to future
-              periods. This applies to all situations without exception, including:
+              <strong>Paddle.com</strong> is the Merchant of Record for all our SaaS orders and
+              handles payments, billing, taxes, and refunds. See the{" "}
+              <a href="https://www.paddle.com/legal/checkout-buyer-terms" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#16a34a] underline underline-offset-2">
+                Paddle Checkout Buyer Terms
+              </a>{" "}
+              and{" "}
+              <a href="https://www.paddle.com/legal/privacy" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#16a34a] underline underline-offset-2">
+                Paddle Privacy Policy
+              </a>.
             </p>
             <ul>
-              <li>Cancellation of a subscription before the current billing period ends</li>
-              <li>Failure to use the service or product after subscribing or purchasing</li>
-              <li>Dissatisfaction with the service, features, or functionality</li>
-              <li>Accidental or duplicate purchases</li>
-              <li>Change of mind after subscribing or purchasing</li>
-              <li>Technical issues on your device that prevent usage</li>
-              <li>Account suspension or termination due to Terms of Service violations</li>
+              <li>
+                You may request a refund within <strong>7 days</strong> of the payment date. This
+                applies to your first payment and to each renewal, and you do not need to give a
+                reason.
+              </li>
+              <li>
+                Submit your request at{" "}
+                <a href="https://paddle.net" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#16a34a] underline underline-offset-2">
+                  paddle.net
+                </a>{" "}
+                using the email address you used for the purchase, or email{" "}
+                <a href="mailto:support@pixelorid.biz.id" className="font-semibold text-[#16a34a] underline underline-offset-2">
+                  support@pixelorid.biz.id
+                </a>{" "}
+                and we will help you.
+              </li>
+              <li>Requests made after 7 days are reviewed case by case.</li>
+              <li>
+                Approved refunds are returned by Paddle to the original payment method. Timing
+                depends on your payment provider.
+              </li>
             </ul>
           </Section>
 
-          <Section num="2" title="SaaS Products — Try Before You Subscribe">
+          <Section num="2" title="Free Trials">
             <p>
-              We offer a <strong>free trial period</strong> for our SaaS products — full access
-              at no charge, no payment information required. Trial duration is displayed on each
-              product&apos;s page at the time of registration.
-            </p>
-            <p>
-              We strongly encourage you to evaluate the product during the trial before
-              subscribing. By choosing to subscribe, you acknowledge you had a reasonable
-              opportunity to evaluate the service.
-            </p>
-            <div className="mt-3 rounded-lg border-l-4 border-[#16a34a] bg-[#f0fdf4] px-4 py-3 text-sm text-[#166534]">
-              💡 Try any Pixelorid SaaS product free before committing — no credit card required.
-            </div>
-          </Section>
-
-          <Section num="3" title="Digital Products — Preview Before You Buy">
-            <p>
-              All digital products include detailed descriptions, previews, and sample images on
-              their marketplace listing pages so you can evaluate the product before purchasing.
-            </p>
-            <p>
-              Because digital products are delivered instantly as downloadable files, all sales
-              are final once the file has been accessed or downloaded.
+              A free trial period itself carries no charge, so there is nothing to refund during
+              the trial. Your first payment after the trial is covered by Section 1.
             </p>
           </Section>
 
-          <Section num="4" title="Cancellation (SaaS Subscriptions)">
+          <Section num="3" title="Cancellation (SaaS Subscriptions)">
             <p>You may cancel your SaaS subscription at any time. Upon cancellation:</p>
             <ul>
               <li>Your subscription remains active until the end of the current paid period.</li>
               <li>You will not be charged for the next renewal cycle.</li>
-              <li>No refund or credit is issued for unused time in the current period.</li>
+              <li>Cancelling does not by itself create a refund beyond the 7-day window in Section 1.</li>
             </ul>
             <p>
               To cancel, contact us at{" "}
@@ -115,6 +123,21 @@ export default function RefundPage() {
             </p>
           </Section>
 
+          <Section num="4" title="Digital Products">
+            <p>
+              Digital products are delivered instantly as downloadable files and cannot be
+              returned, so all sales are final and not refundable. Please review the description
+              and previews on the product listing before you buy.
+            </p>
+            <p>
+              The refund rules of the marketplace where you bought the product (Etsy, Gumroad, or
+              Payhip) also apply. If you have a problem with a file, contact us at{" "}
+              <a href="mailto:support@pixelorid.biz.id" className="font-semibold text-[#16a34a] underline underline-offset-2">
+                support@pixelorid.biz.id
+              </a>{" "}
+              and we will try to help.
+            </p>
+          </Section>
           <Section num="5" title="Statutory Rights & Legal Exceptions">
             <p>
               We acknowledge that certain jurisdictions grant statutory consumer rights that may apply:

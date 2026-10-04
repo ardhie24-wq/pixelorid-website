@@ -34,7 +34,7 @@ export default function PrivacyPage() {
             Privacy <span className="text-[#16a34a]">Policy</span>
           </h1>
           <p className="text-sm text-[#475569]">
-            Last updated: September 27, 2026 &nbsp;·&nbsp; Operated by{" "}
+            Last updated: October 4, 2026 &nbsp;·&nbsp; Operated by{" "}
             <strong className="text-[#0f172a]">Ardiyanto</strong>, Klaten, Central Java, Indonesia
           </p>
         </div>
@@ -52,51 +52,86 @@ export default function PrivacyPage() {
           </Section>
 
           <Section num="2" title="What Data We Collect">
-            <p>We collect only what is necessary to operate our services:</p>
-            <div className="mt-3 overflow-x-auto rounded-xl border border-[#e2e8f0]">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-[#f8fafc] text-left text-[#344054]">
-                    <th className="border-b border-[#e2e8f0] px-4 py-3 font-bold">Data</th>
-                    <th className="border-b border-[#e2e8f0] px-4 py-3 font-bold">Why we collect it</th>
-                    <th className="border-b border-[#e2e8f0] px-4 py-3 font-bold">Where stored</th>
-                  </tr>
-                </thead>
-                <tbody className="text-[#475467]">
-                  {[
-                    ["Email address", "Account authentication & communications", "Supabase"],
-                    ["Business name", "Identifying your account & license", "Supabase"],
-                    ["Device ID", "License activation & device management (SaaS apps)", "Supabase"],
-                    ["License & subscription status", "Verifying access rights within the app", "Supabase"],
-                    ["Payment data", "Processing subscriptions", "Paddle (not us — see Section 6)"],
-                  ].map(([data, why, where], i) => (
-                    <tr key={i} className={i % 2 === 1 ? "bg-[#fafafa]" : ""}>
-                      <td className="border-b border-[#e2e8f0] px-4 py-3 font-semibold text-[#0f172a]">{data}</td>
-                      <td className="border-b border-[#e2e8f0] px-4 py-3">{why}</td>
-                      <td className="border-b border-[#e2e8f0] px-4 py-3">{where}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <p>
+              We collect only what is necessary to operate our services. The data differs by
+              product, so it is described below for each SaaS product.
+            </p>
+
+            <h3 className="mt-4 text-[15px] font-extrabold text-[#0f172a]">Data common to all SaaS products</h3>
+            <ul>
+              <li><strong>Account data:</strong> your name, email address, and login credentials</li>
+              <li><strong>Business profile data:</strong> information about your business that you provide</li>
+              <li><strong>Subscription status:</strong> your plan, trial dates, and payment status as reported to us by Paddle</li>
+              <li><strong>Support messages:</strong> messages you send us and our replies</li>
+              <li><strong>Technical data:</strong> device and browser type, IP address, and basic logs needed to run and secure the service</li>
+              <li><strong>Payment data:</strong> collected by Paddle, not by us (see Section 6)</li>
+            </ul>
+
+            <div className="mt-4 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] px-5 py-4">
+              <h3 className="mb-2 text-[15px] font-extrabold text-[#0f172a]">Pixelorid POS (Android app and website)</h3>
+              <ul>
+                <li><strong>License and device data:</strong> license status, trial dates, and the identifier of the device you activate, stored on our servers (Supabase)</li>
+                <li><strong>Your business records stay on your device.</strong> The products, prices, costs, orders, and sales you record in the app are stored in a local database on your device. We do not collect them on our servers unless you choose to send them to us, for example as an attachment to a support request.</li>
+                <li><strong>Website:</strong> the Pixelorid POS website is hosted on Cloudflare.</li>
+              </ul>
             </div>
-            <div className="mt-4 rounded-lg border-l-4 border-[#16a34a] bg-[#f0fdf4] px-4 py-3 text-sm text-[#166534]">
-              🛡️ <strong>Your transaction data stays on your device.</strong> Sales records and
-              operational data generated within our mobile apps are stored{" "}
-              <em>locally on your device</em> and are never transmitted to our servers.
+
+            <div className="mt-4 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] px-5 py-4">
+              <h3 className="mb-2 text-[15px] font-extrabold text-[#0f172a]">Pixelorid Resto (web app)</h3>
+              <p>
+                Pixelorid Resto runs in your browser, and your restaurant data is stored on our
+                servers (Supabase). This includes:
+              </p>
+              <ul>
+                <li>Your name and profile photo</li>
+                <li>Restaurant name, logo, currency, tax settings, and time zone</li>
+                <li>Branch details (address and phone number)</li>
+                <li>Menu items, prices, and costs</li>
+                <li>Orders and payment records (cash and QR payments are only recorded in the app)</li>
+                <li>Tables and reservations</li>
+                <li>Customer details you choose to enter (name and contact)</li>
+                <li>Staff accounts (name, email, photo, role, and branch)</li>
+              </ul>
+              <p>
+                Cookies are required to keep you logged in. Your theme and branch preferences are
+                saved in your browser.
+              </p>
+            </div>
+
+            <div className="mt-4 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] px-5 py-4">
+              <h3 className="mb-2 text-[15px] font-extrabold text-[#0f172a]">Pixelorid Loop (web app)</h3>
+              <p>
+                Pixelorid Loop runs in your browser. The information you enter is stored on our
+                servers (Supabase) and the app is hosted on Vercel. This includes:
+              </p>
+              <ul>
+                <li>Business name and services offered</li>
+                <li>Client records, follow-ups, and message templates</li>
+              </ul>
+              <p>
+                For the data about your own clients that you enter into Loop, you are the
+                controller and we process that data on your behalf to provide the service.
+              </p>
+            </div>
+
+            <div className="mt-4 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] px-5 py-4">
+              <h3 className="mb-2 text-[15px] font-extrabold text-[#0f172a]">Future SaaS products</h3>
+              <p>
+                When we launch a new SaaS product, the data it handles will be added to this
+                section before launch.
+              </p>
             </div>
           </Section>
 
           <Section num="3" title="Data We Do NOT Collect">
             <p>We do not collect, access, or store:</p>
             <ul>
-              <li>Transaction data or operational records processed within our apps (stored locally on device only)</li>
-              <li>Payment card numbers, bank details, or financial credentials</li>
+              <li>Payment card numbers, bank details, or financial credentials (payments are handled by Paddle)</li>
               <li>GPS location or location history</li>
-              <li>Contact lists, photos, or personal files from your device</li>
-              <li>Any data about your end customers</li>
+              <li>Contact lists, photos, or files from your device, other than files you choose to upload or send to us</li>
+              <li>For Pixelorid POS: the sales and operational records stored locally in the app, unless you choose to send them to us</li>
             </ul>
           </Section>
-
           <Section num="4" title="How We Use Your Data">
             <p>We use your data solely to:</p>
             <ul>
@@ -117,6 +152,14 @@ export default function PrivacyPage() {
             <p>
               Your account data is stored on <strong>Supabase</strong>, a cloud database platform
               implementing industry-standard security including encryption at rest and in transit.
+              Our websites and applications are hosted with infrastructure providers such as
+              Cloudflare (Pixelorid POS website) and Vercel (Pixelorid Loop).
+            </p>
+            <p>
+              We operate from Indonesia, and our service providers may process data in other
+              countries. Where personal data is transferred across borders, we take steps to
+              ensure it stays protected, such as relying on contractual commitments from our
+              providers and, where applicable, recognized transfer safeguards.
             </p>
             <p>
               While we take reasonable measures to protect your data, no online system is
@@ -124,7 +167,6 @@ export default function PrivacyPage() {
               we will notify you as required by applicable law.
             </p>
           </Section>
-
           <Section num="6" title="Paddle — Payment Processor & Merchant of Record">
             <p>
               SaaS subscription payments are processed by <strong>Paddle.com</strong> (Paddle.com

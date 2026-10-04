@@ -34,7 +34,7 @@ export default function TermsPage() {
             Terms of <span className="text-[#16a34a]">Service</span>
           </h1>
           <p className="text-sm text-[#475569]">
-            Last updated: September 27, 2026 &nbsp;·&nbsp; Operated by{" "}
+            Last updated: October 4, 2026 &nbsp;·&nbsp; Operated by{" "}
             <strong className="text-[#0f172a]">Ardiyanto</strong>, Klaten, Central Java, Indonesia
           </p>
         </div>
@@ -78,21 +78,21 @@ export default function TermsPage() {
 
           <Section num="3" title="Free Trial (SaaS Products)">
             <p>
-              New accounts for our SaaS products may be granted a free trial period upon
-              registration — full access at no charge, no payment information required.
+              Some of our SaaS products offer a free trial. Whether a trial is available, and how
+              long it lasts, is shown on each product page and at checkout.
             </p>
             <ul>
-              <li>The trial begins on the date your account is created.</li>
+              <li>
+                Where a trial is arranged through Paddle at checkout, Paddle may collect payment
+                details, and your paid subscription starts after the trial unless you cancel
+                before it ends.
+              </li>
               <li>Access to paid features is restricted after the trial unless you subscribe.</li>
               <li>
                 One trial per account. Creating multiple accounts to extend trial access is a
                 violation of these Terms.
               </li>
             </ul>
-            <p>
-              The duration of the free trial may vary by product and is displayed on the respective
-              product page at the time of registration.
-            </p>
           </Section>
 
           <Section num="4" title="Subscriptions & Payments">
@@ -112,8 +112,12 @@ export default function TermsPage() {
               marketplace (Etsy, Gumroad, or Payhip) and governed by that platform&apos;s payment
               terms.
             </p>
+            <p>
+              SaaS refunds are governed by our Refund Policy and processed by Paddle. Digital
+              product purchases are governed by our Refund Policy and the marketplace&apos;s own
+              terms.
+            </p>
           </Section>
-
           <Section num="5" title="User Obligations">
             <p>By using our services, you agree to:</p>
             <ul>
@@ -152,15 +156,13 @@ export default function TermsPage() {
               <a href="mailto:support@pixelorid.biz.id" className="font-semibold text-[#16a34a] underline underline-offset-2">
                 support@pixelorid.biz.id
               </a>
-              . Cancellation stops future billing but does not entitle you to a refund of amounts
-              already charged (see our{" "}
+              . Cancellation stops future billing. Refunds, if any, are handled according to our{" "}
               <Link href="/refund" className="font-semibold text-[#16a34a] underline underline-offset-2">
                 Refund Policy
               </Link>
-              ).
+              .
             </p>
           </Section>
-
           <Section num="8" title="Disclaimer of Warranties">
             <p>
               Our services are provided <strong>&quot;as is&quot;</strong> and{" "}
