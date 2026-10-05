@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import JsonLd from "./_components/JsonLd";
+import PaddleInit from "../components/PaddleInit";
 
 const SITE_URL = "https://www.pixelorid.biz.id";
 const DEFAULT_TITLE = "Pixelorid \u2014 Simple Technology for Growing Businesses";
@@ -72,6 +73,7 @@ export default function RootLayout({
     <html lang="en" className={manrope.variable}>
       <body>
         <JsonLd data={siteJsonLd} />
+        <PaddleInit />
         {children}
       </body>
     </html>
