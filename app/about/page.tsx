@@ -86,6 +86,71 @@ const stages = [
   "Establish",
 ];
 
+const offerings = [
+  {
+    name: "Pixelorid POS",
+    category: "SaaS \u00B7 Food Business",
+    description:
+      "Point of sale and business management for food trucks and mobile food businesses: orders, payments, receipts and sales reports.",
+    href: "/products/pixelorid-pos",
+    cta: "Explore Pixelorid POS",
+    icon: (
+      <svg {...iconProps} className="h-6 w-6">
+        <path d="M3 9l1.5-5h15L21 9" />
+        <path d="M4 9h16l-1.1 10.1a1 1 0 0 1-.9.9H6.1a1 1 0 0 1-.9-.9L4 9z" />
+        <path d="M9 13a3 3 0 0 0 6 0" />
+      </svg>
+    ),
+  },
+  {
+    name: "Pixelorid Resto",
+    category: "SaaS \u00B7 Restaurant Management",
+    description:
+      "Restaurant software that brings orders, tables, reservations, staff and reports into one practical system, for one branch or many.",
+    href: "/products/pixelorid-resto",
+    cta: "Explore Pixelorid Resto",
+    icon: (
+      <svg {...iconProps} className="h-6 w-6">
+        <path d="M3 2v7a2 2 0 0 0 4 0V2" />
+        <path d="M7 2v20" />
+        <path d="M17 2c-1.1 0-2 1.3-2 3v4c0 1.7.9 3 2 3s2-1.3 2-3V5c0-1.7-.9-3-2-3z" />
+        <path d="M17 12v10" />
+      </svg>
+    ),
+  },
+  {
+    name: "Pixelorid Loop",
+    category: "SaaS \u00B7 Service Business",
+    description:
+      "A web-based client follow-up app for small service businesses to track every lead and client and know who to follow up with.",
+    href: "/products/pixelorid-loop",
+    cta: "Explore Pixelorid Loop",
+    icon: (
+      <svg {...iconProps} className="h-6 w-6">
+        <path d="M17 2l4 4-4 4" />
+        <path d="M3 11V9a4 4 0 0 1 4-4h14" />
+        <path d="M7 22l-4-4 4-4" />
+        <path d="M21 13v2a4 4 0 0 1-4 4H3" />
+      </svg>
+    ),
+  },
+  {
+    name: "Digital Resources",
+    category: "Templates \u00B7 Etsy, Gumroad, Payhip",
+    description:
+      "Business templates, calculators, trackers, SOPs and Canva templates to help owners plan, organize and track their operations.",
+    href: "/digital-products",
+    cta: "Explore Digital Products",
+    icon: (
+      <svg {...iconProps} className="h-6 w-6">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <path d="M14 2v6h6" />
+        <path d="M8 13h8" />
+        <path d="M8 17h8" />
+      </svg>
+    ),
+  },
+];
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white">
@@ -164,6 +229,55 @@ export default function AboutPage() {
               To create approachable technology that helps growing businesses
               operate more simply, stay organized, and move forward.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-pixel-light-green">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-bold uppercase tracking-widest text-pixel-green">
+              What We Build
+            </p>
+
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              Software and Digital Resources for Growing Businesses
+            </h2>
+
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              Three SaaS products and a growing library of digital resources,
+              each built to solve a real, everyday business problem.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {offerings.map((offering) => (
+              <Link
+                key={offering.name}
+                href={offering.href}
+                className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/60"
+              >
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-pixel-light-green text-pixel-green">
+                  {offering.icon}
+                </div>
+
+                <p className="mt-5 text-xs font-bold uppercase tracking-wider text-pixel-green">
+                  {offering.category}
+                </p>
+
+                <h3 className="mt-2 text-xl font-bold text-slate-900">
+                  {offering.name}
+                </h3>
+
+                <p className="mt-3 flex-1 leading-7 text-slate-600">
+                  {offering.description}
+                </p>
+
+                <span className="mt-6 inline-flex text-sm font-bold text-pixel-green group-hover:text-pixel-green-hover">
+                  {offering.cta} &rarr;
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

@@ -198,12 +198,12 @@ export default function PixeloridRestoPage() {
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href={APP + "/register"}
+                  href={APP}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-xl bg-pixel-green px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover"
                 >
-                  Get Started
+                  Explore Pixelorid Resto
                 </a>
 
                 <a
@@ -395,12 +395,12 @@ export default function PixeloridRestoPage() {
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
-              href={APP + "/register"}
+              href={APP}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-xl bg-pixel-green px-7 py-4 text-sm font-bold text-white transition hover:bg-pixel-green-hover"
             >
-              Get Started with Pixelorid Resto
+              Explore Pixelorid Resto
             </a>
 
             <a

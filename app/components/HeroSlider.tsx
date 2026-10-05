@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 type HeroSlide = {
-  image: string;
+  image?: string;
   title: string;
   highlight: string;
   description: string;
@@ -12,11 +12,27 @@ type HeroSlide = {
   secondaryCtaText: string;
   secondaryCtaHref: string;
   secondaryExternal?: boolean;
+  chips?: { label: string; href: string }[];
 };
 
-// Ganti nilai "image" di bawah ini sesuai nama file gambar
-// yang sudah kamu taruh di folder /public
+// Slide pertama = brand (tanpa gambar). Slide lain = sorotan produk.
 const slides: HeroSlide[] = [
+  {
+    title: "Simple Technology for",
+    highlight: "Growing Businesses",
+    description:
+      "Pixelorid builds practical software and digital resources for small businesses: POS, Resto, Loop, and ready-to-use templates.",
+    ctaText: "Explore Products",
+    ctaHref: "/products",
+    secondaryCtaText: "Digital Products",
+    secondaryCtaHref: "/digital-products",
+    chips: [
+      { label: "Pixelorid POS", href: "/products/pixelorid-pos" },
+      { label: "Pixelorid Resto", href: "/products/pixelorid-resto" },
+      { label: "Pixelorid Loop", href: "/products/pixelorid-loop" },
+      { label: "Digital Resources", href: "/digital-products" },
+    ],
+  },
   {
     image: "/hero-pixelorid-pos.png",
     title: "Point-of-Sale Built for",
@@ -36,8 +52,8 @@ const slides: HeroSlide[] = [
       "Pixelorid Resto brings orders, tables, reservations, staff and reports into one practical system, for one branch or many.",
     ctaText: "Explore Pixelorid Resto",
     ctaHref: "/products/pixelorid-resto",
-    secondaryCtaText: "Get Started",
-    secondaryCtaHref: "https://resto.pixelorid.biz.id/register",
+    secondaryCtaText: "Visit Pixelorid Resto",
+    secondaryCtaHref: "https://resto.pixelorid.biz.id",
     secondaryExternal: true,
   },
   {
@@ -45,9 +61,9 @@ const slides: HeroSlide[] = [
     title: "Never Miss a",
     highlight: "Client Follow-Up",
     description:
-      "Pixelorid Loop is a web-based follow-up app built for small service businesses — track every client, log every conversation, and know exactly who to reach out to next.",
+      "Pixelorid Loop is a web-based follow-up app built for small service businesses \u2014 track every client, log every conversation, and know exactly who to reach out to next.",
     ctaText: "Explore Pixelorid Loop",
-    ctaHref: "https://loop.pixelorid.biz.id",
+    ctaHref: "/products/pixelorid-loop",
     secondaryCtaText: "Try Pixelorid Loop Free",
     secondaryCtaHref: "https://loop.pixelorid.biz.id",
     secondaryExternal: true,
@@ -80,6 +96,8 @@ export default function HeroSlider() {
   }, [paused]);
 
   const slide = slides[active];
+  // Slide brand = H1 halaman; slide produk memakai H2
+  const Heading = active === 0 ? "h1" : "h2";
 
   return (
     <section
@@ -88,21 +106,29 @@ export default function HeroSlider() {
       onMouseLeave={() => setPaused(false)}
     >
       <div className="relative h-[560px] w-full bg-slate-900 sm:h-[620px] lg:h-[680px]">
-        {/* Background images (crossfade) */}
-        {slides.map((s, index) => (
-          <img
-            key={s.image}
-            src={s.image}
-            alt={s.highlight}
-            onError={(e) => {
-              // Sembunyikan ikon "broken image" kalau file gambar belum ada
-              e.currentTarget.style.opacity = "0";
-            }}
-            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out ${
-              index === active ? "opacity-100" : "opacity-0"
-            }`}
-          />
-        ))}
+        {/* Background (crossfade) */}
+        {slides.map((s, index) =>
+          s.image ? (
+            <img
+              key={s.image}
+              src={s.image}
+              alt={s.highlight}
+              onError={(e) => {
+                e.currentTarget.style.opacity = "0";
+              }}
+              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out ${
+                index === active ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ) : (
+            <div
+              key={`bg-${index}`}
+              className={`absolute inset-0 bg-gradient-to-br from-green-900 via-slate-900 to-slate-950 transition-opacity duration-1000 ease-in-out ${
+                index === active ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          )
+        )}
 
         {/* Readability overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-slate-950/10" />
@@ -110,15 +136,29 @@ export default function HeroSlider() {
 
         {/* Content */}
         <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-16 lg:px-8 lg:pb-24">
-          <div key={slide.image} className="max-w-2xl">
-            <h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <div key={active} className="max-w-2xl">
+            <Heading className="text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
               {slide.title}{" "}
               <span className="text-pixel-green">{slide.highlight}</span>
-            </h1>
+            </Heading>
 
             <p className="mt-6 max-w-xl text-lg leading-8 text-slate-200 sm:text-xl">
               {slide.description}
             </p>
+
+            {slide.chips && (
+              <div className="mt-6 hidden flex-wrap gap-2 sm:flex">
+                {slide.chips.map((chip) => (
+                  <a
+                    key={chip.href}
+                    href={chip.href}
+                    className="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur transition hover:bg-white hover:text-slate-900"
+                  >
+                    {chip.label}
+                  </a>
+                ))}
+              </div>
+            )}
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
@@ -144,10 +184,10 @@ export default function HeroSlider() {
           <div className="mt-10 flex items-center gap-3">
             {slides.map((s, index) => (
               <button
-                key={s.image}
+                key={index}
                 type="button"
                 onClick={() => setActive(index)}
-                aria-label={`Show ${s.highlight} slide`}
+                aria-label={`Show slide ${index + 1}: ${s.highlight}`}
                 className={`h-2.5 rounded-full transition-all ${
                   index === active
                     ? "w-8 bg-pixel-green"
