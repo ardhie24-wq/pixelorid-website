@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 
@@ -18,6 +18,7 @@ type HeroSlide = {
 // Slide pertama = brand (tanpa gambar). Slide lain = sorotan produk.
 const slides: HeroSlide[] = [
   {
+    image: "/hero-simple-technology.png",
     title: "Simple Technology for",
     highlight: "Growing Businesses",
     description:
