@@ -1,9 +1,12 @@
+import { pageMeta } from "../../_lib/seo";
 import PosHeroImage from "../../components/PosHeroImage";
 
-export const metadata = {
-  title: "Pixelorid POS",
-  description: "Pixelorid POS — point of sale and business management for food trucks.",
-}
+export const metadata = pageMeta({
+  title: "POS for Food Trucks",
+  description:
+    "Pixelorid POS is a point of sale and business management app for food trucks and mobile food businesses: orders, payments, receipts and sales reports.",
+  path: "/products/pixelorid-pos",
+});
 
 const iconProps = {
   viewBox: "0 0 24 24",

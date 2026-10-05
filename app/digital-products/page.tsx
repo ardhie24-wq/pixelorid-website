@@ -1,9 +1,12 @@
+import { pageMeta } from "../_lib/seo";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Digital Products",
-  description: "Explore Pixelorid digital products available on Etsy, Gumroad, and Payhip.",
-}
+export const metadata = pageMeta({
+  title: "Digital Products and Templates",
+  description:
+    "Business templates, calculators, trackers, SOPs and Canva templates from Pixelorid, available on Etsy, Gumroad and Payhip.",
+  path: "/digital-products",
+});
 
 
 const iconProps = {

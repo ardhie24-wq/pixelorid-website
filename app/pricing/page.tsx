@@ -1,9 +1,12 @@
+import { pageMeta } from "../_lib/seo";
 import Link from "next/link";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Pricing",
-  description: "See pricing for Pixelorid products and digital resources.",
-}
+  description:
+    "See pricing for Pixelorid products and digital resources.",
+  path: "/pricing",
+});
 
 
 const options = [

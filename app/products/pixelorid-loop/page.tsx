@@ -1,9 +1,12 @@
+import { pageMeta } from "../../_lib/seo";
 import LoopHeroSlider from "../../components/LoopHeroSlider";
 
-export const metadata = {
-  title: "Pixelorid Loop",
-  description: "Pixelorid Loop — a web-based client follow-up app for small service businesses.",
-}
+export const metadata = pageMeta({
+  title: "Loop - Client Follow-Up App",
+  description:
+    "Pixelorid Loop is a web-based client follow-up app for small service businesses. Track every lead and client and know who to follow up with.",
+  path: "/products/pixelorid-loop",
+});
 
 const iconProps = {
   viewBox: "0 0 24 24",

@@ -1,7 +1,10 @@
-export const metadata = {
-  title: "Products",
-  description: "All Pixelorid products: POS, Resto, Loop, and more.",
-}
+import { pageMeta } from "../_lib/seo";
+export const metadata = pageMeta({
+  title: "Software Products for Growing Businesses",
+  description:
+    "Explore Pixelorid software: POS for food trucks, Resto for restaurants, and Loop for client follow-up.",
+  path: "/products",
+});
 
 const iconProps = {
   viewBox: "0 0 24 24",

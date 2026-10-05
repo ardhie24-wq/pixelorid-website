@@ -1,9 +1,12 @@
+import { pageMeta } from "../_lib/seo";
 import Link from "next/link";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Support",
-  description: "Need help? Contact the Pixelorid support team.",
-}
+  description:
+    "Need help? Contact the Pixelorid support team.",
+  path: "/support",
+});
 
 const iconProps = {
   viewBox: "0 0 24 24",

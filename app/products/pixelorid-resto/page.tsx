@@ -1,8 +1,10 @@
-export const metadata = {
-  title: "Pixelorid Resto",
+import { pageMeta } from "../../_lib/seo";
+export const metadata = pageMeta({
+  title: "Resto - Restaurant Management Software",
   description:
     "Pixelorid Resto brings orders, tables, reservations, staff and reports into one practical system, for one branch or many.",
-};
+  path: "/products/pixelorid-resto",
+});
 
 const APP = "https://resto.pixelorid.biz.id";
 
