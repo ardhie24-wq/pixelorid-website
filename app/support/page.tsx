@@ -227,6 +227,10 @@ export default function SupportPage() {
               <p className="mt-3 text-sm text-slate-500">
                 Simple technology for growing businesses.
               </p>
+              <div className="mt-4 flex items-center gap-5 text-sm font-semibold text-slate-600">
+                <a href="https://www.instagram.com/pixelorid/" target="_blank" rel="noopener noreferrer" className="hover:text-pixel-green">Instagram</a>
+                <a href="https://id.pinterest.com/pixelorid/" target="_blank" rel="noopener noreferrer" className="hover:text-pixel-green">Pinterest</a>
+              </div>
             </div>
 
             <div className="flex flex-wrap gap-5 text-sm font-semibold text-slate-600">

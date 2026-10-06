@@ -240,6 +240,10 @@ function LegalFooter({ current }: { current: "terms" | "privacy" | "refund" }) {
           </Link>
         ))}
       </div>
+      <div className="mt-4 flex flex-wrap justify-center gap-5">
+        <a href="https://www.instagram.com/pixelorid/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#16a34a]">Instagram</a>
+        <a href="https://id.pinterest.com/pixelorid/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#16a34a]">Pinterest</a>
+      </div>
     </footer>
   );
 }

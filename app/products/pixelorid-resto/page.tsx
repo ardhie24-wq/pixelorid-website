@@ -421,6 +421,11 @@ export default function PixeloridRestoPage() {
             className="h-7 w-auto"
           />
 
+          <div className="flex items-center gap-5 text-sm font-semibold text-slate-600">
+            <a href="https://www.instagram.com/pixelorid/" target="_blank" rel="noopener noreferrer" className="hover:text-pixel-green">Instagram</a>
+            <a href="https://id.pinterest.com/pixelorid/" target="_blank" rel="noopener noreferrer" className="hover:text-pixel-green">Pinterest</a>
+          </div>
+
           <div className="flex flex-wrap gap-5 text-sm font-semibold text-slate-600">
             <a href={APP + "/terms-of-service"} className="hover:text-pixel-green">
               Resto Terms of Service
