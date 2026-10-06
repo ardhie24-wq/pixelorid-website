@@ -474,7 +474,7 @@ export default function Home() {
           <p className="font-bold text-green-400">OUR PHILOSOPHY</p>
 
           <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
-            Start Small. Build Better. Grow Further.
+            Start Small, Build Better, Grow Further.
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">

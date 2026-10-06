@@ -366,7 +366,7 @@ export default function AboutPage() {
       <section className="bg-slate-900">
         <div className="mx-auto max-w-5xl px-6 py-20 text-center lg:px-8">
           <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-            Start Small. Build Better. Grow Further.
+            Start Small, Build Better, Grow Further.
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-300">
