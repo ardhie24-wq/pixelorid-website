@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import JsonLd from "./_components/JsonLd";
@@ -24,6 +24,7 @@ export const metadata: Metadata = {
   applicationName: "Pixelorid",
   alternates: { canonical: "./" },
   robots: { index: true, follow: true },
+  other: { "p:domain_verify": "670c462fc7b3bc7d4f6bda4abc91063a" },
   openGraph: {
     type: "website",
     siteName: "Pixelorid",
@@ -52,6 +53,8 @@ const siteJsonLd = {
         "https://pixelorid.etsy.com",
         "https://pixelorid.gumroad.com/",
         "https://payhip.com/pixelorid",
+        "https://id.pinterest.com/pixelorid/",
+        "https://www.instagram.com/pixelorid/",
       ],
     },
     {
