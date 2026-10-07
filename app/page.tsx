@@ -1,5 +1,7 @@
 import HeroSlider from "./components/HeroSlider";
 
+import FreeTemplateButton from "./components/FreeTemplateButton";
+import AvailableProducts from "./components/AvailableProducts";
 const products = [
   {
     name: "Pixelorid POS",
@@ -366,21 +368,13 @@ export default function Home() {
             </div>
 
             <div className="grid gap-3 sm:grid-cols-2">
-              {businessTypes.map((business, index) => (
+              {businessTypes.map((business) => (
                 <div
                   key={business.label}
-                  className={`rounded-2xl border p-5 ${
-                    index === businessTypes.length - 1
-                      ? "border-green-200 bg-green-50"
-                      : "border-slate-200 bg-white"
-                  }`}
+                  className="rounded-2xl border border-slate-200 bg-white p-5"
                 >
                   <div
-                    className={`mb-3 flex h-9 w-9 items-center justify-center rounded-xl ${
-                      index === businessTypes.length - 1
-                        ? "bg-white text-pixel-green"
-                        : "bg-slate-100 text-slate-700"
-                    }`}
+                    className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-700"
                   >
                     {business.icon}
                   </div>
@@ -442,12 +436,15 @@ export default function Home() {
                 improve their operations.
               </p>
 
-              <a
-                href="/digital-products"
-                className="mt-8 inline-flex h-12 items-center justify-center rounded-xl bg-pixel-green px-6 font-bold text-white transition hover:bg-pixel-green-hover"
-              >
-                Explore Digital Products
-              </a>
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <a
+                  href="/digital-products"
+                  className="inline-flex h-12 items-center justify-center rounded-xl bg-pixel-green px-6 font-bold text-white transition hover:bg-pixel-green-hover"
+                >
+                  Explore Digital Products
+                </a>
+                <FreeTemplateButton />
+              </div>
             </div>
 
             <div className="grid gap-3 sm:grid-cols-2">
@@ -467,6 +464,9 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      {/* Available Products */}
+      <AvailableProducts />
 
       {/* Philosophy */}
       <section className="bg-slate-950">
