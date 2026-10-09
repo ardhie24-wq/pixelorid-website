@@ -399,7 +399,7 @@ export default function PixeloridPOSPage() {
           </div>
 
           <p className="text-sm text-slate-500">
-            Â© 2026 Pixelorid. All rights reserved.
+            © 2026 Pixelorid. All rights reserved.
           </p>
         </div>
       </footer>
