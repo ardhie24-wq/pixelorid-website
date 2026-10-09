@@ -120,6 +120,24 @@ const products = [
     ],
     href: "/products/pixelorid-loop",
   },
+  {
+    name: "Pixelorid Growth",
+    category: "SaaS \u00b7 Small Business Finance",
+    description:
+      "Simple financial management for small businesses. Record your revenue and expenses, see your profit at a glance, and turn your numbers into clear reports.",
+    icon: growthIcon,
+    iconBg: "bg-pixel-light-green",
+    iconColor: "text-pixel-green",
+    features: [
+      "Revenue & Expense Tracking",
+      "Dashboard with Key KPIs",
+      "Profit Margin Tracking",
+      "Cash Flow Reports",
+      "Monthly & Yearly Views",
+      "Export to Excel",
+    ],
+    href: "https://growth.pixelorid.biz.id",
+  },
 ];
 
 export default function ProductsPage() {
@@ -161,7 +179,7 @@ export default function ProductsPage() {
             </p>
           </div>
 
-          <div className="mt-16 grid gap-8 lg:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-16 grid gap-8 lg:grid-cols-2">
             {products.map((product) => (
               <article
                 key={product.name}
@@ -207,6 +225,8 @@ export default function ProductsPage() {
 
                 <a
                   href={product.href}
+                  target={product.href.startsWith("http") ? "_blank" : undefined}
+                  rel={product.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="mt-8 inline-flex w-full items-center justify-center rounded-xl bg-pixel-green px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover"
                 >
                   Explore {product.name} →
@@ -215,52 +235,6 @@ export default function ProductsPage() {
             ))}
           </div>
 
-          <article className="mt-8 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg lg:p-10">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-pixel-light-green text-pixel-green">
-              {growthIcon}
-            </div>
-
-            <p className="mt-6 text-sm font-bold uppercase tracking-wide text-pixel-green">
-              SaaS &middot; Small Business Finance
-            </p>
-
-            <h2 className="mt-3 text-3xl font-extrabold text-slate-900">
-              Pixelorid Growth
-            </h2>
-
-            <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600">
-              Simple financial management for small businesses. Record your
-              revenue and expenses, see your profit at a glance, and turn your
-              numbers into clear reports.
-            </p>
-
-            <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {[
-                "Revenue & Expense Tracking",
-                "Dashboard with Key KPIs",
-                "Profit Margin Tracking",
-                "Cash Flow Reports",
-                "Monthly & Yearly Views",
-                "Export to Excel",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700"
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
-
-            <a
-              href="https://growth.pixelorid.biz.id"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex w-full items-center justify-center rounded-xl bg-pixel-green px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover"
-            >
-              Explore Pixelorid Growth &rarr;
-            </a>
-          </article>
           <article className="mt-8 rounded-3xl border border-teal-100 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg lg:p-10">
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-pixel-light-teal text-pixel-teal">
               {digitalIcon}
