@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useState } from "react";
 
@@ -31,6 +31,7 @@ const slides: HeroSlide[] = [
       { label: "Pixelorid POS", href: "/products/pixelorid-pos" },
       { label: "Pixelorid Resto", href: "/products/pixelorid-resto" },
       { label: "Pixelorid Loop", href: "/products/pixelorid-loop" },
+      { label: "Pixelorid Growth", href: "https://growth.pixelorid.biz.id" },
       { label: "Digital Resources", href: "/digital-products" },
     ],
   },
