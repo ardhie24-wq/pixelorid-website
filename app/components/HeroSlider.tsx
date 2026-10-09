@@ -9,6 +9,7 @@ type HeroSlide = {
   description: string;
   ctaText: string;
   ctaHref: string;
+  ctaExternal?: boolean;
   secondaryCtaText: string;
   secondaryCtaHref: string;
   secondaryExternal?: boolean;
@@ -22,7 +23,7 @@ const slides: HeroSlide[] = [
     title: "Simple Technology for",
     highlight: "Growing Businesses",
     description:
-      "Pixelorid builds practical software and digital resources for small businesses: POS, Resto, Loop, and ready-to-use templates.",
+      "Pixelorid builds practical software and digital resources for small businesses: POS, Resto, Loop, Growth, and ready-to-use templates.",
     ctaText: "Explore Products",
     ctaHref: "/products",
     secondaryCtaText: "Digital Products",
@@ -69,6 +70,18 @@ const slides: HeroSlide[] = [
     secondaryCtaText: "Try Pixelorid Loop Free",
     secondaryCtaHref: "https://loop.pixelorid.biz.id",
     secondaryExternal: true,
+  },
+  {
+    image: "/hero-pixelorid-growth.png",
+    title: "Simple Finance for",
+    highlight: "Small Businesses",
+    description:
+      "Pixelorid Growth helps small businesses record revenue and expenses, see profit at a glance, and export clear reports to Excel.",
+    ctaText: "Try Pixelorid Growth Free",
+    ctaHref: "https://growth.pixelorid.biz.id",
+    ctaExternal: true,
+    secondaryCtaText: "View All Products",
+    secondaryCtaHref: "/products",
   },
   {
     image: "/hero-digital-products.png",
@@ -165,6 +178,9 @@ export default function HeroSlider() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href={slide.ctaHref}
+                {...(slide.ctaExternal
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
                 className="inline-flex h-12 items-center justify-center rounded-xl bg-pixel-green px-6 font-bold text-white transition hover:bg-pixel-green-hover"
               >
                 {slide.ctaText}
