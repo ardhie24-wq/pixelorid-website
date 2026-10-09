@@ -136,7 +136,7 @@ export default function PricingPage() {
                 <span className="text-4xl font-extrabold text-slate-900">$0</span>
                 <span className="text-sm text-slate-500">USD / month</span>
               </p>
-              <p className="mt-1 text-sm font-bold text-pixel-green">1 branch, 14 days</p>
+              <p className="mt-1 text-sm font-bold text-pixel-green">1 branch, 7 days</p>
             </div>
 
             <div className="rounded-2xl border border-slate-200 p-6">
@@ -270,3 +270,4 @@ export default function PricingPage() {
     </main>
   );
 }
+

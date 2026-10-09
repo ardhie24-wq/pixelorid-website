@@ -1,4 +1,4 @@
-import { pageMeta } from "../../_lib/seo";
+﻿import { pageMeta } from "../../_lib/seo";
 export const metadata = pageMeta({
   title: "Resto - Restaurant Management Software",
   description:
@@ -129,14 +129,23 @@ const included = [
 
 const plans = [
   {
+    name: "Free Trial",
+    price: "0",
+    originalPrice: null,
+    forWho: "Try all features free for 7 days.",
+    limit: "1 branch, 7 days",
+  },
+  {
     name: "Basic",
-    price: "20",
+    price: "15",
+    originalPrice: "20",
     forWho: "For a single restaurant or a small pair of branches.",
     limit: "Up to 2 branches",
   },
   {
     name: "Pro",
-    price: "210",
+    price: "75",
+    originalPrice: "210",
     forWho: "For a growing restaurant group.",
     limit: "Up to 10 branches",
   },
@@ -330,7 +339,7 @@ export default function PixeloridRestoPage() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
             {plans.map((plan) => (
               <article
                 key={plan.name}
@@ -347,6 +356,11 @@ export default function PixeloridRestoPage() {
                   </span>
                   <span className="text-sm text-slate-500">USD / month</span>
                 </p>
+                {plan.originalPrice && (
+                  <p className="mt-1 text-sm text-slate-400 line-through">
+                    ${plan.originalPrice} / month
+                  </p>
+                )}
                 <p className="mt-1 text-sm font-bold text-pixel-green">
                   {plan.limit}
                 </p>
