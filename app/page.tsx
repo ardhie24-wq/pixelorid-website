@@ -558,6 +558,7 @@ export default function Home() {
                 </a>
                 <a className="block hover:text-pixel-green" href="/products/pixelorid-loop">Pixelorid Loop
                 </a>
+                <a className="block hover:text-pixel-green" href="https://growth.pixelorid.biz.id" target="_blank" rel="noopener noreferrer">Pixelorid Growth</a>
                 <a className="block hover:text-pixel-green" href="/products">All Products
                 </a>
               </div>

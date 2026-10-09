@@ -2,7 +2,7 @@ import { pageMeta } from "../_lib/seo";
 export const metadata = pageMeta({
   title: "Software Products for Growing Businesses",
   description:
-    "Explore Pixelorid software: POS for food trucks, Resto for restaurants, and Loop for client follow-up.",
+    "Explore Pixelorid software: POS for food trucks, Resto for restaurants, Loop for client follow-up, and Growth for small business finance.",
   path: "/products",
 });
 
@@ -46,6 +46,13 @@ const digitalIcon = (
     <path d="M12 2 2 7l10 5 10-5-10-5z" />
     <path d="M2 17l10 5 10-5" />
     <path d="M2 12l10 5 10-5" />
+  </svg>
+);
+
+const growthIcon = (
+  <svg {...iconProps} className="h-7 w-7">
+    <polyline points="3 17 9 11 13 15 21 7" />
+    <polyline points="15 7 21 7 21 13" />
   </svg>
 );
 
@@ -208,6 +215,52 @@ export default function ProductsPage() {
             ))}
           </div>
 
+          <article className="mt-8 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg lg:p-10">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-pixel-light-green text-pixel-green">
+              {growthIcon}
+            </div>
+
+            <p className="mt-6 text-sm font-bold uppercase tracking-wide text-pixel-green">
+              SaaS &middot; Small Business Finance
+            </p>
+
+            <h2 className="mt-3 text-3xl font-extrabold text-slate-900">
+              Pixelorid Growth
+            </h2>
+
+            <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600">
+              Simple financial management for small businesses. Record your
+              revenue and expenses, see your profit at a glance, and turn your
+              numbers into clear reports.
+            </p>
+
+            <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                "Revenue & Expense Tracking",
+                "Dashboard with Key KPIs",
+                "Profit Margin Tracking",
+                "Cash Flow Reports",
+                "Monthly & Yearly Views",
+                "Export to Excel",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+
+            <a
+              href="https://growth.pixelorid.biz.id"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex w-full items-center justify-center rounded-xl bg-pixel-green px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover"
+            >
+              Explore Pixelorid Growth &rarr;
+            </a>
+          </article>
           <article className="mt-8 rounded-3xl border border-teal-100 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg lg:p-10">
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-pixel-light-teal text-pixel-teal">
               {digitalIcon}
