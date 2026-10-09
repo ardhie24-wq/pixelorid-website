@@ -1,4 +1,4 @@
-import { pageMeta } from "../_lib/seo";
+﻿import { pageMeta } from "../_lib/seo";
 import Link from "next/link";
 
 export const metadata = pageMeta({
@@ -129,22 +129,33 @@ export default function PricingPage() {
             Every plan includes all features. Choose the number of branches you need.
           </p>
 
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          <div className="mt-8 grid gap-6 sm:grid-cols-3">
+            <div className="rounded-2xl border border-slate-200 p-6">
+              <h3 className="text-lg font-extrabold text-slate-900">Free Trial</h3>
+              <p className="mt-3 flex items-baseline gap-2">
+                <span className="text-4xl font-extrabold text-slate-900">$0</span>
+                <span className="text-sm text-slate-500">USD / month</span>
+              </p>
+              <p className="mt-1 text-sm font-bold text-pixel-green">1 branch, 14 days</p>
+            </div>
+
             <div className="rounded-2xl border border-slate-200 p-6">
               <h3 className="text-lg font-extrabold text-slate-900">Basic</h3>
               <p className="mt-3 flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold text-slate-900">$20</span>
+                <span className="text-4xl font-extrabold text-slate-900">$15</span>
                 <span className="text-sm text-slate-500">USD / month</span>
               </p>
+              <p className="mt-1 text-sm text-slate-400 line-through">$20 / month</p>
               <p className="mt-1 text-sm font-bold text-pixel-green">Up to 2 branches</p>
             </div>
 
             <div className="rounded-2xl border border-slate-200 p-6">
               <h3 className="text-lg font-extrabold text-slate-900">Pro</h3>
               <p className="mt-3 flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold text-slate-900">$210</span>
+                <span className="text-4xl font-extrabold text-slate-900">$75</span>
                 <span className="text-sm text-slate-500">USD / month</span>
               </p>
+              <p className="mt-1 text-sm text-slate-400 line-through">$210 / month</p>
               <p className="mt-1 text-sm font-bold text-pixel-green">Up to 10 branches</p>
             </div>
           </div>
