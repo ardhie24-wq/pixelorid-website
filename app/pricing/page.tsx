@@ -1,4 +1,4 @@
-﻿import { pageMeta } from "../_lib/seo";
+import { pageMeta } from "../_lib/seo";
 import Link from "next/link";
 
 export const metadata = pageMeta({
@@ -229,7 +229,7 @@ export default function PricingPage() {
       </section>
 
       {/* Pixelorid Loop */}
-      <section className="mx-auto max-w-5xl px-6 pb-20 lg:px-8">
+      <section className="mx-auto max-w-5xl px-6 pb-16 lg:px-8">
         <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
           <p className="text-sm font-bold uppercase tracking-widest text-pixel-green">
             Pixelorid Loop
@@ -280,6 +280,63 @@ export default function PricingPage() {
           >
             View Pixelorid Loop &rarr;
           </Link>
+        </div>
+      </section>
+
+      {/* Pixelorid Growth */}
+      <section className="mx-auto max-w-5xl px-6 pb-20 lg:px-8">
+        <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
+          <p className="text-sm font-bold uppercase tracking-widest text-pixel-green">
+            Pixelorid Growth
+          </p>
+          <h2 className="mt-3 text-2xl font-extrabold text-slate-900 sm:text-3xl">
+            Simple pricing for Growth
+          </h2>
+          <p className="mt-3 leading-7 text-slate-600">
+            Start free, then upgrade when you are ready.
+          </p>
+
+          <div className="mt-8 grid gap-6 sm:grid-cols-3">
+            <div className="rounded-2xl border border-slate-200 p-6">
+              <h3 className="text-lg font-extrabold text-slate-900">Free Trial</h3>
+              <p className="mt-3 flex items-baseline gap-2">
+                <span className="text-4xl font-extrabold text-slate-900">$0</span>
+                <span className="text-sm text-slate-500">USD / month</span>
+              </p>
+              <p className="mt-1 text-sm font-bold text-pixel-green">7 days, up to 10 transactions</p>
+            </div>
+
+            <div className="rounded-2xl border border-slate-200 p-6">
+              <h3 className="text-lg font-extrabold text-slate-900">Pro Monthly</h3>
+              <p className="mt-3 flex items-baseline gap-2">
+                <span className="text-4xl font-extrabold text-slate-900">$9.99</span>
+                <span className="text-sm text-slate-500">USD / month</span>
+              </p>
+              <p className="mt-1 text-sm font-bold text-pixel-green">Billed monthly</p>
+            </div>
+
+            <div className="rounded-2xl border border-slate-200 p-6">
+              <h3 className="text-lg font-extrabold text-slate-900">Pro Yearly</h3>
+              <p className="mt-3 flex items-baseline gap-2">
+                <span className="text-4xl font-extrabold text-slate-900">$79</span>
+                <span className="text-sm text-slate-500">USD / year</span>
+              </p>
+              <p className="mt-1 text-sm font-bold text-pixel-green">Save $40.88 / year</p>
+            </div>
+          </div>
+
+          <p className="mt-5 text-sm text-slate-500">
+            Prices are in US dollars.
+          </p>
+
+          <a
+            href="https://growth.pixelorid.biz.id"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center justify-center rounded-xl bg-pixel-green px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover"
+          >
+            View Pixelorid Growth &rarr;
+          </a>
         </div>
       </section>
 
