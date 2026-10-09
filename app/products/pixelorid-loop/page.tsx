@@ -1,4 +1,4 @@
-import { pageMeta } from "../../_lib/seo";
+﻿import { pageMeta } from "../../_lib/seo";
 import LoopHeroSlider from "../../components/LoopHeroSlider";
 
 export const metadata = pageMeta({
@@ -108,14 +108,14 @@ export default function PixeloridLoopPage() {
               href="/products"
               className="text-sm font-semibold text-slate-600 transition hover:text-pixel-green"
             >
-              ← All Products
+              â† All Products
             </a>
 
             <a
               href="https://loop.pixelorid.biz.id/login"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-bold text-pixel-teal transition hover:text-pixel-dark-teal"
+              className="text-sm font-bold text-pixel-green transition hover:text-pixel-green-hover"
             >
               Login
             </a>
@@ -127,15 +127,15 @@ export default function PixeloridLoopPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <div>
-              <span className="inline-flex rounded-full bg-white px-4 py-2 text-sm font-bold text-pixel-teal shadow-sm ring-1 ring-pixel-teal/10">
-                SaaS · Business Management
+              <span className="inline-flex rounded-full bg-white px-4 py-2 text-sm font-bold text-pixel-green shadow-sm ring-1 ring-pixel-green/10">
+                SaaS Â· Business Management
               </span>
 
               <h1 className="mt-6 text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
                 Pixelorid Loop
               </h1>
 
-              <p className="mt-5 text-2xl font-bold leading-tight text-pixel-dark-teal">
+              <p className="mt-5 text-2xl font-bold leading-tight text-pixel-green-hover">
                 Simple Technology for More Organized Business Workflows
               </p>
 
@@ -149,7 +149,7 @@ export default function PixeloridLoopPage() {
                   href="https://loop.pixelorid.biz.id"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-xl bg-pixel-teal px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-dark-teal"
+                  className="inline-flex items-center justify-center rounded-xl bg-pixel-green px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover"
                 >
                   Try Pixelorid Loop Free
                 </a>
@@ -158,7 +158,7 @@ export default function PixeloridLoopPage() {
                   href="https://loop.pixelorid.biz.id/login"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-xl border border-pixel-teal bg-white px-6 py-3.5 text-sm font-bold text-pixel-teal transition hover:bg-pixel-light-teal"
+                  className="inline-flex items-center justify-center rounded-xl border border-pixel-green bg-white px-6 py-3.5 text-sm font-bold text-pixel-green transition hover:bg-pixel-light-teal"
                 >
                   Login
                 </a>
@@ -166,9 +166,9 @@ export default function PixeloridLoopPage() {
 
               <a
                 href="#capabilities"
-                className="mt-5 inline-flex text-sm font-bold text-slate-500 underline-offset-4 transition hover:text-pixel-teal hover:underline"
+                className="mt-5 inline-flex text-sm font-bold text-slate-500 underline-offset-4 transition hover:text-pixel-green hover:underline"
               >
-                See what it does ↓
+                See what it does â†“
               </a>
             </div>
 
@@ -180,7 +180,7 @@ export default function PixeloridLoopPage() {
       <section className="px-6 py-20 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-widest text-pixel-teal">
+            <p className="text-sm font-bold uppercase tracking-widest text-pixel-green">
               Built for growing businesses
             </p>
 
@@ -203,7 +203,7 @@ export default function PixeloridLoopPage() {
       >
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-bold uppercase tracking-widest text-pixel-teal">
+            <p className="text-sm font-bold uppercase tracking-widest text-pixel-green">
               Core capabilities
             </p>
 
@@ -223,7 +223,7 @@ export default function PixeloridLoopPage() {
                 key={capability.title}
                 className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-pixel-light-teal text-pixel-teal">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-pixel-light-teal text-pixel-green">
                   {capability.icon}
                 </div>
 
@@ -244,7 +244,7 @@ export default function PixeloridLoopPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-sm font-bold uppercase tracking-widest text-pixel-teal">
+              <p className="text-sm font-bold uppercase tracking-widest text-pixel-green">
                 Stay connected
               </p>
 
@@ -268,7 +268,7 @@ export default function PixeloridLoopPage() {
                     <span className="text-sm font-bold text-slate-900">
                       Support Thread
                     </span>
-                    <span className="text-xs font-bold text-pixel-teal">
+                    <span className="text-xs font-bold text-pixel-green">
                       Active
                     </span>
                   </div>
@@ -283,7 +283,7 @@ export default function PixeloridLoopPage() {
                     <span className="text-sm font-bold text-slate-900">
                       Attachments
                     </span>
-                    <span className="text-xs font-bold text-pixel-teal">
+                    <span className="text-xs font-bold text-pixel-green">
                       Supported
                     </span>
                   </div>
@@ -299,7 +299,7 @@ export default function PixeloridLoopPage() {
 
       <section className="bg-slate-900 px-6 py-20 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-bold uppercase tracking-widest text-pixel-teal">
+          <p className="text-sm font-bold uppercase tracking-widest text-pixel-green">
             Simple technology
           </p>
 
@@ -317,7 +317,7 @@ export default function PixeloridLoopPage() {
               href="https://loop.pixelorid.biz.id"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-xl bg-pixel-teal px-7 py-4 text-sm font-bold text-white transition hover:bg-pixel-dark-teal"
+              className="inline-flex items-center justify-center rounded-xl bg-pixel-green px-7 py-4 text-sm font-bold text-white transition hover:bg-pixel-green-hover"
             >
               Try Pixelorid Loop Free
             </a>
@@ -346,11 +346,13 @@ export default function PixeloridLoopPage() {
           </div>
 
           <p className="text-sm text-slate-500">
-            © 2026 Pixelorid. All rights reserved.
+            Â© 2026 Pixelorid. All rights reserved.
           </p>
         </div>
       </footer>
     </main>
   );
 }
+
+
 
