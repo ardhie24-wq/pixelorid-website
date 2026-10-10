@@ -2,9 +2,9 @@ import { pageMeta } from "../_lib/seo";
 import Link from "next/link";
 
 export const metadata = pageMeta({
-  title: "Pricing",
+  title: "Pricing — Pixelorid POS, Resto, Loop & Growth Plans",
   description:
-    "See pricing for Pixelorid products and digital resources.",
+    "Simple, transparent pricing for all Pixelorid products — food truck POS, restaurant management software, client follow-up app, and small business financial tracker.",
   path: "/pricing",
 });
 
@@ -408,24 +408,11 @@ export default function PricingPage() {
             </div>
 
             <div className="flex flex-wrap gap-5 text-sm font-semibold text-slate-600">
-              <Link href="/products" className="hover:text-pixel-green">
-                Products
-              </Link>
-              <Link
-                href="/digital-products"
-                className="hover:text-pixel-green"
-              >
-                Digital Products
-              </Link>
-              <Link href="/pricing" className="hover:text-pixel-green">
-                Pricing
-              </Link>
-              <Link href="/about" className="hover:text-pixel-green">
-                About
-              </Link>
-              <Link href="/support" className="hover:text-pixel-green">
-                Support
-              </Link>
+              <Link href="/products" className="hover:text-pixel-green">Products</Link>
+              <Link href="/digital-products" className="hover:text-pixel-green">Digital Products</Link>
+              <Link href="/pricing" className="hover:text-pixel-green">Pricing</Link>
+              <Link href="/about" className="hover:text-pixel-green">About</Link>
+              <Link href="/support" className="hover:text-pixel-green">Support</Link>
             </div>
           </div>
 

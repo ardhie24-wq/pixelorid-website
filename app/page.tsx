@@ -1,7 +1,32 @@
+import type { Metadata } from "next";
 import HeroSlider from "./components/HeroSlider";
-
 import FreeTemplateButton from "./components/FreeTemplateButton";
 import AvailableProducts from "./components/AvailableProducts";
+
+export const metadata: Metadata = {
+  title: "Pixelorid — Simple Business Software for Small Businesses",
+  description:
+    "Pixelorid builds simple, practical SaaS tools and digital products for small businesses — POS for food trucks, restaurant management, client tracking, and financial tools.",
+  alternates: { canonical: "https://www.pixelorid.biz.id" },
+  openGraph: {
+    type: "website",
+    siteName: "Pixelorid",
+    locale: "en_US",
+    url: "https://www.pixelorid.biz.id",
+    title: "Pixelorid — Simple Business Software for Small Businesses",
+    description:
+      "Pixelorid builds simple, practical SaaS tools and digital products for small businesses — POS for food trucks, restaurant management, client tracking, and financial tools.",
+    images: ["/opengraph-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pixelorid — Simple Business Software for Small Businesses",
+    description:
+      "Pixelorid builds simple, practical SaaS tools and digital products for small businesses — POS for food trucks, restaurant management, client tracking, and financial tools.",
+    images: ["/twitter-image.png"],
+  },
+};
+
 const products = [
   {
     name: "Pixelorid POS",
@@ -228,33 +253,33 @@ export default function Home() {
           </a>
 
           <details className="relative lg:hidden">
-  <summary className="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-lg border border-slate-200 text-slate-700">
-    <span className="text-xl">&#9776;</span>
-  </summary>
+            <summary className="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-lg border border-slate-200 text-slate-700">
+              <span className="text-xl">&#9776;</span>
+            </summary>
 
-  <div className="absolute right-0 mt-3 w-64 rounded-2xl border border-slate-200 bg-white p-3 shadow-xl">
-    <nav className="flex flex-col gap-1 text-sm font-semibold text-slate-700">
-      <a href="/products" className="rounded-lg px-4 py-3 hover:bg-pixel-light-green hover:text-pixel-green">
-        Products
-      </a>
-      <a href="/digital-products" className="rounded-lg px-4 py-3 hover:bg-pixel-light-green hover:text-pixel-green">
-        Digital Products
-      </a>
-      <a href="/pricing" className="rounded-lg px-4 py-3 hover:bg-pixel-light-green hover:text-pixel-green">
-        Pricing
-      </a>
-      <a href="/about" className="rounded-lg px-4 py-3 hover:bg-pixel-light-green hover:text-pixel-green">
-        About
-      </a>
-      <a href="/support" className="rounded-lg px-4 py-3 hover:bg-pixel-light-green hover:text-pixel-green">
-        Support
-      </a>
-      <a href="/products" className="mt-2 rounded-xl bg-pixel-green px-4 py-3 text-center font-bold text-white hover:bg-pixel-green-hover">
-        Get Started
-      </a>
-    </nav>
-  </div>
-</details>
+            <div className="absolute right-0 mt-3 w-64 rounded-2xl border border-slate-200 bg-white p-3 shadow-xl">
+              <nav className="flex flex-col gap-1 text-sm font-semibold text-slate-700">
+                <a href="/products" className="rounded-lg px-4 py-3 hover:bg-pixel-light-green hover:text-pixel-green">
+                  Products
+                </a>
+                <a href="/digital-products" className="rounded-lg px-4 py-3 hover:bg-pixel-light-green hover:text-pixel-green">
+                  Digital Products
+                </a>
+                <a href="/pricing" className="rounded-lg px-4 py-3 hover:bg-pixel-light-green hover:text-pixel-green">
+                  Pricing
+                </a>
+                <a href="/about" className="rounded-lg px-4 py-3 hover:bg-pixel-light-green hover:text-pixel-green">
+                  About
+                </a>
+                <a href="/support" className="rounded-lg px-4 py-3 hover:bg-pixel-light-green hover:text-pixel-green">
+                  Support
+                </a>
+                <a href="/products" className="mt-2 rounded-xl bg-pixel-green px-4 py-3 text-center font-bold text-white hover:bg-pixel-green-hover">
+                  Get Started
+                </a>
+              </nav>
+            </div>
+          </details>
         </div>
       </header>
 
@@ -373,9 +398,7 @@ export default function Home() {
                   key={business.label}
                   className="rounded-2xl border border-slate-200 bg-white p-5"
                 >
-                  <div
-                    className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-700"
-                  >
+                  <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-700">
                     {business.icon}
                   </div>
                   <p className="font-bold text-slate-900">{business.label}</p>
@@ -552,75 +575,38 @@ export default function Home() {
             <div>
               <h3 className="font-bold text-slate-950">Products</h3>
               <div className="mt-4 space-y-3 text-sm text-slate-600">
-                <a className="block hover:text-pixel-green" href="/products/pixelorid-pos">Pixelorid POS
-                </a>
-                <a className="block hover:text-pixel-green" href="/products/pixelorid-resto">Pixelorid Resto
-                </a>
-                <a className="block hover:text-pixel-green" href="/products/pixelorid-loop">Pixelorid Loop
-                </a>
+                <a className="block hover:text-pixel-green" href="/products/pixelorid-pos">Pixelorid POS</a>
+                <a className="block hover:text-pixel-green" href="/products/pixelorid-resto">Pixelorid Resto</a>
+                <a className="block hover:text-pixel-green" href="/products/pixelorid-loop">Pixelorid Loop</a>
                 <a className="block hover:text-pixel-green" href="https://growth.pixelorid.biz.id" target="_blank" rel="noopener noreferrer">Pixelorid Growth</a>
-                <a className="block hover:text-pixel-green" href="/products">All Products
-                </a>
+                <a className="block hover:text-pixel-green" href="/products">All Products</a>
               </div>
             </div>
 
             <div>
               <h3 className="font-bold text-slate-950">Digital Products</h3>
               <div className="mt-4 space-y-3 text-sm text-slate-600">
-                <a
-                  className="block hover:text-pixel-green"
-                  href="https://pixelorid.etsy.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Etsy
-                </a>
-                <a
-                  className="block hover:text-pixel-green"
-                  href="https://pixelorid.gumroad.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Gumroad
-                </a>
-                <a
-                  className="block hover:text-pixel-green"
-                  href="https://payhip.com/pixelorid"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Payhip
-                </a>
+                <a className="block hover:text-pixel-green" href="https://pixelorid.etsy.com" target="_blank" rel="noopener noreferrer">Etsy</a>
+                <a className="block hover:text-pixel-green" href="https://pixelorid.gumroad.com/" target="_blank" rel="noopener noreferrer">Gumroad</a>
+                <a className="block hover:text-pixel-green" href="https://payhip.com/pixelorid" target="_blank" rel="noopener noreferrer">Payhip</a>
               </div>
             </div>
 
             <div>
               <h3 className="font-bold text-slate-950">Company</h3>
               <div className="mt-4 space-y-3 text-sm text-slate-600">
-                <a className="block hover:text-pixel-green" href="/about">
-                  About
-                </a>
-                <a className="block hover:text-pixel-green" href="/pricing">
-                  Pricing
-                </a>
-                <a className="block hover:text-pixel-green" href="/support">
-                  Support
-                </a>
+                <a className="block hover:text-pixel-green" href="/about">About</a>
+                <a className="block hover:text-pixel-green" href="/pricing">Pricing</a>
+                <a className="block hover:text-pixel-green" href="/support">Support</a>
               </div>
             </div>
 
             <div>
               <h3 className="font-bold text-slate-950">Legal</h3>
               <div className="mt-4 space-y-3 text-sm text-slate-600">
-                <a className="block hover:text-pixel-green" href="/terms">
-                  Terms of Service
-                </a>
-                <a className="block hover:text-pixel-green" href="/privacy">
-                  Privacy Policy
-                </a>
-                <a className="block hover:text-pixel-green" href="/refund">
-                  Refund Policy
-                </a>
+                <a className="block hover:text-pixel-green" href="/terms">Terms of Service</a>
+                <a className="block hover:text-pixel-green" href="/privacy">Privacy Policy</a>
+                <a className="block hover:text-pixel-green" href="/refund">Refund Policy</a>
               </div>
             </div>
           </div>
