@@ -1,5 +1,6 @@
 import { pageMeta } from "../../_lib/seo";
 import Link from "next/link";
+import GrowthHeroImage from "../../components/GrowthHeroImage";
 
 export const metadata = pageMeta({
   title: "Pixelorid Growth — Financial Tracker for Small Businesses",
@@ -123,38 +124,48 @@ export default function PixeloridGrowthPage() {
       </header>
 
       {/* Hero */}
-      <section className="bg-pixel-light-green">
-        <div className="mx-auto max-w-5xl px-6 py-20 text-center lg:px-8 lg:py-28">
-          <span className="inline-flex rounded-full bg-white px-4 py-2 text-sm font-bold text-pixel-green shadow-sm">
-            SaaS · Finance
-          </span>
+      <section className="bg-gradient-to-br from-pixel-light-green via-white to-pixel-light-teal px-6 py-20 lg:px-8 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid items-center gap-14 lg:grid-cols-2">
+            <div>
+              <span className="inline-flex rounded-full bg-white px-4 py-2 text-sm font-bold text-pixel-green shadow-sm ring-1 ring-pixel-green/10">
+                SaaS · Finance
+              </span>
 
-          <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            Simple Financial Insights for Growing Businesses
-          </h1>
+              <h1 className="mt-6 text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
+                Pixelorid Growth
+              </h1>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-            Pixelorid Growth helps small business owners track revenue, expenses,
-            profit and cash flow — all in one simple, practical app.
-          </p>
+              <p className="mt-5 text-2xl font-bold leading-tight text-pixel-dark-green">
+                Simple Financial Insights for Growing Businesses
+              </p>
 
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a
-              href={APP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-12 items-center justify-center rounded-xl bg-pixel-green px-8 font-bold text-white transition hover:bg-pixel-green-hover"
-            >
-              Try Pixelorid Growth Free →
-            </a>
-            <a
-              href={`${APP_URL}/login`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-12 items-center justify-center rounded-xl border border-slate-300 bg-white px-8 font-bold text-slate-700 transition hover:border-pixel-green hover:text-pixel-green"
-            >
-              Log In
-            </a>
+              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
+                Pixelorid Growth helps small business owners track revenue, expenses,
+                profit and cash flow — all in one simple, practical app.
+              </p>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href={APP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-xl bg-pixel-green px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover"
+                >
+                  Try Pixelorid Growth Free →
+                </a>
+                <a
+                  href={`${APP_URL}/login`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-xl border border-pixel-green bg-white px-6 py-3.5 text-sm font-bold text-pixel-green transition hover:bg-pixel-light-green"
+                >
+                  Log In
+                </a>
+              </div>
+            </div>
+
+            <GrowthHeroImage />
           </div>
         </div>
       </section>
