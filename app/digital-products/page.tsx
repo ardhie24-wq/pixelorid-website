@@ -1,4 +1,4 @@
-﻿import { pageMeta } from "../_lib/seo";
+import { pageMeta } from "../_lib/seo";
 import Link from "next/link";
 
 export const metadata = pageMeta({
@@ -171,7 +171,7 @@ export default async function DigitalProductsPage() {
             href="/"
             className="text-sm font-semibold text-slate-600 transition hover:text-pixel-green"
           >
-            â† Back to Home
+            ← Back to Home
           </Link>
         </div>
       </header>
@@ -365,7 +365,7 @@ export default async function DigitalProductsPage() {
                     {marketplace.description}
                   </p>
                   <p className="mt-3 text-sm font-bold text-white opacity-0 transition group-hover:opacity-100">
-                    Visit store â†’
+                    Visit store →
                   </p>
                 </a>
               ))}
@@ -389,7 +389,7 @@ export default async function DigitalProductsPage() {
           href="/products"
           className="mt-8 inline-flex rounded-xl bg-pixel-green px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover"
         >
-          Explore Pixelorid SaaS â†’
+          Explore Pixelorid SaaS →
         </Link>
       </section>
 
@@ -462,7 +462,7 @@ export default async function DigitalProductsPage() {
           </div>
 
           <div className="mt-8 border-t border-slate-200 pt-6 text-sm text-slate-500">
-            Â© 2026 Pixelorid. All rights reserved.
+            © 2026 Pixelorid. All rights reserved.
           </div>
         </div>
       </footer>

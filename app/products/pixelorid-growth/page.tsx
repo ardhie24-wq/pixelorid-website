@@ -1,8 +1,8 @@
-﻿import { pageMeta } from "../../_lib/seo";
+import { pageMeta } from "../../_lib/seo";
 import Link from "next/link";
 
 export const metadata = pageMeta({
-  title: "Pixelorid Growth â€” Financial Tracker for Small Businesses",
+  title: "Pixelorid Growth — Financial Tracker for Small Businesses",
   description:
     "Pixelorid Growth is a simple financial tracking app for small businesses. Track revenue, expenses, profit and cash flow in one place. Start free.",
   path: "/products/pixelorid-growth",
@@ -117,7 +117,7 @@ export default function PixeloridGrowthPage() {
             href="/"
             className="text-sm font-semibold text-slate-600 transition hover:text-pixel-green"
           >
-            â† Back to Home
+            ← Back to Home
           </Link>
         </div>
       </header>
@@ -126,7 +126,7 @@ export default function PixeloridGrowthPage() {
       <section className="bg-pixel-light-green">
         <div className="mx-auto max-w-5xl px-6 py-20 text-center lg:px-8 lg:py-28">
           <span className="inline-flex rounded-full bg-white px-4 py-2 text-sm font-bold text-pixel-green shadow-sm">
-            SaaS Â· Finance
+            SaaS · Finance
           </span>
 
           <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
@@ -135,7 +135,7 @@ export default function PixeloridGrowthPage() {
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
             Pixelorid Growth helps small business owners track revenue, expenses,
-            profit and cash flow â€” all in one simple, practical app.
+            profit and cash flow — all in one simple, practical app.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -145,7 +145,7 @@ export default function PixeloridGrowthPage() {
               rel="noopener noreferrer"
               className="inline-flex h-12 items-center justify-center rounded-xl bg-pixel-green px-8 font-bold text-white transition hover:bg-pixel-green-hover"
             >
-              Try Pixelorid Growth Free â†’
+              Try Pixelorid Growth Free →
             </a>
             <a
               href={`${APP_URL}/login`}
@@ -235,7 +235,7 @@ export default function PixeloridGrowthPage() {
                   {plan.items.map((item) => (
                     <li key={item} className="flex items-center gap-3 text-slate-700">
                       <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-pixel-green text-xs font-bold text-white">
-                        âœ“
+                        ✓
                       </span>
                       <span className="text-sm">{item}</span>
                     </li>
@@ -252,7 +252,7 @@ export default function PixeloridGrowthPage() {
                       : "border border-slate-300 bg-white text-slate-700 hover:border-pixel-green hover:text-pixel-green"
                   }`}
                 >
-                  {plan.cta} â†’
+                  {plan.cta} →
                 </a>
               </div>
             ))}
@@ -271,7 +271,7 @@ export default function PixeloridGrowthPage() {
             Know Where Your Money Goes. Every Month.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-300">
-            Start tracking your business finances today â€” it takes less than a minute to get started.
+            Start tracking your business finances today — it takes less than a minute to get started.
           </p>
           <a
             href={APP_URL}
@@ -279,7 +279,7 @@ export default function PixeloridGrowthPage() {
             rel="noopener noreferrer"
             className="mt-8 inline-flex rounded-xl bg-pixel-green px-8 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover"
           >
-            Try Pixelorid Growth Free â†’
+            Try Pixelorid Growth Free →
           </a>
         </div>
       </section>
@@ -304,7 +304,7 @@ export default function PixeloridGrowthPage() {
             </div>
           </div>
           <div className="mt-8 border-t border-slate-200 pt-6 text-sm text-slate-500">
-            Â© 2026 Pixelorid. All rights reserved.
+            © 2026 Pixelorid. All rights reserved.
           </div>
         </div>
       </footer>

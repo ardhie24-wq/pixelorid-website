@@ -1,4 +1,4 @@
-﻿import { pageMeta } from "../_lib/seo";
+import { pageMeta } from "../_lib/seo";
 import Link from "next/link";
 
 export const metadata = pageMeta({
@@ -138,7 +138,7 @@ const offerings = [
     name: "Pixelorid Growth",
     category: "SaaS \u00B7 Finance",
     description:
-      "A simple financial tracking app for small businesses to monitor revenue, expenses, profit and cash flow â€” all in one place.",
+      "A simple financial tracking app for small businesses to monitor revenue, expenses, profit and cash flow — all in one place.",
     href: "https://growth.pixelorid.biz.id",
     cta: "Explore Pixelorid Growth",
     icon: (
@@ -182,7 +182,7 @@ export default function AboutPage() {
             href="/"
             className="text-sm font-semibold text-slate-600 transition hover:text-pixel-green"
           >
-            â† Back to Home
+            ← Back to Home
           </Link>
         </div>
       </header>
@@ -392,7 +392,7 @@ export default function AboutPage() {
             href="/products"
             className="mt-8 inline-flex rounded-xl bg-pixel-green px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover"
           >
-            Explore Pixelorid Products â†’
+            Explore Pixelorid Products →
           </Link>
         </div>
       </section>
@@ -438,7 +438,7 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-8 border-t border-slate-200 pt-6 text-sm text-slate-500">
-            Â© 2026 Pixelorid. All rights reserved.
+            © 2026 Pixelorid. All rights reserved.
           </div>
         </div>
       </footer>
