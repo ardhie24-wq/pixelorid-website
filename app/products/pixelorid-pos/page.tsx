@@ -1,10 +1,10 @@
-import { pageMeta } from "../../_lib/seo";
+﻿import { pageMeta } from "../../_lib/seo";
 import PosHeroImage from "../../components/PosHeroImage";
 
 export const metadata = pageMeta({
-  title: "POS for Food Trucks",
+  title: "Pixelorid POS — Point of Sale App for Food Trucks & Mobile Food Businesses",
   description:
-    "Pixelorid POS is a point of sale and business management app for food trucks and mobile food businesses: orders, payments, receipts and sales reports.",
+    "Pixelorid POS is a point of sale and business management app for food trucks and mobile food businesses. Manage orders, payments, receipts and sales reports in one simple app.",
   path: "/products/pixelorid-pos",
 });
 
@@ -147,7 +147,7 @@ export default function PixeloridPOSPage() {
               href="/products"
               className="text-sm font-semibold text-slate-600 transition hover:text-pixel-green"
             >
-              ← All Products
+              â† All Products
             </a>
 
             <a
@@ -167,7 +167,7 @@ export default function PixeloridPOSPage() {
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <div>
               <span className="inline-flex rounded-full bg-white px-4 py-2 text-sm font-bold text-pixel-green shadow-sm ring-1 ring-pixel-green/10">
-                SaaS · Food Business
+                SaaS Â· Food Business
               </span>
 
               <h1 className="mt-6 text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
@@ -207,7 +207,7 @@ export default function PixeloridPOSPage() {
                 href="#features"
                 className="mt-5 inline-flex text-sm font-bold text-slate-500 underline-offset-4 transition hover:text-pixel-green hover:underline"
               >
-                See all features ↓
+                See all features â†“
               </a>
             </div>
 
@@ -399,13 +399,14 @@ export default function PixeloridPOSPage() {
           </div>
 
           <p className="text-sm text-slate-500">
-            © 2026 Pixelorid. All rights reserved.
+            Â© 2026 Pixelorid. All rights reserved.
           </p>
         </div>
       </footer>
     </main>
   );
 }
+
 
 
 

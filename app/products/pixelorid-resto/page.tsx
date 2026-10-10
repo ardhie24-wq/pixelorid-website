@@ -1,8 +1,8 @@
 ﻿import { pageMeta } from "../../_lib/seo";
 export const metadata = pageMeta({
-  title: "Resto - Restaurant Management Software",
+  title: "Pixelorid Resto — Restaurant Management Software for One Branch or Many",
   description:
-    "Pixelorid Resto brings orders, tables, reservations, staff and reports into one practical system, for one branch or many.",
+    "Pixelorid Resto is restaurant management software that handles orders, tables, reservations, staff and reports in one system — built for single restaurants and multi-branch operations.",
   path: "/products/pixelorid-resto",
 });
 
@@ -460,3 +460,5 @@ export default function PixeloridRestoPage() {
     </main>
   );
 }
+
+

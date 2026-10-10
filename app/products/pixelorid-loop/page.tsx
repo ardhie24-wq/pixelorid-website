@@ -1,10 +1,10 @@
-import { pageMeta } from "../../_lib/seo";
+﻿import { pageMeta } from "../../_lib/seo";
 import LoopHeroSlider from "../../components/LoopHeroSlider";
 
 export const metadata = pageMeta({
-  title: "Loop - Client Follow-Up App",
+  title: "Pixelorid Loop — Client Follow-Up App for Small Service Businesses",
   description:
-    "Pixelorid Loop is a web-based client follow-up app for small service businesses. Track every lead and client and know who to follow up with.",
+    "Pixelorid Loop is a client follow-up and lead tracking app for small service businesses. Know who to follow up with, track every client, and never let a lead go cold.",
   path: "/products/pixelorid-loop",
 });
 
@@ -108,7 +108,7 @@ export default function PixeloridLoopPage() {
               href="/products"
               className="text-sm font-semibold text-slate-600 transition hover:text-pixel-green"
             >
-              ← All Products
+              â† All Products
             </a>
 
             <a
@@ -128,7 +128,7 @@ export default function PixeloridLoopPage() {
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <div>
               <span className="inline-flex rounded-full bg-white px-4 py-2 text-sm font-bold text-pixel-green shadow-sm ring-1 ring-pixel-green/10">
-                SaaS · Business Management
+                SaaS Â· Business Management
               </span>
 
               <h1 className="mt-6 text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
@@ -168,7 +168,7 @@ export default function PixeloridLoopPage() {
                 href="#capabilities"
                 className="mt-5 inline-flex text-sm font-bold text-slate-500 underline-offset-4 transition hover:text-pixel-green hover:underline"
               >
-                See what it does ↓
+                See what it does â†“
               </a>
             </div>
 
@@ -346,13 +346,14 @@ export default function PixeloridLoopPage() {
           </div>
 
           <p className="text-sm text-slate-500">
-            © 2026 Pixelorid. All rights reserved.
+            Â© 2026 Pixelorid. All rights reserved.
           </p>
         </div>
       </footer>
     </main>
   );
 }
+
 
 
 

@@ -1,10 +1,10 @@
-import { pageMeta } from "../_lib/seo";
+﻿import { pageMeta } from "../_lib/seo";
 import Link from "next/link";
 
 export const metadata = pageMeta({
-  title: "About",
+  title: "About Pixelorid — Simple Business Software for Small Businesses",
   description:
-    "Learn about Pixelorid, the team building simple, practical software and digital products for growing small businesses.",
+    "Pixelorid builds simple, practical SaaS tools and digital resources for small businesses — food truck POS, restaurant software, client tracking, financial tools, and business templates.",
   path: "/about",
 });
 
@@ -138,7 +138,7 @@ const offerings = [
     name: "Pixelorid Growth",
     category: "SaaS \u00B7 Finance",
     description:
-      "A simple financial tracking app for small businesses to monitor revenue, expenses, profit and cash flow — all in one place.",
+      "A simple financial tracking app for small businesses to monitor revenue, expenses, profit and cash flow â€” all in one place.",
     href: "https://growth.pixelorid.biz.id",
     cta: "Explore Pixelorid Growth",
     icon: (
@@ -182,7 +182,7 @@ export default function AboutPage() {
             href="/"
             className="text-sm font-semibold text-slate-600 transition hover:text-pixel-green"
           >
-            ← Back to Home
+            â† Back to Home
           </Link>
         </div>
       </header>
@@ -392,7 +392,7 @@ export default function AboutPage() {
             href="/products"
             className="mt-8 inline-flex rounded-xl bg-pixel-green px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover"
           >
-            Explore Pixelorid Products →
+            Explore Pixelorid Products â†’
           </Link>
         </div>
       </section>
@@ -438,10 +438,12 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-8 border-t border-slate-200 pt-6 text-sm text-slate-500">
-            © 2026 Pixelorid. All rights reserved.
+            Â© 2026 Pixelorid. All rights reserved.
           </div>
         </div>
       </footer>
     </main>
   );
 }
+
+
