@@ -139,7 +139,7 @@ const offerings = [
     category: "SaaS \u00B7 Finance",
     description:
       "A simple financial tracking app for small businesses to monitor revenue, expenses, profit and cash flow — all in one place.",
-    href: "https://growth.pixelorid.biz.id",
+    href: "/products/pixelorid-growth",
     cta: "Explore Pixelorid Growth",
     icon: (
       <svg {...iconProps} className="h-6 w-6">

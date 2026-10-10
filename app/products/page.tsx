@@ -136,7 +136,7 @@ const products = [
       "Monthly & Yearly Views",
       "Export to Excel",
     ],
-    href: "https://growth.pixelorid.biz.id",
+    href: "/products/pixelorid-growth",
   },
 ];
 

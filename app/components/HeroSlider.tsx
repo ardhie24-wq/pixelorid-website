@@ -32,7 +32,7 @@ const slides: HeroSlide[] = [
       { label: "Pixelorid POS", href: "/products/pixelorid-pos" },
       { label: "Pixelorid Resto", href: "/products/pixelorid-resto" },
       { label: "Pixelorid Loop", href: "/products/pixelorid-loop" },
-      { label: "Pixelorid Growth", href: "https://growth.pixelorid.biz.id" },
+      { label: "Pixelorid Growth", href: "/products/pixelorid-growth" },
       { label: "Digital Resources", href: "/digital-products" },
     ],
   },
@@ -78,7 +78,7 @@ const slides: HeroSlide[] = [
     description:
       "Pixelorid Growth helps small businesses record revenue and expenses, see profit at a glance, and export clear reports to Excel.",
     ctaText: "Try Pixelorid Growth Free",
-    ctaHref: "https://growth.pixelorid.biz.id",
+    ctaHref: "/products/pixelorid-growth",
     ctaExternal: true,
     secondaryCtaText: "View All Products",
     secondaryCtaHref: "/products",

@@ -330,7 +330,7 @@ export default function PricingPage() {
           </p>
 
           <a
-            href="https://growth.pixelorid.biz.id"
+            href="/products/pixelorid-growth"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-6 inline-flex items-center justify-center rounded-xl bg-pixel-green px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover"
