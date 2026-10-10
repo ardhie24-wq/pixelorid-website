@@ -135,6 +135,20 @@ const offerings = [
     ),
   },
   {
+    name: "Pixelorid Growth",
+    category: "SaaS \u00B7 Finance",
+    description:
+      "A simple financial tracking app for small businesses to monitor revenue, expenses, profit and cash flow — all in one place.",
+    href: "https://growth.pixelorid.biz.id",
+    cta: "Explore Pixelorid Growth",
+    icon: (
+      <svg {...iconProps} className="h-6 w-6">
+        <path d="M3 17l6-6 4 4 8-8" />
+        <path d="M15 7h6v6" />
+      </svg>
+    ),
+  },
+  {
     name: "Digital Resources",
     category: "Templates \u00B7 Etsy, Gumroad, Payhip",
     description:
@@ -245,12 +259,12 @@ export default function AboutPage() {
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-slate-600">
-              Three SaaS products and a growing library of digital resources,
+              Four SaaS products and a growing library of digital resources,
               each built to solve a real, everyday business problem.
             </p>
           </div>
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {offerings.map((offering) => (
               <Link
                 key={offering.name}
