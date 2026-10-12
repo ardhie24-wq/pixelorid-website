@@ -1,28 +1,28 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import HeroSlider from "./components/HeroSlider";
 import FreeTemplateButton from "./components/FreeTemplateButton";
 import AvailableProducts from "./components/AvailableProducts";
 
 export const metadata: Metadata = {
-  title: "Pixelorid â€” Simple Business Software for Small Businesses",
+  title: "Pixelorid — Simple Business Software for Small Businesses",
   description:
-    "Pixelorid builds simple, practical SaaS tools and digital products for small businesses â€” POS for food trucks, restaurant management, client tracking, and financial tools.",
+    "Pixelorid builds simple, practical SaaS tools and digital products for small businesses — POS for food trucks, restaurant management, client tracking, and financial tools.",
   alternates: { canonical: "https://www.pixelorid.biz.id" },
   openGraph: {
     type: "website",
     siteName: "Pixelorid",
     locale: "en_US",
     url: "https://www.pixelorid.biz.id",
-    title: "Pixelorid â€” Simple Business Software for Small Businesses",
+    title: "Pixelorid — Simple Business Software for Small Businesses",
     description:
-      "Pixelorid builds simple, practical SaaS tools and digital products for small businesses â€” POS for food trucks, restaurant management, client tracking, and financial tools.",
+      "Pixelorid builds simple, practical SaaS tools and digital products for small businesses — POS for food trucks, restaurant management, client tracking, and financial tools.",
     images: ["/opengraph-image.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pixelorid â€” Simple Business Software for Small Businesses",
+    title: "Pixelorid — Simple Business Software for Small Businesses",
     description:
-      "Pixelorid builds simple, practical SaaS tools and digital products for small businesses â€” POS for food trucks, restaurant management, client tracking, and financial tools.",
+      "Pixelorid builds simple, practical SaaS tools and digital products for small businesses — POS for food trucks, restaurant management, client tracking, and financial tools.",
     images: ["/twitter-image.png"],
   },
 };
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const products = [
   {
     name: "Pixelorid POS",
-    category: "SaaS Â· Food Business",
+    category: "SaaS · Food Business",
     description:
       "A practical point-of-sale and business management solution designed for food trucks and mobile food businesses.",
     href: "/products/pixelorid-pos",
@@ -52,7 +52,7 @@ const products = [
   },
   {
     name: "Pixelorid Resto",
-    category: "SaaS Â· Restaurant Management",
+    category: "SaaS · Restaurant Management",
     description:
       "Pixelorid Resto brings orders, tables, reservations, staff and reports into one practical system, for one branch or many.",
     href: "/products/pixelorid-resto",
@@ -75,9 +75,9 @@ const products = [
   },
   {
     name: "Pixelorid Loop",
-    category: "SaaS Â· Service Business",
+    category: "SaaS · Service Business",
     description:
-      "A web-based client follow-up app built for small service businesses â€” track every lead and client, know who to follow up with, and never let a conversation go cold.",
+      "A web-based client follow-up app built for small service businesses — track every lead and client, know who to follow up with, and never let a conversation go cold.",
     href: "/products/pixelorid-loop",
     icon: (
       <svg
@@ -322,7 +322,7 @@ export default function Home() {
 
           <p className="mx-auto mt-3 max-w-3xl text-lg leading-8 text-slate-600">
             Pixelorid creates practical technology for businesses at different
-            stages of growth â€” from getting started with limited resources to
+            stages of growth — from getting started with limited resources to
             managing a growing operation.
           </p>
         </div>
@@ -369,7 +369,7 @@ export default function Home() {
                   href={product.href}
                   className="mt-7 inline-flex font-bold text-pixel-green transition hover:text-pixel-green-hover"
                 >
-                  Explore {product.name} â†’
+                  Explore {product.name} →
                 </a>
               </article>
             ))}
@@ -389,7 +389,7 @@ export default function Home() {
               href="/products"
               className="font-bold text-pixel-green hover:text-pixel-green-hover"
             >
-              View All Products â†’
+              View All Products →
             </a>
           </div>
         </div>
@@ -504,7 +504,7 @@ export default function Home() {
           </div>
 
           <p className="mt-10 text-sm font-semibold text-slate-500">
-            Available on Etsy Â· Gumroad Â· Payhip
+            Available on Etsy · Gumroad · Payhip
           </p>
         </div>
       </section>
@@ -539,7 +539,7 @@ export default function Home() {
                 </div>
 
                 {index < 3 && (
-                  <span className="hidden text-slate-600 sm:block">â†’</span>
+                  <span className="hidden text-slate-600 sm:block">→</span>
                 )}
               </div>
             ))}
@@ -599,7 +599,7 @@ export default function Home() {
                 <a className="block hover:text-pixel-green" href="/products/pixelorid-pos">Pixelorid POS</a>
                 <a className="block hover:text-pixel-green" href="/products/pixelorid-resto">Pixelorid Resto</a>
                 <a className="block hover:text-pixel-green" href="/products/pixelorid-loop">Pixelorid Loop</a>
-                <a className="block hover:text-pixel-green" href="/products/pixelorid-growth" target="_blank" rel="noopener noreferrer">Pixelorid Growth</a>
+                <a className="block hover:text-pixel-green" href="https://growth.pixelorid.biz.id" target="_blank" rel="noopener noreferrer">Pixelorid Growth</a>
                 <a className="block hover:text-pixel-green" href="/products">All Products</a>
               </div>
             </div>
@@ -633,11 +633,10 @@ export default function Home() {
           </div>
 
           <div className="mt-12 border-t border-slate-200 pt-7 text-sm text-slate-500">
-            Â© 2026 Pixelorid. All rights reserved.
+            © 2026 Pixelorid. All rights reserved.
           </div>
         </div>
       </footer>
     </main>
   );
 }
-
