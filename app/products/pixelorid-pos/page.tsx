@@ -395,7 +395,7 @@ export default function PixeloridPOSPage() {
 
           <div className="flex items-center gap-5 text-sm font-semibold text-slate-600">
             <a href="https://www.instagram.com/pixelorid/" target="_blank" rel="noopener noreferrer" className="hover:text-pixel-green">Instagram</a>
-            <a href="https://id.pinterest.com/pixelorid/" target="_blank" rel="noopener noreferrer" className="hover:text-pixel-green">Pinterest</a>
+            <a href="https://www.pinterest.com/pixelorid/" target="_blank" rel="noopener noreferrer" className="hover:text-pixel-green">Pinterest</a>
           </div>
 
           <p className="text-sm text-slate-500">

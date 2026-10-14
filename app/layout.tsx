@@ -54,7 +54,7 @@ const siteJsonLd = {
         "https://pixelorid.etsy.com",
         "https://pixelorid.gumroad.com/",
         "https://payhip.com/pixelorid",
-        "https://id.pinterest.com/pixelorid/",
+        "https://www.pinterest.com/pixelorid/",
         "https://www.instagram.com/pixelorid/",
       ],
     },

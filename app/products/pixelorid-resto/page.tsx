@@ -1,4 +1,4 @@
-﻿import { pageMeta } from "../../_lib/seo";
+import { pageMeta } from "../../_lib/seo";
 export const metadata = pageMeta({
   title: "Pixelorid Resto — Restaurant Management Software for One Branch or Many",
   description:
@@ -437,7 +437,7 @@ export default function PixeloridRestoPage() {
 
           <div className="flex items-center gap-5 text-sm font-semibold text-slate-600">
             <a href="https://www.instagram.com/pixelorid/" target="_blank" rel="noopener noreferrer" className="hover:text-pixel-green">Instagram</a>
-            <a href="https://id.pinterest.com/pixelorid/" target="_blank" rel="noopener noreferrer" className="hover:text-pixel-green">Pinterest</a>
+            <a href="https://www.pinterest.com/pixelorid/" target="_blank" rel="noopener noreferrer" className="hover:text-pixel-green">Pinterest</a>
           </div>
 
           <div className="flex flex-wrap gap-5 text-sm font-semibold text-slate-600">

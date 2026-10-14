@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import HeroSlider from "./components/HeroSlider";
 import FreeTemplateButton from "./components/FreeTemplateButton";
 import AvailableProducts from "./components/AvailableProducts";
+import SocialFollow from "./components/SocialFollow";
 
 export const metadata: Metadata = {
   title: "Pixelorid — Simple Business Software for Small Businesses",
@@ -577,6 +578,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pinterest Follow */}
+      <SocialFollow />
+
       {/* Footer */}
       <footer id="support" className="bg-white">
         <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
@@ -589,7 +593,7 @@ export default function Home() {
               </p>
               <div className="mt-4 flex items-center gap-5 text-sm font-semibold text-slate-600">
                 <a href="https://www.instagram.com/pixelorid/" target="_blank" rel="noopener noreferrer" className="hover:text-pixel-green">Instagram</a>
-                <a href="https://id.pinterest.com/pixelorid/" target="_blank" rel="noopener noreferrer" className="hover:text-pixel-green">Pinterest</a>
+                <a href="https://www.pinterest.com/pixelorid/" target="_blank" rel="noopener noreferrer" className="hover:text-pixel-green">Pinterest</a>
               </div>
             </div>
 
