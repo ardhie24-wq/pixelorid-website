@@ -149,6 +149,22 @@ const offerings = [
     ),
   },
   {
+    name: "Pixelorid Invoice Generator",
+    category: "SaaS \u00B7 Invoicing",
+    description:
+      "Create professional invoices and quotations, manage customers and track payments in one simple workspace for freelancers and small businesses.",
+    href: "/products/pixelorid-invoice-generator",
+    cta: "Explore Pixelorid Invoice Generator",
+    icon: (
+      <svg {...iconProps} className="h-6 w-6">
+        <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z" />
+        <path d="M8 8h8" />
+        <path d="M8 12h8" />
+        <path d="M8 16h5" />
+      </svg>
+    ),
+  },
+  {
     name: "Digital Resources",
     category: "Templates \u00B7 Etsy, Gumroad, Payhip",
     description:
@@ -259,12 +275,12 @@ export default function AboutPage() {
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-slate-600">
-              Four SaaS products and a growing library of digital resources,
+              Five SaaS products and a growing library of digital resources,
               each built to solve a real, everyday business problem.
             </p>
           </div>
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {offerings.map((offering) => (
               <Link
                 key={offering.name}

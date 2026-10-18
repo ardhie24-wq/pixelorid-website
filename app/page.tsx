@@ -118,6 +118,29 @@ const products = [
       </svg>
     ),
   },
+  {
+    name: "Pixelorid Invoice Generator",
+    category: "SaaS \u00b7 Invoicing",
+    description:
+      "Create professional invoices and quotations, manage customers, and track payments in one simple workspace, built for freelancers and small businesses.",
+    href: "/products/pixelorid-invoice-generator",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-6 w-6"
+      >
+        <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z" />
+        <path d="M8 8h8" />
+        <path d="M8 12h8" />
+        <path d="M8 16h5" />
+      </svg>
+    ),
+  },
 ];
 
 const iconProps = {
@@ -604,6 +627,7 @@ export default function Home() {
                 <a className="block hover:text-pixel-green" href="/products/pixelorid-resto">Pixelorid Resto</a>
                 <a className="block hover:text-pixel-green" href="/products/pixelorid-loop">Pixelorid Loop</a>
                 <a className="block hover:text-pixel-green" href="https://growth.pixelorid.biz.id" target="_blank" rel="noopener noreferrer">Pixelorid Growth</a>
+                <a className="block hover:text-pixel-green" href="/products/pixelorid-invoice-generator">Pixelorid Invoice Generator</a>
                 <a className="block hover:text-pixel-green" href="/products">All Products</a>
               </div>
             </div>

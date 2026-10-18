@@ -2,7 +2,7 @@ import { pageMeta } from "../_lib/seo";
 export const metadata = pageMeta({
   title: "Software Products for Growing Businesses",
   description:
-    "Explore Pixelorid software: POS for food trucks, Resto for restaurants, Loop for client follow-up, and Growth for small business finance.",
+    "Explore Pixelorid software: POS for food trucks, Resto for restaurants, Loop for client follow-up, Growth for small business finance, and Invoice Generator for invoicing.",
   path: "/products",
 });
 
@@ -59,6 +59,15 @@ const growthIcon = (
 const checkIcon = (
   <svg {...iconProps} className="h-4 w-4 shrink-0">
     <polyline points="20 6 9 17 4 12" />
+  </svg>
+);
+
+const invoiceIcon = (
+  <svg {...iconProps} className="h-7 w-7">
+    <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z" />
+    <path d="M8 8h8" />
+    <path d="M8 12h8" />
+    <path d="M8 16h5" />
   </svg>
 );
 
@@ -138,6 +147,24 @@ const products = [
     ],
     href: "/products/pixelorid-growth",
   },
+  {
+    name: "Pixelorid Invoice Generator",
+    category: "SaaS \u00b7 Invoicing",
+    description:
+      "Create professional invoices and quotations, manage customers, and track payments in one simple workspace, built for freelancers and small businesses.",
+    icon: invoiceIcon,
+    iconBg: "bg-pixel-light-green",
+    iconColor: "text-pixel-green",
+    features: [
+      "Invoices & Quotations",
+      "Customer Management",
+      "PDF Export",
+      "Payment Status Tracking",
+      "Dashboard Overview",
+      "Multiple Currencies",
+    ],
+    href: "/products/pixelorid-invoice-generator",
+  },
 ];
 
 export default function ProductsPage() {
@@ -183,7 +210,7 @@ export default function ProductsPage() {
             {products.map((product) => (
               <article
                 key={product.name}
-                className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg lg:p-10"
+                className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg lg:p-10 lg:last:odd:col-span-2"
               >
                 <div
                   className={`flex h-14 w-14 items-center justify-center rounded-2xl ${product.iconBg} ${product.iconColor}`}

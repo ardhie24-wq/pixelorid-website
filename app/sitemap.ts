@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 
 const BASE_URL = 'https://www.pixelorid.biz.id'
 // Ubah tanggal ini setiap kali isi halaman benar-benar berubah
-const LAST_UPDATED = new Date('2026-10-10')
+const LAST_UPDATED = new Date('2026-10-18')
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/products/pixelorid-pos',
     '/products/pixelorid-resto',
     '/products/pixelorid-growth',
+    '/products/pixelorid-invoice-generator',
     '/support',
   ]
 
