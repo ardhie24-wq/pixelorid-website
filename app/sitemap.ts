@@ -1,13 +1,15 @@
 import type { MetadataRoute } from 'next'
+import { client } from '@/sanity/lib/client'
+import { POSTS_QUERY } from '@/sanity/lib/queries'
 
 const BASE_URL = 'https://www.pixelorid.biz.id'
-// Ubah tanggal ini setiap kali isi halaman benar-benar berubah
-const LAST_UPDATED = new Date('2026-10-18')
+const LAST_UPDATED = new Date('2026-10-20')
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routes = [
     '',
     '/about',
+    '/blog',
     '/digital-products',
     '/pricing',
     '/products',
@@ -19,10 +21,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/support',
   ]
 
-  return routes.map((route) => ({
+  const staticRoutes = routes.map((route) => ({
     url: `${BASE_URL}${route}`,
     lastModified: LAST_UPDATED,
-    changeFrequency: route === '' ? 'daily' : 'weekly',
-    priority: route === '' ? 1 : 0.7,
+    changeFrequency: (route === '' ? 'daily' : 'weekly') as 'daily' | 'weekly',
+    priority: route === '' ? 1 : route === '/blog' ? 0.9 : 0.7,
   }))
+
+  const posts = await client.fetch(POSTS_QUERY)
+  const blogRoutes = posts.map((post: { slug: { current: string }, publishedAt: string }) => ({
+    url: `${BASE_URL}/blog/${post.slug.current}`,
+    lastModified: new Date(post.publishedAt || LAST_UPDATED),
+    changeFrequency: 'monthly' as 'monthly',
+    priority: 0.8,
+  }))
+
+  return [...staticRoutes, ...blogRoutes]
 }
