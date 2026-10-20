@@ -8,6 +8,16 @@ export const metadata: Metadata = {
   description: "Tips and guides for small business owners.",
 };
 
+type Post = {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  publishedAt: string;
+  excerpt: string;
+  categories: { title: string }[];
+  author: { name: string };
+};
+
 export default async function BlogPage() {
   const posts = await client.fetch(POSTS_QUERY);
 
@@ -19,7 +29,7 @@ export default async function BlogPage() {
         <p className="text-gray-400">No posts yet. Check back soon!</p>
       ) : (
         <div className="grid gap-8">
-          {posts.map((post) => (
+          {posts.map((post: Post) => (
             <article key={post._id} className="border-b pb-8">
               <Link href={`/blog/${post.slug.current}`}>
                 <h2 className="text-2xl font-semibold hover:text-blue-600 transition-colors">
@@ -37,7 +47,7 @@ export default async function BlogPage() {
                 <p className="text-gray-600 mt-2">{post.excerpt}</p>
               )}
               <Link href={`/blog/${post.slug.current}`} className="inline-block mt-3 text-blue-600 hover:underline text-sm font-medium">
-                Read more ?
+                Read more
               </Link>
             </article>
           ))}
