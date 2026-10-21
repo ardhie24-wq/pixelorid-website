@@ -282,6 +282,9 @@ export default function Home() {
             <a href="/pricing" className="transition hover:text-pixel-green">
               Pricing
             </a>
+            <a href="/blog" className="transition hover:text-pixel-green">
+              Blog
+            </a>
             <a href="/about" className="transition hover:text-pixel-green">
               About
             </a>
@@ -312,6 +315,9 @@ export default function Home() {
                 </a>
                 <a href="/pricing" className="rounded-lg px-4 py-3 hover:bg-pixel-light-green hover:text-pixel-green">
                   Pricing
+                </a>
+                <a href="/blog" className="rounded-lg px-4 py-3 hover:bg-pixel-light-green hover:text-pixel-green">
+                  Blog
                 </a>
                 <a href="/about" className="rounded-lg px-4 py-3 hover:bg-pixel-light-green hover:text-pixel-green">
                   About
