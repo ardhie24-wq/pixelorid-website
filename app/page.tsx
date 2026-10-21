@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import HeroSlider from "./components/HeroSlider";
 import FreeTemplateButton from "./components/FreeTemplateButton";
 import AvailableProducts from "./components/AvailableProducts";
