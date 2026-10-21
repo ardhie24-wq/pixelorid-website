@@ -5,25 +5,25 @@ import AvailableProducts from "./components/AvailableProducts";
 import SocialFollow from "./components/SocialFollow";
 
 export const metadata: Metadata = {
-  title: "Pixelorid — Simple Business Software for Small Businesses",
+  title: "Pixelorid Ã¢â‚¬â€ Simple Business Software for Small Businesses",
   description:
-    "Pixelorid builds simple, practical SaaS tools and digital products for small businesses — POS for food trucks, restaurant management, client tracking, and financial tools.",
+    "Pixelorid builds simple, practical SaaS tools and digital products for small businesses Ã¢â‚¬â€ POS for food trucks, restaurant management, client tracking, and financial tools.",
   alternates: { canonical: "https://www.pixelorid.biz.id" },
   openGraph: {
     type: "website",
     siteName: "Pixelorid",
     locale: "en_US",
     url: "https://www.pixelorid.biz.id",
-    title: "Pixelorid — Simple Business Software for Small Businesses",
+    title: "Pixelorid Ã¢â‚¬â€ Simple Business Software for Small Businesses",
     description:
-      "Pixelorid builds simple, practical SaaS tools and digital products for small businesses — POS for food trucks, restaurant management, client tracking, and financial tools.",
+      "Pixelorid builds simple, practical SaaS tools and digital products for small businesses Ã¢â‚¬â€ POS for food trucks, restaurant management, client tracking, and financial tools.",
     images: ["/opengraph-image.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pixelorid — Simple Business Software for Small Businesses",
+    title: "Pixelorid Ã¢â‚¬â€ Simple Business Software for Small Businesses",
     description:
-      "Pixelorid builds simple, practical SaaS tools and digital products for small businesses — POS for food trucks, restaurant management, client tracking, and financial tools.",
+      "Pixelorid builds simple, practical SaaS tools and digital products for small businesses Ã¢â‚¬â€ POS for food trucks, restaurant management, client tracking, and financial tools.",
     images: ["/twitter-image.png"],
   },
 };
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const products = [
   {
     name: "Pixelorid POS",
-    category: "SaaS · Food Business",
+    category: "SaaS Ã‚Â· Food Business",
     description:
       "A practical point-of-sale and business management solution designed for food trucks and mobile food businesses.",
     href: "/products/pixelorid-pos",
@@ -53,7 +53,7 @@ const products = [
   },
   {
     name: "Pixelorid Resto",
-    category: "SaaS · Restaurant Management",
+    category: "SaaS Ã‚Â· Restaurant Management",
     description:
       "Pixelorid Resto brings orders, tables, reservations, staff and reports into one practical system, for one branch or many.",
     href: "/products/pixelorid-resto",
@@ -76,9 +76,9 @@ const products = [
   },
   {
     name: "Pixelorid Loop",
-    category: "SaaS · Service Business",
+    category: "SaaS Ã‚Â· Service Business",
     description:
-      "A web-based client follow-up app built for small service businesses — track every lead and client, know who to follow up with, and never let a conversation go cold.",
+      "A web-based client follow-up app built for small service businesses Ã¢â‚¬â€ track every lead and client, know who to follow up with, and never let a conversation go cold.",
     href: "/products/pixelorid-loop",
     icon: (
       <svg
@@ -99,9 +99,9 @@ const products = [
   },
   {
     name: "Pixelorid Growth",
-    category: "SaaS · Finance",
+    category: "SaaS Ã‚Â· Finance",
     description:
-      "A simple financial tracking app for small businesses to monitor revenue, expenses, profit and cash flow — all in one place.",
+      "A simple financial tracking app for small businesses to monitor revenue, expenses, profit and cash flow Ã¢â‚¬â€ all in one place.",
     href: "https://growth.pixelorid.biz.id",
     icon: (
       <svg
@@ -346,7 +346,7 @@ export default function Home() {
 
           <p className="mx-auto mt-3 max-w-3xl text-lg leading-8 text-slate-600">
             Pixelorid creates practical technology for businesses at different
-            stages of growth — from getting started with limited resources to
+            stages of growth Ã¢â‚¬â€ from getting started with limited resources to
             managing a growing operation.
           </p>
         </div>
@@ -393,7 +393,7 @@ export default function Home() {
                   href={product.href}
                   className="mt-7 inline-flex font-bold text-pixel-green transition hover:text-pixel-green-hover"
                 >
-                  Explore {product.name} →
+                  Explore {product.name} Ã¢â€ â€™
                 </a>
               </article>
             ))}
@@ -413,7 +413,7 @@ export default function Home() {
               href="/products"
               className="font-bold text-pixel-green hover:text-pixel-green-hover"
             >
-              View All Products →
+              View All Products Ã¢â€ â€™
             </a>
           </div>
         </div>
@@ -528,7 +528,7 @@ export default function Home() {
           </div>
 
           <p className="mt-10 text-sm font-semibold text-slate-500">
-            Available on Etsy · Gumroad · Payhip
+            Available on Etsy Ã‚Â· Gumroad Ã‚Â· Payhip
           </p>
         </div>
       </section>
@@ -563,7 +563,7 @@ export default function Home() {
                 </div>
 
                 {index < 3 && (
-                  <span className="hidden text-slate-600 sm:block">→</span>
+                  <span className="hidden text-slate-600 sm:block">Ã¢â€ â€™</span>
                 )}
               </div>
             ))}
@@ -661,7 +661,7 @@ export default function Home() {
           </div>
 
           <div className="mt-12 border-t border-slate-200 pt-7 text-sm text-slate-500">
-            © 2026 Pixelorid. All rights reserved.
+            Ã‚Â© 2026 Pixelorid. All rights reserved.
           </div>
         </div>
       </footer>
