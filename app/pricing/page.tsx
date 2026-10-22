@@ -298,30 +298,30 @@ export default function PricingPage() {
 
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             <div className="rounded-2xl border border-slate-200 p-6">
-              <h3 className="text-lg font-extrabold text-slate-900">Free</h3>
+              <h3 className="text-lg font-extrabold text-slate-900">Free Trial</h3>
               <p className="mt-3 flex items-baseline gap-2">
                 <span className="text-4xl font-extrabold text-slate-900">$0</span>
-                <span className="text-sm text-slate-500">USD / month</span>
+                <span className="text-sm text-slate-500">USD / 7 days</span>
               </p>
-              <p className="mt-1 text-sm font-bold text-pixel-green">Up to 3 invoices/month</p>
+              <p className="mt-1 text-sm font-bold text-pixel-green">All features included</p>
             </div>
 
             <div className="rounded-2xl border border-slate-200 p-6">
               <h3 className="text-lg font-extrabold text-slate-900">Pro Monthly</h3>
               <p className="mt-3 flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold text-slate-900">$8</span>
+                <span className="text-4xl font-extrabold text-slate-900">$9</span>
                 <span className="text-sm text-slate-500">USD / month</span>
               </p>
-              <p className="mt-1 text-sm font-bold text-pixel-green">Unlimited invoices</p>
+              <p className="mt-1 text-sm font-bold text-pixel-green">Unlimited invoices &amp; quotations</p>
             </div>
 
             <div className="rounded-2xl border border-slate-200 p-6">
               <h3 className="text-lg font-extrabold text-slate-900">Pro Yearly</h3>
               <p className="mt-3 flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold text-slate-900">$69</span>
+                <span className="text-4xl font-extrabold text-slate-900">$90</span>
                 <span className="text-sm text-slate-500">USD / year</span>
               </p>
-              <p className="mt-1 text-sm font-bold text-pixel-green">Save $27 / year</p>
+              <p className="mt-1 text-sm font-bold text-pixel-green">Save $18 / year</p>
             </div>
           </div>
 
