@@ -24,6 +24,13 @@ export default async function BlogPage() {
   return (
     <main className="min-h-screen bg-white">
 
+      {/* Back to Home */}
+      <div className="mx-auto max-w-4xl px-6 pt-8">
+        <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-pixel-green transition-colors">
+          &#8592; Back to Home
+        </a>
+      </div>
+
       {/* Header */}
       <section className="bg-slate-50 border-b border-slate-200">
         <div className="mx-auto max-w-4xl px-6 py-16 lg:py-20">
