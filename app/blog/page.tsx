@@ -1,6 +1,8 @@
 import { client } from "@/sanity/lib/client";
 import { POSTS_QUERY } from "@/sanity/lib/queries";
+import { urlFor } from "@/sanity/lib/image";
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,6 +16,7 @@ type Post = {
   slug: { current: string };
   publishedAt: string;
   excerpt: string;
+  mainImage: { asset: { _ref: string } };
   categories: { title: string }[];
   author: { name: string };
 };
@@ -52,46 +55,60 @@ export default async function BlogPage() {
           <div className="flex flex-col gap-0">
             {posts.map((post: Post) => (
               <article key={post._id} className="group border-b border-slate-100 py-10">
-                <div className="flex flex-col gap-3">
-                  {post.categories?.length > 0 && (
-                    <div className="flex gap-2">
-                      {post.categories.map((cat) => (
-                        <span key={cat.title} className="text-xs font-bold text-pixel-green uppercase tracking-wide">
-                          {cat.title}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                  <Link href={`/blog/${post.slug.current}`}>
-                    <h2 className="text-2xl font-extrabold text-slate-950 group-hover:text-pixel-green transition-colors">
-                      {post.title}
-                    </h2>
-                  </Link>
-                  {post.excerpt && (
-                    <p className="text-slate-600 leading-7">{post.excerpt}</p>
-                  )}
-                  <div className="flex items-center justify-between mt-2">
-                    <div className="flex items-center gap-3 text-sm text-slate-400">
-                      {post.publishedAt && (
-                        <span>
-                          {new Date(post.publishedAt).toLocaleDateString("en-US", {
-                            year: "numeric", month: "long", day: "numeric"
-                          })}
-                        </span>
-                      )}
-                      {post.author?.name && (
-                        <>
-                          <span>&#183;</span>
-                          <span>{post.author.name}</span>
-                        </>
-                      )}
-                    </div>
-                    <Link
-                      href={`/blog/${post.slug.current}`}
-                      className="text-sm font-bold text-pixel-green hover:text-pixel-green-hover transition-colors"
-                    >
-                      Read more &#8594;
+                <div className="flex flex-col gap-3 sm:flex-row sm:gap-8">
+                  {post.mainImage && (
+                    <Link href={`/blog/${post.slug.current}`} className="shrink-0">
+                      <div className="relative w-full sm:w-48 h-36 rounded-2xl overflow-hidden bg-slate-100">
+                        <Image
+                          src={urlFor(post.mainImage).width(400).height(280).url()}
+                          alt={post.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
                     </Link>
+                  )}
+                  <div className="flex flex-col gap-3 flex-1">
+                    {post.categories?.length > 0 && (
+                      <div className="flex gap-2">
+                        {post.categories.map((cat) => (
+                          <span key={cat.title} className="text-xs font-bold text-pixel-green uppercase tracking-wide">
+                            {cat.title}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    <Link href={`/blog/${post.slug.current}`}>
+                      <h2 className="text-2xl font-extrabold text-slate-950 group-hover:text-pixel-green transition-colors">
+                        {post.title}
+                      </h2>
+                    </Link>
+                    {post.excerpt && (
+                      <p className="text-slate-600 leading-7">{post.excerpt}</p>
+                    )}
+                    <div className="flex items-center justify-between mt-2">
+                      <div className="flex items-center gap-3 text-sm text-slate-400">
+                        {post.publishedAt && (
+                          <span>
+                            {new Date(post.publishedAt).toLocaleDateString("en-US", {
+                              year: "numeric", month: "long", day: "numeric"
+                            })}
+                          </span>
+                        )}
+                        {post.author?.name && (
+                          <>
+                            <span>&#183;</span>
+                            <span>{post.author.name}</span>
+                          </>
+                        )}
+                      </div>
+                      <Link
+                        href={`/blog/${post.slug.current}`}
+                        className="text-sm font-bold text-pixel-green hover:text-pixel-green-hover transition-colors"
+                      >
+                        Read more &#8594;
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </article>
