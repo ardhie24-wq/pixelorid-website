@@ -5,25 +5,25 @@ import AvailableProducts from "./components/AvailableProducts";
 import SocialFollow from "./components/SocialFollow";
 
 export const metadata: Metadata = {
-  title: "Pixelorid — Simple Business Software for Small Businesses",
+  title: { absolute: "Pixelorid \u2014 Small Business Software: POS, Invoicing, CRM" },
   description:
-    "Pixelorid builds simple, practical SaaS tools and digital products for small businesses — POS for food trucks, restaurant management, client tracking, and financial tools.",
+    "Simple software for small businesses: food truck POS, restaurant management, client follow-up, cash flow tracking and invoicing.",
   alternates: { canonical: "https://www.pixelorid.biz.id" },
   openGraph: {
     type: "website",
     siteName: "Pixelorid",
     locale: "en_US",
     url: "https://www.pixelorid.biz.id",
-    title: "Pixelorid — Simple Business Software for Small Businesses",
+    title: "Pixelorid \u2014 Small Business Software: POS, Invoicing, CRM",
     description:
-      "Pixelorid builds simple, practical SaaS tools and digital products for small businesses — POS for food trucks, restaurant management, client tracking, and financial tools.",
+      "Simple software for small businesses: food truck POS, restaurant management, client follow-up, cash flow tracking and invoicing.",
     images: ["/opengraph-image.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pixelorid — Simple Business Software for Small Businesses",
+    title: "Pixelorid \u2014 Small Business Software: POS, Invoicing, CRM",
     description:
-      "Pixelorid builds simple, practical SaaS tools and digital products for small businesses — POS for food trucks, restaurant management, client tracking, and financial tools.",
+      "Simple software for small businesses: food truck POS, restaurant management, client follow-up, cash flow tracking and invoicing.",
     images: ["/twitter-image.png"],
   },
 };
@@ -102,7 +102,7 @@ const products = [
     category: "SaaS · Finance",
     description:
       "A simple financial tracking app for small businesses to monitor revenue, expenses, profit and cash flow — all in one place.",
-    href: "https://growth.pixelorid.biz.id",
+    href: "/products/pixelorid-growth",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -632,7 +632,7 @@ export default function Home() {
                 <a className="block hover:text-pixel-green" href="/products/pixelorid-pos">Pixelorid POS</a>
                 <a className="block hover:text-pixel-green" href="/products/pixelorid-resto">Pixelorid Resto</a>
                 <a className="block hover:text-pixel-green" href="/products/pixelorid-loop">Pixelorid Loop</a>
-                <a className="block hover:text-pixel-green" href="https://growth.pixelorid.biz.id" target="_blank" rel="noopener noreferrer">Pixelorid Growth</a>
+                <a className="block hover:text-pixel-green" href="/products/pixelorid-growth">Pixelorid Growth</a>
                 <a className="block hover:text-pixel-green" href="/products/pixelorid-invoice-generator">Pixelorid Invoice Generator</a>
                 <a className="block hover:text-pixel-green" href="/products">All Products</a>
               </div>

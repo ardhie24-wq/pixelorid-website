@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 type HeroSlide = {
   image?: string;
+  alt?: string;
   title: string;
   highlight: string;
   description: string;
@@ -20,8 +21,9 @@ type HeroSlide = {
 const slides: HeroSlide[] = [
   {
     image: "/hero-simple-technology.png",
-    title: "Simple Technology for",
-    highlight: "Growing Businesses",
+    alt: "Pixelorid small business software: POS, Resto, Loop, Growth and Invoice Generator",
+    title: "Simple Software for",
+    highlight: "Small Business Operations",
     description:
       "Pixelorid builds practical software and digital resources for small businesses: POS, Resto, Loop, Growth, and ready-to-use templates.",
     ctaText: "Explore Products",
@@ -39,6 +41,7 @@ const slides: HeroSlide[] = [
   },
   {
     image: "/hero-pixelorid-pos.png",
+    alt: "Pixelorid POS, food truck point-of-sale software",
     title: "Point-of-Sale Built for",
     highlight: "Food Businesses",
     description:
@@ -50,6 +53,7 @@ const slides: HeroSlide[] = [
   },
   {
     image: "/hero-pixelorid-resto.png",
+    alt: "Pixelorid Resto, restaurant management software",
     title: "Simple Restaurant Software for",
     highlight: "Growing Businesses",
     description:
@@ -62,6 +66,7 @@ const slides: HeroSlide[] = [
   },
   {
     image: "/hero-pixelorid-loop.png",
+    alt: "Pixelorid Loop, client follow-up app for service businesses",
     title: "Never Miss a",
     highlight: "Client Follow-Up",
     description:
@@ -74,18 +79,19 @@ const slides: HeroSlide[] = [
   },
   {
     image: "/hero-pixelorid-growth.png",
+    alt: "Pixelorid Growth, cash flow and profit tracker for small businesses",
     title: "Simple Finance for",
     highlight: "Small Businesses",
     description:
       "Pixelorid Growth helps small businesses record revenue and expenses, see profit at a glance, and export clear reports to Excel.",
     ctaText: "Try Pixelorid Growth Free",
     ctaHref: "/products/pixelorid-growth",
-    ctaExternal: true,
     secondaryCtaText: "View All Products",
     secondaryCtaHref: "/products",
   },
   {
     image: "/hero-pixelorid-invoice-generator.png",
+    alt: "Pixelorid Invoice Generator, invoicing and quotation software",
     title: "Professional Invoices for",
     highlight: "Freelancers & Small Businesses",
     description:
@@ -97,6 +103,7 @@ const slides: HeroSlide[] = [
   },
   {
     image: "/hero-digital-products.png",
+    alt: "Pixelorid digital products: business templates, calculators and trackers",
     title: "Digital Resources for",
     highlight: "Every Business Owner",
     description:
@@ -139,7 +146,7 @@ export default function HeroSlider() {
             <img
               key={s.image}
               src={s.image}
-              alt={s.highlight}
+              alt={s.alt ?? s.highlight}
               onError={(e) => {
                 e.currentTarget.style.opacity = "0";
               }}
