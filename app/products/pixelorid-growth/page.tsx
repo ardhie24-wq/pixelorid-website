@@ -1,11 +1,12 @@
 import { pageMeta } from "../../_lib/seo";
 import Link from "next/link";
 import GrowthHeroImage from "../../components/GrowthHeroImage";
+import JsonLd from "../../_components/JsonLd";
 
 export const metadata = pageMeta({
-  title: "Pixelorid Growth — Financial Tracker for Small Businesses",
+  title: "Small Business Cash Flow & Profit Tracker App",
   description:
-    "Pixelorid Growth is a simple financial tracking app for small businesses. Track revenue, expenses, profit and cash flow in one place. Start free.",
+    "Track revenue, expenses, profit and cash flow in one simple app built for business owners, not accountants. Start free.",
   path: "/products/pixelorid-growth",
 });
 
@@ -102,9 +103,74 @@ const plans = [
   },
 ];
 
+const SITE_URL = "https://www.pixelorid.biz.id";
+const PAGE_URL = SITE_URL + "/products/pixelorid-growth";
+
+const faqs = [
+  {
+    q: "What is Pixelorid Growth?",
+    a: "Pixelorid Growth is a simple financial tracking app for small business owners. It helps you track revenue, expenses, profit and cash flow in one place, without complex spreadsheets.",
+  },
+  {
+    q: "What can I track with Pixelorid Growth?",
+    a: "You can log every sale and income source, record and categorize your business expenses, see your net profit at a glance, and monitor the money coming in and going out over time.",
+  },
+  {
+    q: "Do I need accounting knowledge to use it?",
+    a: "No. Pixelorid Growth is built for business owners, not accountants, so you can understand the difference between revenue and expenses without an accounting degree.",
+  },
+  {
+    q: "Is there a free plan?",
+    a: "Yes. The Free plan lets you track revenue and expenses with a basic dashboard, up to 10 transactions.",
+  },
+  {
+    q: "How much does the Pro plan cost?",
+    a: "Pro costs " + plans[1].price + " per month, or " + plans[2].price + " per year. Pro includes unlimited transactions, the full dashboard, profit and cash flow reports, and data export. Prices are in US dollars.",
+  },
+  {
+    q: "Can I cancel anytime?",
+    a: "Yes. There are no hidden fees and you can cancel anytime. Subscriptions are managed through Paddle.",
+  },
+];
+
+const growthJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": PAGE_URL + "#software",
+      name: "Pixelorid Growth",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      url: PAGE_URL,
+      description:
+        "A simple financial tracking app for small businesses to track revenue, expenses, profit and cash flow in one place.",
+      publisher: { "@id": SITE_URL + "/#organization" },
+      offers: plans.map((plan) => ({
+        "@type": "Offer",
+        name: plan.name,
+        price: plan.price.replace("$", ""),
+        priceCurrency: "USD",
+        description: plan.period,
+        url: PAGE_URL,
+      })),
+    },
+    {
+      "@type": "FAQPage",
+      "@id": PAGE_URL + "#faq",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: { "@type": "Answer", text: faq.a },
+      })),
+    },
+  ],
+};
+
 export default function PixeloridGrowthPage() {
   return (
     <main className="min-h-screen bg-white">
+      <JsonLd data={growthJsonLd} />
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
           <Link href="/" className="flex items-center">
@@ -133,11 +199,11 @@ export default function PixeloridGrowthPage() {
               </span>
 
               <h1 className="mt-6 text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
-                Pixelorid Growth
+                Know Where Your Money Goes. Every Month.
               </h1>
 
               <p className="mt-5 text-2xl font-bold leading-tight text-pixel-dark-green">
-                Simple Financial Insights for Growing Businesses
+                Pixelorid Growth: Simple Financial Insights for Growing Businesses
               </p>
 
               <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
@@ -275,6 +341,31 @@ export default function PixeloridGrowthPage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section id="faq" className="mx-auto max-w-3xl px-6 py-20 lg:px-8">
+        <div className="text-center">
+          <p className="text-sm font-bold uppercase tracking-widest text-pixel-green">
+            FAQ
+          </p>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            Pixelorid Growth: Common Questions
+          </h2>
+        </div>
+
+        <div className="mt-10 space-y-3">
+          {faqs.map((faq) => (
+            <details
+              key={faq.q}
+              className="rounded-2xl border border-slate-200 bg-white p-6"
+            >
+              <summary className="cursor-pointer text-lg font-bold text-slate-900">
+                {faq.q}
+              </summary>
+              <p className="mt-3 leading-7 text-slate-600">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
       {/* CTA */}
       <section className="bg-slate-900">
         <div className="mx-auto max-w-5xl px-6 py-20 text-center lg:px-8">
