@@ -1,15 +1,19 @@
-import { pageMeta } from "../../_lib/seo";
+﻿import { pageMeta } from "../../_lib/seo";
 import PosHeroImage from "../../components/PosHeroImage";
+import JsonLd from "../../_components/JsonLd";
 
 export const metadata = pageMeta({
-  title: "Pixelorid POS — Point of Sale App for Food Trucks & Mobile Food Businesses",
+  title: "Food Truck POS App with Offline Mode and Profit Tracking",
   description:
-    "Pixelorid POS is a point of sale and business management app for food trucks and mobile food businesses. Manage orders, payments, receipts and sales reports in one simple app.",
+    "Pixelorid POS lets food trucks take orders, track payments and see real profit after costs. Works offline. Try free for 7 days.",
   path: "/products/pixelorid-pos",
 });
 
+const SITE_URL = "https://www.pixelorid.biz.id";
+const APP_URL = "https://pos.pixelorid.biz.id";
+
 const iconProps = {
-  viewBox: "0 0 24 24",git -C "D:\pixelorid-website" diff --name-only HEAD
+  viewBox: "0 0 24 24",
   fill: "none",
   stroke: "currentColor",
   strokeWidth: "1.8",
@@ -20,144 +24,105 @@ const iconProps = {
 const features = [
   {
     title: "Point of Sale",
-    description:
-      "Take orders quickly and keep your daily sales organized from one simple workspace.",
-    icon: (
-      <svg {...iconProps} className="h-6 w-6">
-        <rect x="1" y="4" width="22" height="16" rx="2" />
-        <line x1="1" y1="10" x2="23" y2="10" />
-      </svg>
-    ),
+    description: "Take orders quickly and keep your daily sales organized from one simple workspace.",
+    icon: (<svg {...iconProps} className="h-6 w-6"><rect x="1" y="4" width="22" height="16" rx="2" /><line x1="1" y1="10" x2="23" y2="10" /></svg>),
   },
   {
-    title: "Product & Menu Management",
-    description:
-      "Manage products, categories, prices, costs, and menu information in one place.",
-    icon: (
-      <svg {...iconProps} className="h-6 w-6">
-        <line x1="8" y1="6" x2="21" y2="6" />
-        <line x1="8" y1="12" x2="21" y2="12" />
-        <line x1="8" y1="18" x2="21" y2="18" />
-        <line x1="3" y1="6" x2="3.01" y2="6" />
-        <line x1="3" y1="12" x2="3.01" y2="12" />
-        <line x1="3" y1="18" x2="3.01" y2="18" />
-      </svg>
-    ),
+    title: "Product and Menu Management",
+    description: "Manage products, categories, prices, costs, and menu information in one place.",
+    icon: (<svg {...iconProps} className="h-6 w-6"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>),
   },
   {
     title: "Order Management",
-    description:
-      "Keep orders organized from the moment they are created through payment completion.",
-    icon: (
-      <svg {...iconProps} className="h-6 w-6">
-        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4" />
-        <circle cx="9" cy="21" r="1" />
-        <circle cx="20" cy="21" r="1" />
-      </svg>
-    ),
+    description: "Keep orders organized from the moment they are created through payment completion.",
+    icon: (<svg {...iconProps} className="h-6 w-6"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4" /><circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /></svg>),
   },
   {
     title: "Payment Tracking",
-    description:
-      "Track completed payments and keep your transaction records organized.",
-    icon: (
-      <svg {...iconProps} className="h-6 w-6">
-        <rect x="2" y="6" width="20" height="12" rx="2" />
-        <circle cx="12" cy="12" r="2" />
-        <path d="M6 12h.01M18 12h.01" />
-      </svg>
-    ),
+    description: "Track completed payments and keep your transaction records organized.",
+    icon: (<svg {...iconProps} className="h-6 w-6"><rect x="2" y="6" width="20" height="12" rx="2" /><circle cx="12" cy="12" r="2" /><path d="M6 12h.01M18 12h.01" /></svg>),
   },
   {
     title: "Receipt Printing",
-    description:
-      "Connect supported thermal printers and print customer receipts after payment.",
-    icon: (
-      <svg {...iconProps} className="h-6 w-6">
-        <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z" />
-        <line x1="8" y1="8" x2="16" y2="8" />
-        <line x1="8" y1="12" x2="16" y2="12" />
-        <line x1="8" y1="16" x2="12" y2="16" />
-      </svg>
-    ),
+    description: "Connect supported thermal printers and print customer receipts after payment.",
+    icon: (<svg {...iconProps} className="h-6 w-6"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z" /><line x1="8" y1="8" x2="16" y2="8" /><line x1="8" y1="12" x2="16" y2="12" /><line x1="8" y1="16" x2="12" y2="16" /></svg>),
   },
   {
     title: "Sales Reports",
-    description:
-      "Understand your daily business activity with practical sales reporting.",
-    icon: (
-      <svg {...iconProps} className="h-6 w-6">
-        <line x1="12" y1="20" x2="12" y2="10" />
-        <line x1="18" y1="20" x2="18" y2="4" />
-        <line x1="6" y1="20" x2="6" y2="16" />
-      </svg>
-    ),
+    description: "Understand your daily business activity with practical sales reporting.",
+    icon: (<svg {...iconProps} className="h-6 w-6"><line x1="12" y1="20" x2="12" y2="10" /><line x1="18" y1="20" x2="18" y2="4" /><line x1="6" y1="20" x2="6" y2="16" /></svg>),
   },
   {
-    title: "Cost & Profit Tracking",
-    description:
-      "Track product costs, operating expenses, and profit instead of looking at sales alone.",
-    icon: (
-      <svg {...iconProps} className="h-6 w-6">
-        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-        <polyline points="17 6 23 6 23 12" />
-      </svg>
-    ),
+    title: "Cost and Profit Tracking",
+    description: "Track product costs, operating expenses, and profit instead of looking at sales alone.",
+    icon: (<svg {...iconProps} className="h-6 w-6"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" /></svg>),
   },
   {
-    title: "Offline-first",
-    description:
-      "Designed around food truck workflows where reliable connectivity cannot always be guaranteed.",
-    icon: (
-      <svg {...iconProps} className="h-6 w-6">
-        <line x1="1" y1="1" x2="23" y2="23" />
-        <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55" />
-        <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39" />
-        <path d="M10.71 5.05A16 16 0 0 1 22.58 9" />
-        <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88" />
-        <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
-        <line x1="12" y1="20" x2="12.01" y2="20" />
-      </svg>
-    ),
+    title: "Offline-First",
+    description: "Designed around food truck workflows where reliable connectivity cannot always be guaranteed.",
+    icon: (<svg {...iconProps} className="h-6 w-6"><line x1="1" y1="1" x2="23" y2="23" /><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55" /><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39" /><path d="M10.71 5.05A16 16 0 0 1 22.58 9" /><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88" /><path d="M8.53 16.11a6 6 0 0 1 6.95 0" /><line x1="12" y1="20" x2="12.01" y2="20" /></svg>),
   },
 ];
 
-const audiences = [
-  "Food Trucks",
-  "Mobile Food Businesses",
-  "Small Food Businesses",
-  "Growing Food Operations",
+const audiences = ["Food Trucks", "Mobile Food Businesses", "Small Food Businesses", "Growing Food Operations"];
+
+const planItems = ["Point of sale", "Order and payment tracking", "Cost and profit tracking", "Sales reports", "Receipt printing"];
+
+const plans = [
+  { name: "Free Trial", price: "$0", period: "for 7 days", note: "Try every feature", cta: "Start Free Trial", highlighted: false },
+  { name: "Pro Monthly", price: "$18", period: "USD / month", note: "Billed monthly", cta: "Start Pro Monthly", highlighted: false },
+  { name: "Pro Yearly", price: "$180", period: "USD / year", note: "Save $36 per year", cta: "Start Pro Yearly", highlighted: true },
 ];
+
+const faqs = [
+  { question: "What is Pixelorid POS?", answer: "Pixelorid POS is a point-of-sale and business management app built for food trucks and mobile food businesses. It handles orders, payments, receipts, costs and daily sales reports in one place." },
+  { question: "Does Pixelorid POS work offline?", answer: "Yes. Pixelorid POS is designed to work in food truck conditions where internet connectivity is not always reliable." },
+  { question: "Does it support receipt printing?", answer: "Yes. You can connect supported thermal printers and print customer receipts after payment." },
+  { question: "Can I track profit, not just sales?", answer: "Yes. Pixelorid POS lets you track product costs and operating expenses so you can see your real net profit, not just revenue." },
+  { question: "How much does Pixelorid POS cost?", answer: "Start with a 7-day free trial. After that, pay $18 per month or $180 per year, which saves $36. Every plan includes all features. Prices are in US dollars." },
+  { question: "Can I try it before paying?", answer: "Yes. Every new account gets a 7-day free trial with access to all features, no credit card required." },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      name: "Pixelorid POS",
+      url: `${SITE_URL}/products/pixelorid-pos`,
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web, Android",
+      description: "A point-of-sale and business management app for food trucks and mobile food businesses. Handles orders, payments, costs and profit tracking. Works offline.",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      offers: [
+        { "@type": "Offer", name: "Pro Monthly", price: "18", priceCurrency: "USD" },
+        { "@type": "Offer", name: "Pro Yearly", price: "180", priceCurrency: "USD" },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    },
+  ],
+};
 
 export default function PixeloridPOSPage() {
   return (
     <main className="min-h-screen bg-white">
+      <JsonLd data={jsonLd} />
+
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
           <a href="/" className="inline-flex items-center">
-            <img
-              src="/pixelorid-logo-cropped.png"
-              alt="Pixelorid"
-              className="h-8 w-auto"
-            />
+            <img src="/pixelorid-logo-cropped.png" alt="Pixelorid" className="h-8 w-auto" />
           </a>
-
           <div className="flex items-center gap-6">
-            <a
-              href="/products"
-              className="text-sm font-semibold text-slate-600 transition hover:text-pixel-green"
-            >
-              ← All Products
-            </a>
-
-            <a
-              href="https://pos.pixelorid.biz.id/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-bold text-pixel-green transition hover:text-pixel-green-hover"
-            >
-              Login
-            </a>
+            <a href="/products" className="text-sm font-semibold text-slate-600 transition hover:text-pixel-green">All Products</a>
+            <a href={APP_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-pixel-green transition hover:text-pixel-green-hover">Login</a>
           </div>
         </div>
       </header>
@@ -166,122 +131,43 @@ export default function PixeloridPOSPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <div>
-              <span className="inline-flex rounded-full bg-white px-4 py-2 text-sm font-bold text-pixel-green shadow-sm ring-1 ring-pixel-green/10">
-                SaaS · Food Business
-              </span>
-
-              <h1 className="mt-6 text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
-                Pixelorid POS
-              </h1>
-
-              <p className="mt-5 text-2xl font-bold leading-tight text-pixel-dark-green">
-                Point of Sale & Business Management for Food Trucks
-              </p>
-
-              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
-                A practical point-of-sale and business management solution
-                designed for food trucks and mobile food businesses.
-              </p>
-
+              <span className="inline-flex rounded-full bg-white px-4 py-2 text-sm font-bold text-pixel-green shadow-sm ring-1 ring-pixel-green/10">SaaS Food Business</span>
+              <h1 className="mt-6 text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">Food Truck POS That Works Offline</h1>
+              <p className="mt-5 text-2xl font-bold leading-tight text-pixel-dark-green">Take orders, track profit, and run your day with or without internet.</p>
+              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">Pixelorid POS is built for food trucks and mobile food businesses. Manage orders, payments, costs and daily reports in one practical app.</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href="https://pos.pixelorid.biz.id/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-xl bg-pixel-green px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover"
-                >
-                  Get Started
-                </a>
-
-                <a
-                  href="https://pos.pixelorid.biz.id/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-xl border border-pixel-green bg-white px-6 py-3.5 text-sm font-bold text-pixel-green transition hover:bg-pixel-light-green"
-                >
-                  Login
-                </a>
+                <a href={APP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-pixel-green px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover">Start Free Trial</a>
+                <a href="#pricing" className="inline-flex items-center justify-center rounded-xl border border-pixel-green bg-white px-6 py-3.5 text-sm font-bold text-pixel-green transition hover:bg-pixel-light-green">See Pricing</a>
               </div>
-
-              <a
-                href="#features"
-                className="mt-5 inline-flex text-sm font-bold text-slate-500 underline-offset-4 transition hover:text-pixel-green hover:underline"
-              >
-                See all features ↓
-              </a>
+              <a href="#features" className="mt-5 inline-flex text-sm font-bold text-slate-500 underline-offset-4 transition hover:text-pixel-green hover:underline">See all features</a>
             </div>
-
             <PosHeroImage />
           </div>
         </div>
       </section>
 
-      <section className="px-6 py-20 lg:px-8 lg:py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-widest text-pixel-green">
-              Built for food businesses
-            </p>
-
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-              Designed Around the Way Food Trucks Work
-            </h2>
-
-            <p className="mt-5 text-lg leading-8 text-slate-600">
-              Food truck businesses need technology that is practical,
-              straightforward, and ready for fast-moving daily operations.
-              Pixelorid POS brings essential business workflows together in
-              one place.
-            </p>
-          </div>
-
-          <div className="mt-10 flex flex-wrap gap-3">
-            {audiences.map((audience) => (
-              <span
-                key={audience}
-                className="rounded-full border border-slate-200 bg-slate-50 px-5 py-3 text-sm font-semibold text-slate-700"
-              >
-                {audience}
-              </span>
-            ))}
-          </div>
+      <section className="px-6 py-14 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3">
+          <span className="mr-2 text-sm font-bold uppercase tracking-widest text-pixel-green">Built for</span>
+          {audiences.map((a) => (
+            <span key={a} className="rounded-full border border-slate-200 bg-slate-50 px-5 py-3 text-sm font-semibold text-slate-700">{a}</span>
+          ))}
         </div>
       </section>
 
       <section id="features" className="bg-slate-50 px-6 py-20 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-bold uppercase tracking-widest text-pixel-green">
-              Core features
-            </p>
-
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-              Everything You Need to Run Your Daily Operations
-            </h2>
-
-            <p className="mt-5 text-lg leading-8 text-slate-600">
-              Pixelorid POS brings everyday sales and business management tasks
-              into a practical workflow.
-            </p>
+            <p className="text-sm font-bold uppercase tracking-widest text-pixel-green">Core features</p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Everything You Need to Run Your Daily Operations</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">Pixelorid POS brings everyday sales and business management tasks into a practical workflow.</p>
           </div>
-
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((feature) => (
-              <article
-                key={feature.title}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
-              >
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-pixel-light-green text-pixel-green">
-                  {feature.icon}
-                </div>
-
-                <h3 className="mt-5 text-lg font-extrabold text-slate-900">
-                  {feature.title}
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-slate-600">
-                  {feature.description}
-                </p>
+              <article key={feature.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-pixel-light-green text-pixel-green">{feature.icon}</div>
+                <h3 className="mt-5 text-lg font-extrabold text-slate-900">{feature.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{feature.description}</p>
               </article>
             ))}
           </div>
@@ -292,121 +178,90 @@ export default function PixeloridPOSPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-sm font-bold uppercase tracking-widest text-pixel-green">
-                Beyond sales
-              </p>
-
-              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-                Understand Your Business Beyond Revenue
-              </h2>
-
-              <p className="mt-5 text-lg leading-8 text-slate-600">
-                Sales tell you how much money came in. Pixelorid POS is
-                designed to help you look deeper by considering product costs,
-                recipes, ingredients, operating expenses, and profit.
-              </p>
+              <p className="text-sm font-bold uppercase tracking-widest text-pixel-green">Beyond sales</p>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Understand Your Business Beyond Revenue</h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">Sales tell you how much money came in. Pixelorid POS helps you look deeper with product costs, operating expenses, and real net profit.</p>
             </div>
-
             <div className="rounded-3xl border border-pixel-light-green bg-pixel-light-green p-8">
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl bg-white p-5">
-                  <p className="text-sm font-semibold text-slate-500">
-                    Revenue
-                  </p>
-                  <p className="mt-2 text-2xl font-extrabold text-slate-900">
-                    Sales
-                  </p>
-                </div>
-
-                <div className="rounded-2xl bg-white p-5">
-                  <p className="text-sm font-semibold text-slate-500">
-                    Product Costs
-                  </p>
-                  <p className="mt-2 text-2xl font-extrabold text-slate-900">
-                    COGS
-                  </p>
-                </div>
-
-                <div className="rounded-2xl bg-white p-5">
-                  <p className="text-sm font-semibold text-slate-500">
-                    Expenses
-                  </p>
-                  <p className="mt-2 text-2xl font-extrabold text-slate-900">
-                    Operations
-                  </p>
-                </div>
-
-                <div className="rounded-2xl bg-white p-5">
-                  <p className="text-sm font-semibold text-slate-500">
-                    Result
-                  </p>
-                  <p className="mt-2 text-2xl font-extrabold text-pixel-green">
-                    Net Profit
-                  </p>
-                </div>
+                <div className="rounded-2xl bg-white p-5"><p className="text-sm font-semibold text-slate-500">Revenue</p><p className="mt-2 text-2xl font-extrabold text-slate-900">Sales</p></div>
+                <div className="rounded-2xl bg-white p-5"><p className="text-sm font-semibold text-slate-500">Product Costs</p><p className="mt-2 text-2xl font-extrabold text-slate-900">COGS</p></div>
+                <div className="rounded-2xl bg-white p-5"><p className="text-sm font-semibold text-slate-500">Expenses</p><p className="mt-2 text-2xl font-extrabold text-slate-900">Operations</p></div>
+                <div className="rounded-2xl bg-white p-5"><p className="text-sm font-semibold text-slate-500">Result</p><p className="mt-2 text-2xl font-extrabold text-pixel-green">Net Profit</p></div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      <section id="pricing" className="bg-slate-50 px-6 py-20 lg:px-8 lg:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-bold uppercase tracking-widest text-pixel-green">Pricing</p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Start Free, Upgrade When Ready</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">Every plan includes all features. No hidden fees. Cancel anytime.</p>
+          </div>
+          <div className="mt-14 grid gap-6 sm:grid-cols-3">
+            {plans.map((plan) => (
+              <div key={plan.name} className={`flex flex-col rounded-2xl border p-8 ${plan.highlighted ? "border-pixel-green bg-pixel-light-green shadow-lg" : "border-slate-200 bg-white shadow-sm"}`}>
+                {plan.highlighted && (<span className="mb-4 inline-flex self-start rounded-full bg-pixel-green px-3 py-1 text-xs font-bold text-white">Best Value</span>)}
+                <h3 className="text-xl font-bold text-slate-900">{plan.name}</h3>
+                <p className="mt-4 flex items-baseline gap-2">
+                  <span className="text-4xl font-extrabold text-slate-900">{plan.price}</span>
+                  <span className="text-sm text-slate-500">{plan.period}</span>
+                </p>
+                <p className="mt-1 text-sm font-bold text-pixel-green">{plan.note}</p>
+                <ul className="mt-7 flex-1 space-y-3">
+                  {planItems.map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-slate-700">
+                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-pixel-green text-xs font-bold text-white">v</span>
+                      <span className="text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a href={APP_URL} target="_blank" rel="noopener noreferrer" className={`mt-8 inline-flex items-center justify-center rounded-xl px-6 py-3.5 text-sm font-bold transition ${plan.highlighted ? "bg-pixel-green text-white hover:bg-pixel-green-hover" : "border border-slate-300 bg-white text-slate-700 hover:border-pixel-green hover:text-pixel-green"}`}>{plan.cta}</a>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-center text-sm text-slate-500">Prices are in US dollars. Subscriptions managed via Paddle.</p>
+        </div>
+      </section>
+
+      <section id="faq" className="px-6 py-20 lg:px-8 lg:py-24">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Frequently Asked Questions</h2>
+          <div className="mt-12 space-y-4">
+            {faqs.map((faq) => (
+              <article key={faq.question} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <h3 className="text-lg font-bold text-slate-900">{faq.question}</h3>
+                <p className="mt-3 leading-7 text-slate-600">{faq.answer}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-slate-900 px-6 py-20 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-bold uppercase tracking-widest text-pixel-green">
-            Simple technology
-          </p>
-
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-            Built to Help Your Business Move Forward
-          </h2>
-
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-300">
-            Start with the tools you need today and build toward a more
-            organized, data-driven operation as your business grows.
-          </p>
-
+          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Built to Help Your Business Move Forward</h2>
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-300">Start your free trial and run your first day on Pixelorid POS.</p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a
-              href="https://pos.pixelorid.biz.id/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-xl bg-pixel-green px-7 py-4 text-sm font-bold text-white transition hover:bg-pixel-green-hover"
-            >
-              Get Started with Pixelorid POS
-            </a>
-
-            <a
-              href="/products"
-              className="inline-flex items-center justify-center rounded-xl border border-slate-600 bg-transparent px-7 py-4 text-sm font-bold text-white transition hover:bg-white hover:text-slate-900"
-            >
-              Explore Other Products
-            </a>
+            <a href={APP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-pixel-green px-7 py-4 text-sm font-bold text-white transition hover:bg-pixel-green-hover">Start Free Trial</a>
+            <a href="/products" className="inline-flex items-center justify-center rounded-xl border border-slate-600 bg-transparent px-7 py-4 text-sm font-bold text-white transition hover:bg-white hover:text-slate-900">Explore Other Products</a>
           </div>
         </div>
       </section>
 
       <footer className="border-t border-slate-200 bg-white px-6 py-8 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <img
-            src="/pixelorid-logo-cropped.png"
-            alt="Pixelorid"
-            className="h-7 w-auto"
-          />
-
+          <img src="/pixelorid-logo-cropped.png" alt="Pixelorid" className="h-7 w-auto" />
           <div className="flex items-center gap-5 text-sm font-semibold text-slate-600">
             <a href="https://www.instagram.com/pixelorid/" target="_blank" rel="noopener noreferrer" className="hover:text-pixel-green">Instagram</a>
             <a href="https://www.pinterest.com/pixelorid/" target="_blank" rel="noopener noreferrer" className="hover:text-pixel-green">Pinterest</a>
           </div>
-
-          <p className="text-sm text-slate-500">
-            © 2026 Pixelorid. All rights reserved.
-          </p>
+          <p className="text-sm text-slate-500">2026 Pixelorid. All rights reserved.</p>
         </div>
       </footer>
     </main>
   );
 }
-
-
-
-
