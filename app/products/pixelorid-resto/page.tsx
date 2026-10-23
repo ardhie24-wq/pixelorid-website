@@ -1,8 +1,9 @@
 import { pageMeta } from "../../_lib/seo";
+import JsonLd from "../../_components/JsonLd";
 export const metadata = pageMeta({
-  title: "Pixelorid Resto — Restaurant Management Software for One Branch or Many",
+  title: "Restaurant POS & COGS Software for Small Restaurants",
   description:
-    "Pixelorid Resto is restaurant management software that handles orders, tables, reservations, staff and reports in one system — built for single restaurants and multi-branch operations.",
+    "Run orders, tables, reservations and staff from one system, and see the real cost of every dish with a built-in COGS calculator.",
   path: "/products/pixelorid-resto",
 });
 
@@ -151,9 +152,77 @@ const plans = [
   },
 ];
 
+const SITE_URL = "https://www.pixelorid.biz.id";
+const PAGE_URL = SITE_URL + "/products/pixelorid-resto";
+
+const faqs = [
+  {
+    q: "What is Pixelorid Resto?",
+    a: "Pixelorid Resto is restaurant management software that brings orders, tables, reservations, staff and reports into one system. It works for a single restaurant, a cafe, a bakery or a group of branches.",
+  },
+  {
+    q: "Does Pixelorid Resto include a COGS calculator?",
+    a: "Yes. Build your menu and the built-in COGS calculator shows the real cost of every dish, so you always know your margin.",
+  },
+  {
+    q: "How much does Pixelorid Resto cost?",
+    a: "Start with a 7-day free trial for 1 branch. After that, Basic is $" + plans[1].price + " per month for up to 2 branches and Pro is $" + plans[2].price + " per month for up to 10 branches. Every plan includes all features. Prices are in US dollars and billed monthly.",
+  },
+  {
+    q: "Can I manage more than one branch?",
+    a: "Yes. Run several branches from one account and compare them side by side. Basic covers up to 2 branches and Pro covers up to 10 branches.",
+  },
+  {
+    q: "Can I control what my staff can see?",
+    a: "Yes. Resto has owner, manager and cashier roles, so everyone sees only what they need to do their job.",
+  },
+  {
+    q: "Which payment methods can I record?",
+    a: "You can take cash and QR payments, and your reports break sales down by payment method.",
+  },
+  {
+    q: "Can I export my data to Excel?",
+    a: "Yes. You can export your orders to Excel. Reports also show net sales, gross profit, payment methods and best sellers, per day or per month.",
+  },
+];
+
+const restoJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": PAGE_URL + "#software",
+      name: "Pixelorid Resto",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      url: PAGE_URL,
+      description:
+        "Restaurant management software that handles orders, tables, reservations, staff and reports in one system, with a built-in COGS calculator.",
+      publisher: { "@id": SITE_URL + "/#organization" },
+      offers: plans.map((plan) => ({
+        "@type": "Offer",
+        name: plan.name,
+        price: plan.price,
+        priceCurrency: "USD",
+        url: PAGE_URL,
+      })),
+    },
+    {
+      "@type": "FAQPage",
+      "@id": PAGE_URL + "#faq",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: { "@type": "Answer", text: faq.a },
+      })),
+    },
+  ],
+};
+
 export default function PixeloridRestoPage() {
   return (
     <main className="min-h-screen bg-white">
+      <JsonLd data={restoJsonLd} />
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
           <a href="/" className="inline-flex items-center">
@@ -193,11 +262,11 @@ export default function PixeloridRestoPage() {
               </span>
 
               <h1 className="mt-6 text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
-                Pixelorid Resto
+                Restaurant Software with Built-In COGS Calculator
               </h1>
 
               <p className="mt-5 text-2xl font-bold leading-tight text-pixel-dark-green">
-                Simple restaurant software for growing businesses
+                Pixelorid Resto: simple restaurant software for growing businesses
               </p>
 
               <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
@@ -236,7 +305,7 @@ export default function PixeloridRestoPage() {
             <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl">
               <img
                 src="/resto/resto-dashboard.png"
-                alt="Pixelorid Resto dashboard"
+                alt="Pixelorid Resto dashboard with restaurant sales reports"
                 className="h-auto w-full"
               />
             </div>
@@ -397,6 +466,32 @@ export default function PixeloridRestoPage() {
         </div>
       </section>
 
+      <section id="faq" className="px-6 py-20 lg:px-8 lg:py-24">
+        <div className="mx-auto max-w-3xl">
+          <div className="text-center">
+            <p className="text-sm font-bold uppercase tracking-widest text-pixel-green">
+              FAQ
+            </p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              Pixelorid Resto: Common Questions
+            </h2>
+          </div>
+
+          <div className="mt-10 space-y-3">
+            {faqs.map((faq) => (
+              <details
+                key={faq.q}
+                className="rounded-2xl border border-slate-200 bg-white p-6"
+              >
+                <summary className="cursor-pointer text-lg font-bold text-slate-900">
+                  {faq.q}
+                </summary>
+                <p className="mt-3 leading-7 text-slate-600">{faq.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
       <section className="bg-slate-900 px-6 py-20 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
