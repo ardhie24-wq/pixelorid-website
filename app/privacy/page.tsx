@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CookieSettingsButton } from "../_components/AnalyticsConsent";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -34,7 +35,7 @@ export default function PrivacyPage() {
             Privacy <span className="text-[#16a34a]">Policy</span>
           </h1>
           <p className="text-sm text-[#475569]">
-            Last updated: October 4, 2026 &nbsp;·&nbsp; Operated by{" "}
+            Last updated: October 23, 2026 &nbsp;·&nbsp; Operated by{" "}
             <strong className="text-[#0f172a]">Ardiyanto</strong>, Klaten, Central Java, Indonesia
           </p>
         </div>
@@ -115,6 +116,15 @@ export default function PrivacyPage() {
             </div>
 
             <div className="mt-4 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] px-5 py-4">
+              <h3 className="mb-2 text-[15px] font-extrabold text-[#0f172a]">Website visitors and email sign-ups</h3>
+              <ul>
+                <li><strong>Free template sign-up:</strong> when you request a free template on our website, we collect your name and email address and add them to our email list, which is managed with Brevo (see Section 5)</li>
+                <li><strong>Analytics (only if you accept):</strong> Google Analytics collects usage information about your visit, such as pages viewed, approximate location, and device and browser type (see Section 8)</li>
+                <li><strong>Your cookie choice:</strong> saved in your browser so we do not ask you again on every visit</li>
+              </ul>
+            </div>
+
+            <div className="mt-4 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] px-5 py-4">
               <h3 className="mb-2 text-[15px] font-extrabold text-[#0f172a]">Future SaaS products</h3>
               <p>
                 When we launch a new SaaS product, the data it handles will be added to this
@@ -139,6 +149,8 @@ export default function PrivacyPage() {
               <li>Verify license status and device activations</li>
               <li>Provide access during your trial or active subscription</li>
               <li>Send transactional emails (account confirmation, password reset)</li>
+              <li>Send you the free resources you request, and emails about our products and resources (you can unsubscribe at any time using the link in every email)</li>
+              <li>Understand how our website is used, if you accept analytics cookies</li>
               <li>Respond to support inquiries</li>
               <li>Comply with applicable legal obligations</li>
             </ul>
@@ -153,7 +165,12 @@ export default function PrivacyPage() {
               Your account data is stored on <strong>Supabase</strong>, a cloud database platform
               implementing industry-standard security including encryption at rest and in transit.
               Our websites and applications are hosted with infrastructure providers such as
-              Cloudflare (Pixelorid POS website) and Vercel (Pixelorid Loop).
+              Cloudflare (Pixelorid POS website) and Vercel (Pixelorid Loop and the Pixelorid website).
+            </p>
+            <p>
+              Our email list, and the emails we send to it, are managed with <strong>Brevo</strong>,
+              an email service provider. Brevo stores your name and email address on our behalf and
+              sends our emails. Every marketing email includes an unsubscribe link.
             </p>
             <p>
               We operate from Indonesia, and our service providers may process data in other
@@ -201,8 +218,19 @@ export default function PrivacyPage() {
               removed once setup is complete.
             </p>
             <p>
-              We do not use tracking, advertising, or analytics cookies. Third-party scripts
-              (e.g. Supabase JS, Paddle JS) may set their own cookies per their privacy policies.
+              <strong>Analytics (optional).</strong> If you click &quot;Accept&quot; in our cookie
+              banner, we use Google Analytics, a service provided by Google, to understand how
+              visitors use our website, for example which pages are viewed, approximate location,
+              and device and browser type. Google Analytics is only loaded, and its cookies are only
+              set, after you accept. If you decline or do not respond, it is not loaded. Your
+              choice is saved in your browser, and you can change it at any time:
+            </p>
+            <p>
+              <CookieSettingsButton className="rounded-lg border border-[#16a34a] px-4 py-2 text-sm font-semibold text-[#16a34a] transition-colors hover:bg-[#f0fdf4]" />
+            </p>
+            <p>
+              We do not use advertising cookies. Third-party scripts (e.g. Supabase JS, Paddle JS)
+              may set their own cookies per their privacy policies.
             </p>
           </Section>
 
@@ -211,6 +239,9 @@ export default function PrivacyPage() {
               We retain your account data for as long as your account is active or as needed to
               provide the service. Upon deletion request, we will remove or anonymize your data
               within 30 days, except where retention is required by law.
+            </p>
+            <p>
+              We keep email list contacts until you unsubscribe or ask us to delete them.
             </p>
           </Section>
 
@@ -222,6 +253,7 @@ export default function PrivacyPage() {
               <li><strong>Deletion</strong> — request deletion of your account and data</li>
               <li><strong>Portability</strong> — request your data in machine-readable format</li>
               <li><strong>Objection</strong> — object to certain types of processing</li>
+              <li><strong>Withdraw consent</strong> &mdash; where we rely on your consent (for example for analytics cookies), you can withdraw it at any time. You can also unsubscribe from our emails at any time using the link in every email</li>
             </ul>
             <p>
               Contact us at{" "}

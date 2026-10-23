@@ -3,7 +3,7 @@ import { Manrope } from "next/font/google";
 import "./globals.css";
 import JsonLd from "./_components/JsonLd";
 import PaddleInit from "../components/PaddleInit";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import AnalyticsConsent from "./_components/AnalyticsConsent";
 
 const SITE_URL = "https://www.pixelorid.biz.id";
 const DEFAULT_TITLE = "Pixelorid \u2014 Simple Technology for Growing Businesses";
@@ -79,7 +79,7 @@ export default function RootLayout({
         <JsonLd data={siteJsonLd} />
         <PaddleInit />
         {children}
-        <GoogleAnalytics gaId="G-DEW1HBBZ3Z" />
+        <AnalyticsConsent />
       </body>
     </html>
   );
