@@ -1,9 +1,9 @@
-import type { MetadataRoute } from 'next'
+﻿import type { MetadataRoute } from 'next'
 import { client } from '@/sanity/lib/client'
 import { POSTS_QUERY } from '@/sanity/lib/queries'
 
 const BASE_URL = 'https://www.pixelorid.biz.id'
-const LAST_UPDATED = new Date('2026-10-20')
+const LAST_UPDATED = new Date('2026-10-24')
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routes = [
@@ -19,6 +19,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/products/pixelorid-growth',
     '/products/pixelorid-invoice-generator',
     '/support',
+    '/tools',
+    '/tools/food-cost-calculator',
   ]
 
   const staticRoutes = routes.map((route) => ({
