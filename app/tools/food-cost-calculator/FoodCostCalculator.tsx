@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useMemo, useState } from 'react'
 import { TOOL_CONSENT_TEXT } from '../../lib/consent'
@@ -525,9 +525,9 @@ export default function FoodCostCalculator() {
                   type="button"
                   onClick={() => setModalOpen(true)}
                   aria-label="Download PDF (locked, enter your email to unlock)"
-                  className="w-full cursor-pointer rounded-xl bg-[#e5e7eb] px-6 py-3.5 text-[15px] font-bold text-[#6b7280] transition-colors hover:bg-[#d1d5db]"
+                  className="w-full cursor-pointer rounded-xl bg-[#16a34a] px-6 py-3.5 text-[15px] font-bold text-white transition-colors hover:bg-[#15803d]"
                 >
-                  &#128274; Download PDF
+                  Download PDF
                 </button>
                 <p className="mt-2 text-center text-xs text-[#6b7280]">
                   Free. Confirm your email once to unlock the download.
