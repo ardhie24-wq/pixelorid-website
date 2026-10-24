@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import MinimalHeader from "@/components/MinimalHeader"
 
@@ -24,6 +24,12 @@ const TOOLS = [
     title: 'Food Cost Calculator',
     text: 'Calculate food cost, cost per portion, margin and the menu price you need for any dish. Download the result as a PDF.',
     cta: 'Open the calculator',
+  },
+  {
+    href: '/tools/invoice-generator',
+    title: 'Invoice Generator',
+    text: 'Create a clean invoice with your logo, line items, discount and tax in any currency. Get the PDF sent to your email.',
+    cta: 'Open the generator',
   },
 ]
 

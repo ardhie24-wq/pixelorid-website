@@ -1,4 +1,4 @@
-﻿import type { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next'
 import { client } from '@/sanity/lib/client'
 import { POSTS_QUERY } from '@/sanity/lib/queries'
 
@@ -21,6 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/support',
     '/tools',
     '/tools/food-cost-calculator',
+    '/tools/invoice-generator',
   ]
 
   const staticRoutes = routes.map((route) => ({
