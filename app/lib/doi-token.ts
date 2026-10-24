@@ -1,6 +1,7 @@
 import { createHmac, timingSafeEqual } from 'crypto'
 
-export type DoiPayload = { e: string; n: string; v: string; t: number }
+// s = sumber pendaftaran ('free-template' atau 'cogs')
+export type DoiPayload = { e: string; n: string; v: string; t: number; s?: string }
 
 function sign(data: string, secret: string) {
   return createHmac('sha256', secret).update(data).digest('base64url')
