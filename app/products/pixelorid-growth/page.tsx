@@ -1,5 +1,6 @@
-import { pageMeta } from "../../_lib/seo";
-import Link from "next/link";
+﻿import { pageMeta } from "../../_lib/seo";
+import Link from "next/link"
+import MinimalHeader from "@/components/MinimalHeader";
 import GrowthHeroImage from "../../components/GrowthHeroImage";
 import JsonLd from "../../_components/JsonLd";
 
@@ -171,23 +172,7 @@ export default function PixeloridGrowthPage() {
   return (
     <main className="min-h-screen bg-white">
       <JsonLd data={growthJsonLd} />
-      <header className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
-          <Link href="/" className="flex items-center">
-            <img
-              src="/pixelorid-logo-cropped.png"
-              alt="Pixelorid"
-              className="h-8 w-auto"
-            />
-          </Link>
-          <Link
-            href="/"
-            className="text-sm font-semibold text-slate-600 transition hover:text-pixel-green"
-          >
-            ← Back to Home
-          </Link>
-        </div>
-      </header>
+            <MinimalHeader />
 
       {/* Hero */}
       <section className="bg-gradient-to-br from-pixel-light-green via-white to-pixel-light-teal px-6 py-20 lg:px-8 lg:py-28">

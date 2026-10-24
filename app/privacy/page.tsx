@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+﻿import type { Metadata } from "next";
+import Link from "next/link"
+import MinimalHeader from "@/components/MinimalHeader";
 import { CookieSettingsButton } from "../_components/AnalyticsConsent";
 
 export const metadata: Metadata = {
@@ -13,16 +14,7 @@ export default function PrivacyPage() {
     <div className="min-h-screen bg-[#f8fafc]">
 
       {/* ── NAVBAR ── */}
-      <header className="sticky top-0 z-50 border-b border-[#e2e8f0] bg-white">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-          <Link href="/" className="text-xl font-extrabold tracking-tight text-[#0f172a]">
-            Pixel<span className="text-[#16a34a]">orid</span>
-          </Link>
-          <Link href="/" className="text-sm font-semibold text-[#475569] transition-colors hover:text-[#16a34a]">
-            ← Back to Home
-          </Link>
-        </div>
-      </header>
+            <MinimalHeader />
 
       {/* ── CONTENT ── */}
       <main className="mx-auto max-w-3xl px-6 py-14 pb-20">

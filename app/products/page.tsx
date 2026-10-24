@@ -1,4 +1,5 @@
-import { pageMeta } from "../_lib/seo";
+﻿import { pageMeta } from "../_lib/seo"
+import MinimalHeader from "@/components/MinimalHeader";
 export const metadata = pageMeta({
   title: "Software Products for Growing Businesses",
   description:
@@ -170,24 +171,7 @@ const products = [
 export default function ProductsPage() {
   return (
     <main className="min-h-screen bg-slate-50">
-      <header className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
-          <a href="/" className="inline-flex items-center">
-            <img
-              src="/pixelorid-logo-cropped.png"
-              alt="Pixelorid"
-              className="h-8 w-auto"
-            />
-          </a>
-
-          <a
-            href="/"
-            className="text-sm font-semibold text-slate-600 transition hover:text-pixel-green"
-          >
-            ← Back to Home
-          </a>
-        </div>
-      </header>
+            <MinimalHeader />
 
       <section className="px-6 pb-16 pt-20 lg:px-8 lg:pb-24 lg:pt-28">
         <div className="mx-auto max-w-7xl">

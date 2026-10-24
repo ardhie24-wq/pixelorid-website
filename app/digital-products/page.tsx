@@ -1,5 +1,6 @@
-import { pageMeta } from "../_lib/seo";
-import Link from "next/link";
+﻿import { pageMeta } from "../_lib/seo";
+import Link from "next/link"
+import MinimalHeader from "@/components/MinimalHeader";
 
 export const metadata = pageMeta({
   title: "Digital Products for Small Businesses — Templates, Trackers & Calculators",
@@ -157,24 +158,7 @@ export default async function DigitalProductsPage() {
   const products = await getGumroadProducts();
   return (
     <main className="min-h-screen bg-white">
-      <header className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
-          <Link href="/" className="flex items-center">
-            <img
-              src="/pixelorid-logo-cropped.png"
-              alt="Pixelorid"
-              className="h-8 w-auto"
-            />
-          </Link>
-
-          <Link
-            href="/"
-            className="text-sm font-semibold text-slate-600 transition hover:text-pixel-green"
-          >
-            ← Back to Home
-          </Link>
-        </div>
-      </header>
+            <MinimalHeader />
 
 
 

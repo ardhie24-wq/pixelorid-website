@@ -1,5 +1,6 @@
 ﻿import { pageMeta } from "../_lib/seo";
-import Link from "next/link";
+import Link from "next/link"
+import MinimalHeader from "@/components/MinimalHeader";
 
 export const metadata = pageMeta({
   title: "Pricing - POS, Resto, Loop, Growth and Invoice Generator",
@@ -11,14 +12,7 @@ export const metadata = pageMeta({
 export default function PricingPage() {
   return (
     <main className="min-h-screen bg-white">
-      <header className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
-          <Link href="/" className="flex items-center">
-            <img src="/pixelorid-logo-cropped.png" alt="Pixelorid" className="h-8 w-auto" />
-          </Link>
-          <Link href="/" className="text-sm font-semibold text-slate-600 transition hover:text-pixel-green">Back to Home</Link>
-        </div>
-      </header>
+            <MinimalHeader />
 
       <section className="bg-pixel-light-green">
         <div className="mx-auto max-w-5xl px-6 py-20 text-center lg:px-8 lg:py-28">
