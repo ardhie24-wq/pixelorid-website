@@ -35,7 +35,7 @@ export default function PrivacyPage() {
             Privacy <span className="text-[#16a34a]">Policy</span>
           </h1>
           <p className="text-sm text-[#475569]">
-            Last updated: October 23, 2026 &nbsp;·&nbsp; Operated by{" "}
+            Last updated: October 24, 2026 &nbsp;·&nbsp; Operated by{" "}
             <strong className="text-[#0f172a]">Ardiyanto</strong>, Klaten, Central Java, Indonesia
           </p>
         </div>
@@ -118,7 +118,7 @@ export default function PrivacyPage() {
             <div className="mt-4 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] px-5 py-4">
               <h3 className="mb-2 text-[15px] font-extrabold text-[#0f172a]">Website visitors and email sign-ups</h3>
               <ul>
-                <li><strong>Free template sign-up:</strong> when you request a free template on our website, we collect your name and email address and add them to our email list, which is managed with Brevo (see Section 5)</li>
+                <li><strong>Free template sign-up:</strong> when you request a free template on our website, you enter your name and email address and tick a box agreeing to receive the templates and occasional tips from us by email. We then send you one confirmation email. Only after you click the confirmation link do we add you to our email list, which is managed with Brevo (see Section 5). Until you confirm, your email address is used only to send that confirmation email. We keep a record of your consent: the date, the version of the consent text you agreed to, and where you signed up.</li>
                 <li><strong>Analytics (only if you accept):</strong> Google Analytics collects usage information about your visit, such as pages viewed, approximate location, and device and browser type (see Section 8)</li>
                 <li><strong>Your cookie choice:</strong> saved in your browser so we do not ask you again on every visit</li>
               </ul>
@@ -149,7 +149,7 @@ export default function PrivacyPage() {
               <li>Verify license status and device activations</li>
               <li>Provide access during your trial or active subscription</li>
               <li>Send transactional emails (account confirmation, password reset)</li>
-              <li>Send you the free resources you request, and emails about our products and resources (you can unsubscribe at any time using the link in every email)</li>
+              <li>Send you the free templates you request and, because you agreed when you signed up, occasional emails with tips about our products and resources (you can unsubscribe at any time using the link in every email)</li>
               <li>Understand how our website is used, if you accept analytics cookies</li>
               <li>Respond to support inquiries</li>
               <li>Comply with applicable legal obligations</li>
@@ -241,7 +241,7 @@ export default function PrivacyPage() {
               within 30 days, except where retention is required by law.
             </p>
             <p>
-              We keep email list contacts until you unsubscribe or ask us to delete them.
+              We keep email list contacts until you unsubscribe or ask us to delete them. If you do not click the confirmation link within 48 hours, the link expires and we do not add you to the list.
             </p>
           </Section>
 
@@ -253,7 +253,7 @@ export default function PrivacyPage() {
               <li><strong>Deletion</strong> — request deletion of your account and data</li>
               <li><strong>Portability</strong> — request your data in machine-readable format</li>
               <li><strong>Objection</strong> — object to certain types of processing</li>
-              <li><strong>Withdraw consent</strong> &mdash; where we rely on your consent (for example for analytics cookies), you can withdraw it at any time. You can also unsubscribe from our emails at any time using the link in every email</li>
+              <li><strong>Withdraw consent</strong> &mdash; where we rely on your consent (for example for analytics cookies and our email list), you can withdraw it at any time. You can also unsubscribe from our emails at any time using the link in every email</li>
             </ul>
             <p>
               Contact us at{" "}

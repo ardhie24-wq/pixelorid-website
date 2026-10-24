@@ -1,9 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-
-const DRIVE_FOLDER_URL =
-  'https://drive.google.com/drive/folders/1cq6j-cRKY2z7wzEmUyt0iUitGVS6OU7f?usp=sharing'
+import { CONSENT_TEXT } from '../lib/consent'
 
 const GREEN = '#16a34a'
 
@@ -12,6 +10,7 @@ export default function FreeTemplateButton() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [company, setCompany] = useState('') // honeypot anti-spam
+  const [consent, setConsent] = useState(false)
   const [status, setStatus] = useState<'idle' | 'loading' | 'done'>('idle')
   const [error, setError] = useState('')
 
@@ -23,7 +22,7 @@ export default function FreeTemplateButton() {
       const res = await fetch('/api/free-template', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, company }),
+        body: JSON.stringify({ name, email, company, consent }),
       })
       const data = await res.json().catch(() => ({}))
       if (!res.ok) throw new Error(data.error || 'Something went wrong. Please try again.')
@@ -106,38 +105,39 @@ export default function FreeTemplateButton() {
                 color: '#6b7280',
               }}
             >
-              ×
+              &times;
             </button>
 
             {status === 'done' ? (
               <div>
-                <h3 style={{ fontSize: 22, fontWeight: 700, margin: 0 }}>Thank you!</h3>
+                <h3 style={{ fontSize: 22, fontWeight: 700, margin: 0 }}>Check your email</h3>
                 <p style={{ color: '#4b5563', marginTop: 10 }}>
-                  Your free templates are ready. Click the button below to open the download folder.
+                  We sent a confirmation link to {email}. Click it to open your free templates.
+                  If you do not see it within a few minutes, check your spam folder.
                 </p>
-                <a
-                  href={DRIVE_FOLDER_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
+                  onClick={close}
                   style={{
-                    display: 'inline-block',
                     marginTop: 12,
                     padding: '14px 24px',
                     borderRadius: 8,
+                    border: 'none',
                     background: GREEN,
                     color: '#fff',
                     fontWeight: 600,
-                    textDecoration: 'none',
+                    fontSize: 15,
+                    cursor: 'pointer',
                   }}
                 >
-                  Open Free Templates
-                </a>
+                  Close
+                </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
                 <h3 style={{ fontSize: 22, fontWeight: 700, margin: 0 }}>Get Free Templates</h3>
                 <p style={{ color: '#4b5563', marginTop: 10, marginBottom: 18 }}>
-                  Enter your name and email to access the free download folder.
+                  Enter your name and email. We will send you a link to confirm your email and open the download folder.
                 </p>
                 <input
                   type="text"
@@ -164,6 +164,31 @@ export default function FreeTemplateButton() {
                   style={{ position: 'absolute', left: '-9999px', opacity: 0 }}
                   aria-hidden="true"
                 />
+                <label
+                  style={{
+                    display: 'flex',
+                    gap: 10,
+                    alignItems: 'flex-start',
+                    marginTop: 14,
+                    fontSize: 13,
+                    color: '#4b5563',
+                    lineHeight: 1.4,
+                  }}
+                >
+                  <input
+                    type="checkbox"
+                    checked={consent}
+                    onChange={(e) => setConsent(e.target.checked)}
+                    required
+                    style={{ marginTop: 2 }}
+                  />
+                  <span>
+                    {CONSENT_TEXT}{' '}
+                    <a href="/privacy" target="_blank" rel="noopener noreferrer" style={{ color: GREEN }}>
+                      Privacy Policy
+                    </a>
+                  </span>
+                </label>
                 {error && (
                   <p style={{ color: '#dc2626', fontSize: 14, marginTop: 10 }}>{error}</p>
                 )}
