@@ -279,6 +279,9 @@ export default function Home() {
             >
               Digital Products
             </a>
+            <a href="/tools" className="transition hover:text-pixel-green">
+              Free Tools
+            </a>
             <a href="/pricing" className="transition hover:text-pixel-green">
               Pricing
             </a>
@@ -312,6 +315,9 @@ export default function Home() {
                 </a>
                 <a href="/digital-products" className="rounded-lg px-4 py-3 hover:bg-pixel-light-green hover:text-pixel-green">
                   Digital Products
+                </a>
+                <a href="/tools" className="rounded-lg px-4 py-3 hover:bg-pixel-light-green hover:text-pixel-green">
+                  Free Tools
                 </a>
                 <a href="/pricing" className="rounded-lg px-4 py-3 hover:bg-pixel-light-green hover:text-pixel-green">
                   Pricing
