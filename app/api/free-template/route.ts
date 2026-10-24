@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { CONSENT_TEXT_VERSION, TOOL_CONSENT_TEXT_VERSION } from '../../lib/consent'
 import { createToken } from '../../lib/doi-token'
+import { clientIp, rateLimit } from '../../lib/rate-limit'
 
 type Source = 'free-template' | 'cogs'
 
@@ -9,6 +10,17 @@ function esc(s: string) {
 }
 
 export async function POST(req: Request) {
+  // Anti-spam: batasi jumlah permintaan per IP dan ukuran data
+  const ipCheck = rateLimit(`signup-ip:${clientIp(req)}`, 10, 10 * 60 * 1000)
+  if (!ipCheck.ok) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again in a few minutes.' },
+      { status: 429, headers: { 'Retry-After': String(ipCheck.retryAfter) } }
+    )
+  }
+  if (Number(req.headers.get('content-length') ?? 0) > 20_000) {
+    return NextResponse.json({ error: 'Request too large.' }, { status: 413 })
+  }
   const body = await req.json().catch(() => null)
 
   // Honeypot: bot mengisi field tersembunyi, abaikan diam-diam
@@ -35,6 +47,15 @@ export async function POST(req: Request) {
   }
   if (!consent) {
     return NextResponse.json({ error: 'Please tick the box to agree before continuing.' }, { status: 400 })
+  }
+
+  // Anti-spam: batasi jumlah email konfirmasi per alamat email
+  const mailCheck = rateLimit(`signup-mail:${email}`, 3, 60 * 60 * 1000)
+  if (!mailCheck.ok) {
+    return NextResponse.json(
+      { error: 'Too many requests for this email address. Please try again later.' },
+      { status: 429, headers: { 'Retry-After': String(mailCheck.retryAfter) } }
+    )
   }
 
   const apiKey = process.env.BREVO_API_KEY

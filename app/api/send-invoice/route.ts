@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { jsPDF } from 'jspdf'
 import autoTable from 'jspdf-autotable'
 import { CURRENCY_CODES } from '../../lib/currencies'
+import { clientIp, rateLimit } from '../../lib/rate-limit'
 
 export const runtime = 'nodejs'
 
@@ -262,6 +263,17 @@ function buildPdf(inv: Invoice): string {
 }
 
 export async function POST(req: Request) {
+  // Anti-spam: batasi jumlah permintaan per IP dan ukuran data
+  const ipCheck = rateLimit(`invoice-ip:${clientIp(req)}`, 8, 10 * 60 * 1000)
+  if (!ipCheck.ok) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again in a few minutes.' },
+      { status: 429, headers: { 'Retry-After': String(ipCheck.retryAfter) } }
+    )
+  }
+  if (Number(req.headers.get('content-length') ?? 0) > 3_000_000) {
+    return NextResponse.json({ error: 'The invoice is too large. Please use a smaller logo.' }, { status: 413 })
+  }
   const body = (await req.json().catch(() => null)) as {
     data?: Record<string, unknown>
     currency?: unknown
@@ -283,6 +295,15 @@ export async function POST(req: Request) {
   }
   if (body?.consent !== true) {
     return NextResponse.json({ error: 'Please tick the box to agree before continuing.' }, { status: 400 })
+  }
+
+  // Anti-spam: batasi jumlah invoice per alamat email penerima
+  const mailCheck = rateLimit(`invoice-mail:${recipientEmail}`, 3, 60 * 60 * 1000)
+  if (!mailCheck.ok) {
+    return NextResponse.json(
+      { error: 'You have reached the hourly limit for this email address. Please try again later.' },
+      { status: 429, headers: { 'Retry-After': String(mailCheck.retryAfter) } }
+    )
   }
 
   // Isi invoice
