@@ -6,7 +6,7 @@ import { CookieSettingsButton } from "../_components/AnalyticsConsent";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Privacy Policy for Pixelorid — how we collect, use, and protect your personal data.",
+    "Privacy Policy for Pixelorid - how we collect, use, and protect your personal data.",
 };
 
 export default function PrivacyPage() {
@@ -14,7 +14,7 @@ export default function PrivacyPage() {
     <div className="min-h-screen bg-[#f8fafc]">
 
       {/* ── NAVBAR ── */}
-            <MinimalHeader />
+      <MinimalHeader />
 
       {/* ── CONTENT ── */}
       <main className="mx-auto max-w-3xl px-6 py-14 pb-20">
@@ -27,7 +27,7 @@ export default function PrivacyPage() {
             Privacy <span className="text-[#16a34a]">Policy</span>
           </h1>
           <p className="text-sm text-[#475569]">
-            Last updated: October 25, 2026 &nbsp;·&nbsp; Operated by{" "}
+            Last updated: October 25, 2026 &nbsp;&middot;&nbsp; Operated by{" "}
             <strong className="text-[#0f172a]">Ardiyanto</strong>, Klaten, Central Java, Indonesia
           </p>
         </div>
@@ -38,7 +38,7 @@ export default function PrivacyPage() {
             <p>
               This Privacy Policy explains how <strong>Ardiyanto</strong>, operating as{" "}
               <strong>Pixelorid</strong> (pixelorid.biz.id), collects, uses, stores, and protects
-              your personal data when you use any of our services — including SaaS products,
+              your personal data when you use any of our services &mdash; including SaaS products,
               digital products, and our website.
             </p>
             <p>We are committed to handling your data responsibly and transparently.</p>
@@ -144,8 +144,8 @@ export default function PrivacyPage() {
               <h3 className="mb-2 text-[15px] font-extrabold text-[#0f172a]">Website visitors, free tools and email sign-ups</h3>
               <ul>
                 <li><strong>Free template sign-up:</strong> when you request a free template on our website, you enter your name and email address and tick a box agreeing to receive the templates and occasional tips from us by email. We then send you one confirmation email. Only after you click the confirmation link do we add you to our email list, which is managed with Brevo (see Section 5). Until you confirm, your email address is used only to send that confirmation email. We keep a record of your consent: the date, the version of the consent text you agreed to, and where you signed up.</li>
-                <li><strong>Food Cost Calculator (free tool):</strong> the calculator runs in your browser, and the recipes, ingredients, and prices you enter are not sent to our servers. They may be saved in your browser&apos;s local storage on your device so you can come back to them. If you choose to download your results as a PDF, we ask for your email address and your agreement to receive a confirmation email and occasional tips. As with the free template sign-up, we add you to our email list only after you confirm your email, and we keep a record of your consent. After you confirm, a small cookie in your browser remembers that your download is unlocked.</li>
-                <li><strong>Invoice Generator (free tool on our website):</strong> when you ask us to email you your invoice as a PDF, you enter your name and email address and tick a box agreeing to receive the invoice PDF and occasional tips from us by email. The invoice details you enter (your business details, your client&apos;s name and contact details, line items, notes, and terms) are sent to our server only to create the PDF and email it to you, and we do not store a copy in our own database. Your name and email address are then added to our email list, which is managed with Brevo (see Section 5), together with a record of your consent: the date and the version of the consent text you agreed to.</li>
+                <li><strong>Food Cost Calculator (free tool):</strong> the calculator runs in your browser and saves what you enter in your browser&apos;s local storage, so you can come back to it. That copy stays on your device. If you choose to email yourself the PDF, we ask for your name and email address and your agreement to receive the PDF. The figures you enter are sent to our server only to create that PDF and email it to you, and we do not store them in our database. Adding yourself to our email list is optional: it happens only if you tick the optional box, and we keep a record of that consent.</li>
+                <li><strong>Invoice Generator (free tool on our website):</strong> when you ask us to email you your invoice as a PDF, you enter your name and email address and tick a box agreeing to receive the invoice PDF by email. The invoice details you enter (your business details, your client&apos;s name and contact details, line items, notes, and terms) are sent to our server only to create the PDF and email it to you, and we do not store a copy in our own database. If you also tick the optional box, your name and email address are added to our email list, which is managed with Brevo (see Section 5), together with a record of your consent: the date and the version of the consent text you agreed to.</li>
                 <li><strong>Analytics (only if you accept):</strong> Google Analytics collects usage information about your visit, such as pages viewed, approximate location, and device and browser type (see Section 8)</li>
                 <li><strong>Your cookie choice:</strong> saved in your browser so we do not ask you again on every visit</li>
                 <li><strong>Spam protection:</strong> we temporarily use your IP address and email address, in server memory, to limit how many requests can be sent to our sign-up and invoice forms</li>
@@ -168,10 +168,11 @@ export default function PrivacyPage() {
               <li>GPS location or location history</li>
               <li>Contact lists, photos, or files from your device, other than files you choose to upload or send to us</li>
               <li>For Pixelorid POS: the sales and operational records stored locally in the app, unless you choose to send them to us</li>
-              <li>For the free Food Cost Calculator: the recipes, ingredients, and prices you enter stay in your browser and are not sent to us</li>
+              <li>For the free Food Cost Calculator: the recipes, ingredients, and prices you enter are sent to us only to create your PDF, and we do not store them in our database</li>
               <li>For the free Invoice Generator tool: we do not store the invoice you enter in our own database. The details are only used to create the PDF and email it to you</li>
             </ul>
           </Section>
+
           <Section num="4" title="How We Use Your Data">
             <p>We use your data solely to:</p>
             <ul>
@@ -181,7 +182,7 @@ export default function PrivacyPage() {
               <li>Send transactional emails (account confirmation, password reset)</li>
               <li>Send you the free templates and tool results you request and, because you agreed when you signed up, occasional emails with tips about our products and resources (you can unsubscribe at any time using the link in every email)</li>
               <li>Understand how our website is used, if you accept analytics cookies</li>
-              <li>Create the invoice PDF you ask for in the free Invoice Generator tool and email it to you</li>
+              <li>Create the PDF you ask for in our free tools (Invoice Generator and Food Cost Calculator) and email it to you</li>
               <li>Protect our forms from spam and abuse, including by temporarily using your IP address to limit the number of requests</li>
               <li>Respond to support inquiries</li>
               <li>Comply with applicable legal obligations</li>
@@ -193,7 +194,7 @@ export default function PrivacyPage() {
               forms secure. For our free tools, your email address is used to send you the file you request. Agreeing to receive our marketing emails is optional and does not affect whether you get the file.
             </p>
             <div className="mt-3 rounded-lg border-l-4 border-[#16a34a] bg-[#f0fdf4] px-4 py-3 text-sm text-[#166534]">
-              🚫 We do <strong>not</strong> sell, rent, or share your personal data with third
+              {"\u{1F6AB}"} We do <strong>not</strong> sell, rent, or share your personal data with third
               parties for marketing or advertising purposes.
             </div>
           </Section>
@@ -209,9 +210,9 @@ export default function PrivacyPage() {
               Our email list, and the emails we send, are handled by <strong>Brevo</strong>, an
               email service provider. Brevo stores the contacts on our email list (name, email
               address, and the consent record) on our behalf, and sends our emails: the
-              confirmation emails, the invoice PDFs you request, and our marketing emails. It may
-              keep delivery records of those emails under its own policies. Every marketing email
-              includes an unsubscribe link.
+              confirmation emails for our free template sign-ups, the PDFs you request from our free
+              tools, and our marketing emails. It may keep delivery records of those emails under its
+              own policies. Every marketing email includes an unsubscribe link.
             </p>
             <p>
               We operate from Indonesia, and our service providers may process data in other
@@ -225,13 +226,14 @@ export default function PrivacyPage() {
               we will notify you as required by applicable law.
             </p>
           </Section>
-          <Section num="6" title="Paddle — Payment Processor & Merchant of Record">
+
+          <Section num="6" title={"Paddle \u2014 Payment Processor & Merchant of Record"}>
             <p>
               SaaS subscription payments are processed by <strong>Paddle.com</strong> (Paddle.com
               Market Limited), acting as our Merchant of Record. This means:
             </p>
             <ul>
-              <li>Paddle collects your payment information directly — we never receive or store card data.</li>
+              <li>Paddle collects your payment information directly &mdash; we never receive or store card data.</li>
               <li>Paddle issues invoices and is legally responsible for payment transactions.</li>
               <li>Paddle may collect additional data for tax compliance and fraud prevention.</li>
             </ul>
@@ -264,11 +266,6 @@ export default function PrivacyPage() {
               and is not sent to us. We also use local storage to remember your cookie choice.
             </p>
             <p>
-              When you confirm your email for the Food Cost Calculator, we set a small cookie
-              (<strong>pxl_unlock_cogs</strong>) that lasts 30 days and remembers that you have
-              confirmed, so your download is unlocked. It is not used for tracking.
-            </p>
-            <p>
               <strong>Analytics (optional).</strong> If you click &quot;Accept&quot; in our cookie
               banner, we use Google Analytics, a service provided by Google, to understand how
               visitors use our website, for example which pages are viewed, approximate location,
@@ -292,18 +289,18 @@ export default function PrivacyPage() {
               within 30 days, except where retention is required by law.
             </p>
             <p>
-              We keep email list contacts until you unsubscribe or ask us to delete them. If you start a free template or Food Cost Calculator sign-up and do not click the confirmation link within 48 hours, the link expires and we do not add you to the list.
+              We keep email list contacts until you unsubscribe or ask us to delete them. If you start a free template sign-up and do not click the confirmation link within 48 hours, the link expires and we do not add you to the list.
             </p>
           </Section>
 
           <Section num="10" title="Your Rights">
             <p>Depending on your location, you may have the right to:</p>
             <ul>
-              <li><strong>Access</strong> — request a copy of data we hold about you</li>
-              <li><strong>Correction</strong> — request correction of inaccurate data</li>
-              <li><strong>Deletion</strong> — request deletion of your account and data</li>
-              <li><strong>Portability</strong> — request your data in machine-readable format</li>
-              <li><strong>Objection</strong> — object to certain types of processing</li>
+              <li><strong>Access</strong> &mdash; request a copy of data we hold about you</li>
+              <li><strong>Correction</strong> &mdash; request correction of inaccurate data</li>
+              <li><strong>Deletion</strong> &mdash; request deletion of your account and data</li>
+              <li><strong>Portability</strong> &mdash; request your data in machine-readable format</li>
+              <li><strong>Objection</strong> &mdash; object to certain types of processing</li>
               <li><strong>Withdraw consent</strong> &mdash; where we rely on your consent (for example for analytics cookies and our email list), you can withdraw it at any time. You can also unsubscribe from our emails at any time using the link in every email</li>
             </ul>
             <p>
@@ -367,7 +364,7 @@ function Section({ num, title, children }: { num: string; title: string; childre
         </span>
         {title}
       </h2>
-      <div className="space-y-3 text-[14.5px] leading-relaxed text-[#475467] [&_strong]:text-[#0f172a] [&_ul]:mt-2 [&_ul]:space-y-1 [&_ul>li]:relative [&_ul>li]:pl-5 [&_ul>li]:before:absolute [&_ul>li]:before:left-1 [&_ul>li]:before:font-bold [&_ul>li]:before:text-[#16a34a] [&_ul>li]:before:content-['•']">
+      <div className="space-y-3 text-[14.5px] leading-relaxed text-[#475467] [&_strong]:text-[#0f172a] [&_ul]:mt-2 [&_ul]:space-y-1 [&_ul>li]:relative [&_ul>li]:pl-5 [&_ul>li]:before:absolute [&_ul>li]:before:left-1 [&_ul>li]:before:font-bold [&_ul>li]:before:text-[#16a34a] [&_ul>li]:before:content-['\2022']">
         {children}
       </div>
     </div>
