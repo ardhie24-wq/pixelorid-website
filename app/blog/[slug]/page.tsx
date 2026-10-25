@@ -15,6 +15,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${post.title} | Pixelorid Blog`,
     description: post.excerpt || "",
+    alternates: { canonical: `https://pixelorid.biz.id/blog/${slug}` },
+    openGraph: { title: post.title, description: post.excerpt || "", type: "article" },
   };
 }
 
@@ -25,6 +27,7 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-16">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", headline: post.title, description: post.excerpt || "", datePublished: post.publishedAt, author: { "@type": "Person", name: post.author?.name || "Ardiyanto" }, publisher: { "@type": "Organization", name: "Pixelorid", url: "https://pixelorid.biz.id" }, mainEntityOfPage: `https://pixelorid.biz.id/blog/${slug}` }) }} />
       <a href="/blog" className="text-blue-600 hover:underline text-sm">
         Back to Blog
       </a>
