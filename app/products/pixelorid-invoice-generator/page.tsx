@@ -1,4 +1,4 @@
-﻿import { pageMeta } from "../../_lib/seo";
+import { pageMeta } from "../../_lib/seo";
 import Link from "next/link";
 import JsonLd from "../../_components/JsonLd";
 
@@ -185,6 +185,18 @@ export default function PixeloridInvoiceGeneratorPage() {
         </div>
       </section>
 
+      <section className="px-6 py-14 lg:px-8">
+        <div className="mx-auto max-w-5xl rounded-3xl border border-pixel-light-green bg-pixel-light-green p-8 sm:p-10">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-widest text-pixel-green">Free tool</p>
+              <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900">Need One Invoice Right Now? Make It Free</h2>
+              <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">Create a professional invoice in minutes and get it as a PDF with the free Invoice Generator. When you need to save customers, send quotations and track payments, Pixelorid Invoice Generator keeps it all in one workspace.</p>
+            </div>
+            <Link href="/tools/invoice-generator" className="inline-flex shrink-0 items-center justify-center rounded-xl bg-pixel-green px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover">Try the Free Invoice Generator</Link>
+          </div>
+        </div>
+      </section>
       <section id="pricing" className="bg-slate-50 px-6 py-20 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
