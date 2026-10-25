@@ -7,7 +7,7 @@ import SocialFollow from "./components/SocialFollow";
 export const metadata: Metadata = {
   title: { absolute: "Pixelorid \u2014 Small Business Software: POS, Invoicing, CRM" },
   description:
-    "Simple software for small businesses: food truck POS, restaurant management, client follow-up, cash flow tracking and invoicing.",
+    "Simple software for small businesses: food truck POS, restaurant management, client follow-up, cash flow tracking and invoicing. Free tools included.",
   alternates: { canonical: "https://www.pixelorid.biz.id" },
   openGraph: {
     type: "website",
@@ -16,14 +16,14 @@ export const metadata: Metadata = {
     url: "https://www.pixelorid.biz.id",
     title: "Pixelorid \u2014 Small Business Software: POS, Invoicing, CRM",
     description:
-      "Simple software for small businesses: food truck POS, restaurant management, client follow-up, cash flow tracking and invoicing.",
+      "Simple software for small businesses: food truck POS, restaurant management, client follow-up, cash flow tracking and invoicing. Free tools included.",
     images: ["/opengraph-image.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Pixelorid \u2014 Small Business Software: POS, Invoicing, CRM",
     description:
-      "Simple software for small businesses: food truck POS, restaurant management, client follow-up, cash flow tracking and invoicing.",
+      "Simple software for small businesses: food truck POS, restaurant management, client follow-up, cash flow tracking and invoicing. Free tools included.",
     images: ["/twitter-image.png"],
   },
 };

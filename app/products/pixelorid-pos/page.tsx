@@ -1,4 +1,4 @@
-﻿import { pageMeta } from "../../_lib/seo";
+import { pageMeta } from "../../_lib/seo";
 import PosHeroImage from "../../components/PosHeroImage";
 import JsonLd from "../../_components/JsonLd";
 
@@ -194,6 +194,18 @@ export default function PixeloridPOSPage() {
         </div>
       </section>
 
+      <section className="px-6 py-14 lg:px-8">
+        <div className="mx-auto max-w-5xl rounded-3xl border border-pixel-light-green bg-pixel-light-green p-8 sm:p-10">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-widest text-pixel-green">Free tool</p>
+              <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900">Know Your Food Cost Before You Price Your Menu</h2>
+              <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">Use the free Food Cost Calculator to see the cost per portion of any dish and how much margin it leaves, then download the result as a PDF.</p>
+            </div>
+            <a href="/tools/food-cost-calculator" className="inline-flex shrink-0 items-center justify-center rounded-xl bg-pixel-green px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover">Try the Food Cost Calculator</a>
+          </div>
+        </div>
+      </section>
       <section id="pricing" className="bg-slate-50 px-6 py-20 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
