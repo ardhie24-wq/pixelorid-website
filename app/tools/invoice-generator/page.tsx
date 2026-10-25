@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import MinimalHeader from "@/components/MinimalHeader"
 import InvoiceGenerator from './InvoiceGenerator'
 
@@ -10,8 +10,12 @@ const FAQ = [
     a: 'Yes. Fill in your details, preview the invoice, and send it to your email at no cost. No account required.',
   },
   {
+    q: 'Do I need accounting knowledge to use it?',
+    a: 'No. Fill in your details and line items, and the generator calculates the subtotal, discount, tax and total for you.',
+  },
+  {
     q: 'Where is my invoice data stored?',
-    a: 'All your invoice data stays in your browser. We never store your invoice details on our servers. Only your email address is saved so we can send you the PDF.',
+    a: 'We do not store your invoice in our database. The details are only used to create the PDF and email it to you. Your email address is added to our mailing list only if you tick the optional box.',
   },
   {
     q: 'Can I send the invoice directly to my client?',
@@ -25,17 +29,21 @@ const FAQ = [
     q: 'How are tax and discount calculated?',
     a: 'Discount is applied first as a percentage of the subtotal. Tax is then calculated as a percentage of the discounted subtotal.',
   },
+  {
+    q: 'Can I use my local tax rate (VAT, GST or sales tax)?',
+    a: 'Yes. Enter the rate as a percentage, for example 10 for 10%. The generator does not check whether your invoice meets your country legal requirements, so confirm those with an accountant or your tax authority.',
+  },
 ]
 
 export const metadata: Metadata = {
-  title: 'Free Invoice Generator — Create & Email PDF Invoices',
+  title: 'Free Invoice Generator: PDF Invoices, No Sign Up',
   description:
-    'Create professional PDF invoices in seconds. Add your logo, line items, tax and discount. Free invoice generator — send the PDF straight to your email.',
+    'Make a professional invoice in minutes, with no accounting skills needed. Add your logo, tax and discount, then get the PDF sent to your email. Free, no sign up.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: 'Free Invoice Generator — Create & Email PDF Invoices',
+    title: 'Free Invoice Generator: PDF Invoices, No Sign Up',
     description:
-      'Create professional PDF invoices in seconds. Add your logo, line items, tax and discount. Free invoice generator — send the PDF straight to your email.',
+      'Make a professional invoice in minutes, with no accounting skills needed. Add your logo, tax and discount, then get the PDF sent to your email. Free, no sign up.',
     url: PAGE_URL,
     type: 'website',
   },
@@ -50,7 +58,7 @@ export default function InvoiceGeneratorPage() {
       url: PAGE_URL,
       applicationCategory: 'BusinessApplication',
       operatingSystem: 'Web',
-      description: 'Create professional PDF invoices and send them to your email for free.',
+      description: 'Create professional PDF invoices and get them sent to your email for free. No accounting skills needed.',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     },
     {
@@ -82,8 +90,9 @@ export default function InvoiceGeneratorPage() {
             Free Invoice <span className="text-[#16a34a]">Generator</span>
           </h1>
           <p className="text-[15px] leading-relaxed text-[#475467]">
-            Fill in your business details and line items, preview the invoice, then send the PDF straight
-            to your email. No account needed, no watermark, no data stored on our servers.
+            Fill in your business details and line items, preview the invoice, then get the PDF sent to your
+            email. No accounting skills needed, no account, no watermark, and we do not store your invoice in
+            our database.
           </p>
         </div>
 
@@ -108,9 +117,21 @@ export default function InvoiceGeneratorPage() {
               <a href="/products/pixelorid-invoice-generator" className="font-semibold text-[#16a34a] underline underline-offset-2">
                 Pixelorid Invoice Generator
               </a>{' '}
-              lets you save clients, reuse invoice templates, and track payment status — all in one place.
+              lets you save clients, reuse invoice templates, and track payment status, all in one place.
             </p>
           </section>
+
+          <p className="text-sm">
+            More free tools:{' '}
+            <a href="/tools/food-cost-calculator" className="font-semibold text-[#16a34a] underline underline-offset-2">
+              Food Cost Calculator
+            </a>
+            {' '}and{' '}
+            <a href="/tools" className="font-semibold text-[#16a34a] underline underline-offset-2">
+              all free tools
+            </a>
+            .
+          </p>
         </div>
       </main>
 

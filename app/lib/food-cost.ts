@@ -15,7 +15,7 @@ export const UNITS: { id: UnitId; label: string; family: UnitFamily; factor: num
   { id: 'pc', label: 'piece', family: 'count', factor: 1 },
 ]
 
-export const CURRENCIES = ['USD', 'EUR', 'GBP', 'CAD', 'AUD'] as const
+export { CURRENCY_CODES as CURRENCIES } from './currencies'
 
 export type IngredientRow = {
   id: string

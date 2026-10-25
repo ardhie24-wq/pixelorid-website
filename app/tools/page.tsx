@@ -5,14 +5,14 @@ import MinimalHeader from "@/components/MinimalHeader"
 const PAGE_URL = 'https://pixelorid.biz.id/tools'
 
 export const metadata: Metadata = {
-  title: 'Free Tools for Small Business Owners',
+  title: 'Free Tools for Small Business: Food Cost and Invoices',
   description:
-    'Free calculators and generators for small business owners. Work out food cost, margins and more, then download your results as a PDF.',
+    'Free calculators and invoice tools for small business owners. No accounting skills needed, no sign up. Get your results as a PDF sent to your email.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: 'Free Tools for Small Business Owners',
+    title: 'Free Tools for Small Business: Food Cost and Invoices',
     description:
-      'Free calculators and generators for small business owners. Work out food cost, margins and more, then download your results as a PDF.',
+      'Free calculators and invoice tools for small business owners. No accounting skills needed, no sign up. Get your results as a PDF sent to your email.',
     url: PAGE_URL,
     type: 'website',
   },
@@ -22,13 +22,13 @@ const TOOLS = [
   {
     href: '/tools/food-cost-calculator',
     title: 'Food Cost Calculator',
-    text: 'Calculate food cost, cost per portion, margin and the menu price you need for any dish. Download the result as a PDF.',
+    text: 'Calculate food cost, cost per portion, margin and the menu price you need for any dish. Get the result as a PDF sent to your email.',
     cta: 'Open the calculator',
   },
   {
     href: '/tools/invoice-generator',
     title: 'Invoice Generator',
-    text: 'Create a clean invoice with your logo, line items, discount and tax in any currency. Get the PDF sent to your email.',
+    text: 'Create a clean invoice with your logo, line items, discount and tax, in 30+ currencies. Get the PDF sent to your email.',
     cta: 'Open the generator',
   },
 ]
@@ -36,7 +36,7 @@ const TOOLS = [
 export default function ToolsPage() {
   return (
     <div className="min-h-screen bg-[#f8fafc]">
-            <MinimalHeader />
+      <MinimalHeader />
 
       <main className="mx-auto max-w-4xl px-6 py-14 pb-20">
         <div className="mb-10 max-w-2xl">
@@ -47,8 +47,8 @@ export default function ToolsPage() {
             Free Tools for <span className="text-[#16a34a]">Small Business</span>
           </h1>
           <p className="text-[15px] leading-relaxed text-[#475467]">
-            Simple calculators and generators you can use right in your browser. Preview your results for free,
-            and download them as a PDF.
+            Simple calculators and generators for business owners, with no accounting skills needed. Preview
+            your results for free, then get them as a PDF sent to your email.
           </p>
         </div>
 

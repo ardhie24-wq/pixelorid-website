@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import MinimalHeader from "@/components/MinimalHeader"
 import FoodCostCalculator from './FoodCostCalculator'
@@ -15,24 +15,28 @@ const FAQ = [
     a: 'Add up the cost of every ingredient the recipe uses, divide by the number of portions it makes, then add packaging or other per-portion costs. Divide that total by the selling price to get your food cost percentage.',
   },
   {
+    q: 'Do I need accounting knowledge to use this?',
+    a: 'No. Enter what you pay for each ingredient and how much the recipe uses. The calculator does the maths and shows the cost per portion, the food cost percentage, and the price you need to reach your target.',
+  },
+  {
     q: 'Do I need to convert units myself?',
     a: 'No. Enter the pack you buy (for example 5 lb for $18) and the amount you use (for example 1500 g). The calculator converts between weight units and between volume units. Weight, volume and pieces cannot be converted into each other.',
   },
   {
     q: 'Are my recipes stored on your servers?',
-    a: 'No. Your figures stay in your browser. We only ask for your email address when you want to download the PDF.',
+    a: 'Your figures are saved in your browser so you can come back to them. When you ask for the PDF, they are sent to our server only to create it and email it to you. We do not keep them in our database.',
   },
 ]
 
 export const metadata: Metadata = {
-  title: 'Free Food Cost Calculator for Restaurants & Food Trucks',
+  title: 'Free Food Cost Calculator for Restaurants and Cafes',
   description:
-    'Calculate food cost, cost per portion, margin and suggested menu price for any dish. Free food cost calculator with PDF download.',
+    'Work out cost per portion, food cost % and menu price for any dish. No accounting skills needed. Free, no sign up, with the PDF sent to your email.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: 'Free Food Cost Calculator for Restaurants & Food Trucks',
+    title: 'Free Food Cost Calculator for Restaurants and Cafes',
     description:
-      'Calculate food cost, cost per portion, margin and suggested menu price for any dish. Free food cost calculator with PDF download.',
+      'Work out cost per portion, food cost % and menu price for any dish. No accounting skills needed. Free, no sign up, with the PDF sent to your email.',
     url: PAGE_URL,
     type: 'website',
   },
@@ -48,7 +52,7 @@ export default function FoodCostCalculatorPage() {
       applicationCategory: 'BusinessApplication',
       operatingSystem: 'Web',
       description:
-        'Calculate food cost, cost per portion, margin and suggested menu price for any dish.',
+        'Calculate food cost, cost per portion, margin and suggested menu price for any dish. No accounting skills needed.',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     },
     {
@@ -69,7 +73,7 @@ export default function FoodCostCalculatorPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
       />
 
-            <MinimalHeader />
+      <MinimalHeader />
 
       <main className="mx-auto max-w-6xl px-6 py-12 pb-20">
         <div className="mb-10 max-w-3xl">
@@ -81,7 +85,8 @@ export default function FoodCostCalculatorPage() {
           </h1>
           <p className="text-[15px] leading-relaxed text-[#475467]">
             Work out the real cost of any dish: cost per portion, food cost percentage, gross margin and the
-            price you need to hit your target. Preview your sheet below, then download it as a PDF.
+            price you need to hit your target. No accounting skills needed. Preview your sheet below, then get
+            the PDF sent to your email.
           </p>
         </div>
 
@@ -91,9 +96,10 @@ export default function FoodCostCalculatorPage() {
           <section>
             <h2 className="mb-3 text-2xl font-extrabold text-[#0f172a]">What is food cost?</h2>
             <p>
-              Food cost is the share of a menu price that goes to ingredients. If a dish costs you $2.40 to make
-              and you sell it for $9.00, your food cost is 26.7%. Tracking it dish by dish shows which items
-              make money and which quietly lose it.
+              Food cost (also called food cost percentage, or COGS for cost of goods sold) is the share of a
+              menu price that goes to ingredients. If a dish costs you $2.40 to make and you sell it for $9.00,
+              your food cost is 26.7%. Tracking it dish by dish shows which items make money and which quietly
+              lose it.
             </p>
           </section>
 
@@ -134,6 +140,18 @@ export default function FoodCostCalculatorPage() {
               shows your real profit after costs.
             </p>
           </section>
+
+          <p className="text-sm">
+            More free tools:{' '}
+            <Link href="/tools/invoice-generator" className="font-semibold text-[#16a34a] underline underline-offset-2">
+              Invoice Generator
+            </Link>
+            {' '}and{' '}
+            <Link href="/tools" className="font-semibold text-[#16a34a] underline underline-offset-2">
+              all free tools
+            </Link>
+            .
+          </p>
         </div>
       </main>
 
