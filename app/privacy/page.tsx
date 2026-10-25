@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link"
 import MinimalHeader from "@/components/MinimalHeader";
 import { CookieSettingsButton } from "../_components/AnalyticsConsent";
@@ -27,7 +27,7 @@ export default function PrivacyPage() {
             Privacy <span className="text-[#16a34a]">Policy</span>
           </h1>
           <p className="text-sm text-[#475569]">
-            Last updated: October 24, 2026 &nbsp;·&nbsp; Operated by{" "}
+            Last updated: October 25, 2026 &nbsp;·&nbsp; Operated by{" "}
             <strong className="text-[#0f172a]">Ardiyanto</strong>, Klaten, Central Java, Indonesia
           </p>
         </div>
@@ -108,11 +108,47 @@ export default function PrivacyPage() {
             </div>
 
             <div className="mt-4 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] px-5 py-4">
-              <h3 className="mb-2 text-[15px] font-extrabold text-[#0f172a]">Website visitors and email sign-ups</h3>
+              <h3 className="mb-2 text-[15px] font-extrabold text-[#0f172a]">Pixelorid Growth (web app)</h3>
+              <p>
+                Pixelorid Growth runs in your browser. The financial information you enter is stored on
+                our servers (Supabase). This includes:
+              </p>
               <ul>
-                <li><strong>Free template sign-up:</strong> when you request a free template on our website, you enter your name and email address and tick a box agreeing to receive the templates and occasional tips from us by email. We then send you one confirmation email. Only after you click the confirmation link do we add you to our email list, which is managed with Brevo (see Section 5). Until you confirm, your email address is used only to send that confirmation email. We keep a record of your consent: the date, the version of the consent text you agreed to, and where you signed up.</li> <li><strong>Free tools:</strong> our free calculators run in your browser, and the figures you enter are not sent to our servers. They may be saved in your browser&apos;s local storage on your device so you can come back to them. If you choose to download your results as a PDF, we ask for your email address and your agreement to receive a confirmation email and occasional tips. As with the free template sign-up, we add you to our email list only after you confirm your email, and we keep a record of your consent. After you confirm, a small cookie in your browser remembers that your download is unlocked.</li>
+                <li>Revenue and income records (amounts, dates, and categories)</li>
+                <li>Expense records (amounts, dates, and categories)</li>
+              </ul>
+              <p>
+                For the financial data you enter about your own business, you are the controller and we
+                process that data on your behalf to provide the service.
+              </p>
+            </div>
+
+            <div className="mt-4 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] px-5 py-4">
+              <h3 className="mb-2 text-[15px] font-extrabold text-[#0f172a]">Pixelorid Invoice Generator (web app)</h3>
+              <p>
+                Pixelorid Invoice Generator runs in your browser. The information you enter is stored on
+                our servers (Supabase). This includes:
+              </p>
+              <ul>
+                <li>Business details: business name, logo, currency, tax defaults, and invoice numbering</li>
+                <li>Customer records, including their contact details</li>
+                <li>Invoices and quotations: line items, amounts, dates, notes, and payment status</li>
+              </ul>
+              <p>
+                For the data about your own customers that you enter into Invoice Generator, you are the
+                controller and we process that data on your behalf to provide the service.
+              </p>
+            </div>
+
+            <div className="mt-4 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] px-5 py-4">
+              <h3 className="mb-2 text-[15px] font-extrabold text-[#0f172a]">Website visitors, free tools and email sign-ups</h3>
+              <ul>
+                <li><strong>Free template sign-up:</strong> when you request a free template on our website, you enter your name and email address and tick a box agreeing to receive the templates and occasional tips from us by email. We then send you one confirmation email. Only after you click the confirmation link do we add you to our email list, which is managed with Brevo (see Section 5). Until you confirm, your email address is used only to send that confirmation email. We keep a record of your consent: the date, the version of the consent text you agreed to, and where you signed up.</li>
+                <li><strong>Food Cost Calculator (free tool):</strong> the calculator runs in your browser, and the recipes, ingredients, and prices you enter are not sent to our servers. They may be saved in your browser&apos;s local storage on your device so you can come back to them. If you choose to download your results as a PDF, we ask for your email address and your agreement to receive a confirmation email and occasional tips. As with the free template sign-up, we add you to our email list only after you confirm your email, and we keep a record of your consent. After you confirm, a small cookie in your browser remembers that your download is unlocked.</li>
+                <li><strong>Invoice Generator (free tool on our website):</strong> when you ask us to email you your invoice as a PDF, you enter your name and email address and tick a box agreeing to receive the invoice PDF and occasional tips from us by email. The invoice details you enter (your business details, your client&apos;s name and contact details, line items, notes, and terms) are sent to our server only to create the PDF and email it to you, and we do not store a copy in our own database. Your name and email address are then added to our email list, which is managed with Brevo (see Section 5), together with a record of your consent: the date and the version of the consent text you agreed to.</li>
                 <li><strong>Analytics (only if you accept):</strong> Google Analytics collects usage information about your visit, such as pages viewed, approximate location, and device and browser type (see Section 8)</li>
                 <li><strong>Your cookie choice:</strong> saved in your browser so we do not ask you again on every visit</li>
+                <li><strong>Spam protection:</strong> we temporarily use your IP address and email address, in server memory, to limit how many requests can be sent to our sign-up and invoice forms</li>
               </ul>
             </div>
 
@@ -132,6 +168,8 @@ export default function PrivacyPage() {
               <li>GPS location or location history</li>
               <li>Contact lists, photos, or files from your device, other than files you choose to upload or send to us</li>
               <li>For Pixelorid POS: the sales and operational records stored locally in the app, unless you choose to send them to us</li>
+              <li>For the free Food Cost Calculator: the recipes, ingredients, and prices you enter stay in your browser and are not sent to us</li>
+              <li>For the free Invoice Generator tool: we do not store the invoice you enter in our own database. The details are only used to create the PDF and email it to you</li>
             </ul>
           </Section>
           <Section num="4" title="How We Use Your Data">
@@ -141,12 +179,20 @@ export default function PrivacyPage() {
               <li>Verify license status and device activations</li>
               <li>Provide access during your trial or active subscription</li>
               <li>Send transactional emails (account confirmation, password reset)</li>
-              <li>Send you the free templates you request and, because you agreed when you signed up, occasional emails with tips about our products and resources (you can unsubscribe at any time using the link in every email)</li>
+              <li>Send you the free templates and tool results you request and, because you agreed when you signed up, occasional emails with tips about our products and resources (you can unsubscribe at any time using the link in every email)</li>
               <li>Understand how our website is used, if you accept analytics cookies</li>
+              <li>Create the invoice PDF you ask for in the free Invoice Generator tool and email it to you</li>
+              <li>Protect our forms from spam and abuse, including by temporarily using your IP address to limit the number of requests</li>
               <li>Respond to support inquiries</li>
               <li>Comply with applicable legal obligations</li>
             </ul>
-            <div className="mt-3 rounded-lg border-l-4 border-[#16a34a] bg-[#f0fdf4] px-4 py-3 text-sm text-[#166534]">
+            <p>
+              Where privacy law requires a legal basis (for example in the EU and UK), we rely on
+              your consent for our email list and for analytics cookies, on the need to provide the
+              service or file you request, and on our legitimate interest in keeping our website and
+              forms secure. For our free tools and templates, agreeing to receive our emails is a
+              condition of getting the file.
+            </p>            <div className="mt-3 rounded-lg border-l-4 border-[#16a34a] bg-[#f0fdf4] px-4 py-3 text-sm text-[#166534]">
               🚫 We do <strong>not</strong> sell, rent, or share your personal data with third
               parties for marketing or advertising purposes.
             </div>
@@ -160,11 +206,13 @@ export default function PrivacyPage() {
               Cloudflare (Pixelorid POS website) and Vercel (Pixelorid Loop and the Pixelorid website).
             </p>
             <p>
-              Our email list, and the emails we send to it, are managed with <strong>Brevo</strong>,
-              an email service provider. Brevo stores your name and email address on our behalf and
-              sends our emails. Every marketing email includes an unsubscribe link.
-            </p>
-            <p>
+              Our email list, and the emails we send, are handled by <strong>Brevo</strong>, an
+              email service provider. Brevo stores the contacts on our email list (name, email
+              address, and the consent record) on our behalf, and sends our emails: the
+              confirmation emails, the invoice PDFs you request, and our marketing emails. It may
+              keep delivery records of those emails under its own policies. Every marketing email
+              includes an unsubscribe link.
+            </p>            <p>
               We operate from Indonesia, and our service providers may process data in other
               countries. Where personal data is transferred across borders, we take steps to
               ensure it stays protected, such as relying on contractual commitments from our
@@ -210,6 +258,15 @@ export default function PrivacyPage() {
               removed once setup is complete.
             </p>
             <p>
+              The free Food Cost Calculator also saves what you enter in your browser&apos;s local
+              storage, so your inputs are still there when you come back. This stays on your device
+              and is not sent to us. We also use local storage to remember your cookie choice.
+            </p>
+            <p>
+              When you confirm your email for the Food Cost Calculator, we set a small cookie
+              (<strong>pxl_unlock_cogs</strong>) that lasts 30 days and remembers that you have
+              confirmed, so your download is unlocked. It is not used for tracking.
+            </p>            <p>
               <strong>Analytics (optional).</strong> If you click &quot;Accept&quot; in our cookie
               banner, we use Google Analytics, a service provided by Google, to understand how
               visitors use our website, for example which pages are viewed, approximate location,
@@ -233,7 +290,7 @@ export default function PrivacyPage() {
               within 30 days, except where retention is required by law.
             </p>
             <p>
-              We keep email list contacts until you unsubscribe or ask us to delete them. If you do not click the confirmation link within 48 hours, the link expires and we do not add you to the list.
+              We keep email list contacts until you unsubscribe or ask us to delete them. If you start a free template or Food Cost Calculator sign-up and do not click the confirmation link within 48 hours, the link expires and we do not add you to the list.
             </p>
           </Section>
 
