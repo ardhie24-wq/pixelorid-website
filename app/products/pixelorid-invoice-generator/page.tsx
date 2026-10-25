@@ -128,7 +128,7 @@ export default function PixeloridInvoiceGeneratorPage() {
             <p className="mt-5 text-2xl font-bold leading-tight text-pixel-dark-green">Professional invoicing for freelancers and small businesses.</p>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600">Create invoices, send quotations, manage customers, and keep track of payments in one simple, modern workspace.</p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <a href={`${APP_URL}/register`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-pixel-green px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover">Start Your Free Trial</a>
+              <a href="https://igenerator.pixelorid.biz.id" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-pixel-green px-6 py-3.5 text-sm font-bold text-white transition hover:bg-pixel-green-hover">Explore Pixelorid Invoice Generator</a>
               <a href={`${APP_URL}/login`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl border border-pixel-green bg-white px-6 py-3.5 text-sm font-bold text-pixel-green transition hover:bg-pixel-light-green">Log In</a>
             </div>
           </div>
