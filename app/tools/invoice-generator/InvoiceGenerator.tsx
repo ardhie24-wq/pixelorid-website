@@ -67,6 +67,7 @@ export default function InvoiceGenerator() {
   const [sendName, setSendName] = useState('')
   const [sendEmail, setSendEmail] = useState('')
   const [consent, setConsent] = useState(false)
+  const [marketing, setMarketing] = useState(false)
   const [errorMsg, setErrorMsg] = useState('')
   const logoInputRef = useRef<HTMLInputElement>(null)
 
@@ -123,6 +124,7 @@ export default function InvoiceGenerator() {
           name: sendName.trim(),
           email: sendEmail.trim(),
           consent,
+          marketing,
         }),
       })
       if (!res.ok) {
@@ -130,6 +132,7 @@ export default function InvoiceGenerator() {
         throw new Error(j?.error || 'Failed')
       }
       setModal('sent')
+      setMarketing(false)
       setConsent(false)
     } catch (e: unknown) {
       setErrorMsg(e instanceof Error ? e.message : 'Something went wrong. Please try again.')
@@ -345,17 +348,23 @@ export default function InvoiceGenerator() {
             </div>
 
             <label className="mt-4 flex cursor-pointer items-start gap-3 text-sm text-[#475467]">
-              <input type="checkbox" checked={consent} onChange={e => setConsent(e.target.checked)}
-                className="mt-0.5 h-4 w-4 shrink-0 accent-[#16a34a]" />
-              <span>
-                I agree to receive this invoice PDF and occasional tips from Pixelorid by email, and I have read the{' '}
-                <Link href="/privacy" target="_blank" className="font-semibold text-[#16a34a] underline">Privacy Policy</Link>.
-                I can unsubscribe at any time.
-              </span>
-            </label>
+  <input type="checkbox" checked={consent} onChange={e => setConsent(e.target.checked)}
+    className="mt-0.5 h-4 w-4 shrink-0 accent-[#16a34a]" />
+  <span>
+    I agree that Pixelorid may email me the invoice PDF I requested. I have read the{' '}
+    <Link href="/privacy" target="_blank" className="font-semibold text-[#16a34a] underline">Privacy Policy</Link>.
+  </span>
+</label>
+<label className="mt-3 flex cursor-pointer items-start gap-3 text-sm text-[#475467]">
+  <input type="checkbox" checked={marketing} onChange={e => setMarketing(e.target.checked)}
+    className="mt-0.5 h-4 w-4 shrink-0 accent-[#16a34a]" />
+  <span>
+    (Optional) Yes, send me free templates and occasional tips from Pixelorid by email. I can unsubscribe at any time.
+  </span>
+</label>
 
             <div className="mt-5 flex gap-3">
-              <button type="button" onClick={() => { setModal('idle'); setConsent(false); setErrorMsg('') }}
+              <button type="button" onClick={() => { setModal('idle'); setConsent(false); setMarketing(false); setErrorMsg('') }}
                 className="flex-1 rounded-xl border border-[#e2e8f0] px-4 py-3 text-sm font-semibold text-[#475467] hover:bg-[#f8fafc]">
                 Cancel
               </button>

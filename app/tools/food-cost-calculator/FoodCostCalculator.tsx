@@ -1,7 +1,7 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useMemo, useState } from 'react'
-import { TOOL_CONSENT_TEXT } from '../../lib/consent'
+import Link from 'next/link'
 import {
   CURRENCIES,
   DEFAULT_STATE,
@@ -20,28 +20,25 @@ import {
 } from '../../lib/food-cost'
 
 const STORAGE_KEY = 'pxl_cogs_v1'
-const COOKIE_NAME = 'pxl_unlock_cogs'
 
 const inputCls =
   'w-full rounded-lg border border-[#d1d5db] bg-white px-3 py-2 text-sm text-[#0f172a] outline-none focus:border-[#16a34a]'
 const labelCls = 'mb-1 block text-xs font-semibold text-[#475467]'
 
+type ModalState = 'idle' | 'open' | 'loading' | 'sent' | 'error'
+
 export default function FoodCostCalculator() {
   const [state, setState] = useState<CalcState>(DEFAULT_STATE)
   const [loaded, setLoaded] = useState(false)
-  const [restored, setRestored] = useState(false)
-  const [unlocked, setUnlocked] = useState(false)
-  const [justConfirmed, setJustConfirmed] = useState(false)
-  const [modalOpen, setModalOpen] = useState(false)
-  const [email, setEmail] = useState('')
-  const [company, setCompany] = useState('') // honeypot anti-spam
+  const [modal, setModal] = useState<ModalState>('idle')
+  const [sendName, setSendName] = useState('')
+  const [sendEmail, setSendEmail] = useState('')
   const [consent, setConsent] = useState(false)
-  const [gate, setGate] = useState<'idle' | 'loading' | 'sent'>('idle')
-  const [error, setError] = useState('')
-  const [pdfBusy, setPdfBusy] = useState(false)
-  const [pdfError, setPdfError] = useState('')
+  const [marketing, setMarketing] = useState(false)
+  const [company, setCompany] = useState('') // honeypot anti-spam
+  const [errorMsg, setErrorMsg] = useState('')
 
-  // Muat data tersimpan dan cek status unlock saat halaman dibuka
+  // Muat data tersimpan di browser (tidak dikirim ke server)
   useEffect(() => {
     try {
       const raw = window.localStorage.getItem(STORAGE_KEY)
@@ -49,23 +46,12 @@ export default function FoodCostCalculator() {
         const saved = JSON.parse(raw) as CalcState
         if (saved && Array.isArray(saved.rows) && saved.rows.length > 0) {
           setState({ ...DEFAULT_STATE, ...saved })
-          setRestored(true)
         }
-      }
-    } catch {}
-    try {
-      const fromLink = new URLSearchParams(window.location.search).get('confirmed') === '1'
-      const hasCookie = document.cookie.split('; ').includes(`${COOKIE_NAME}=1`)
-      if (fromLink || hasCookie) setUnlocked(true)
-      if (fromLink) {
-        setJustConfirmed(true)
-        window.history.replaceState(null, '', window.location.pathname)
       }
     } catch {}
     setLoaded(true)
   }, [])
 
-  // Simpan data di browser setiap ada perubahan (tidak dikirim ke server)
   useEffect(() => {
     if (!loaded) return
     try {
@@ -98,25 +84,25 @@ export default function FoodCostCalculator() {
     setState((s) => ({ ...s, rows: s.rows.length > 1 ? s.rows.filter((r) => r.id !== id) : s.rows }))
   }
 
-  const fmt = (v: number | null, code = false) => (v === null ? '-' : formatMoney(v, state.currency, code))
+  const fmt = (v: number | null) => (v === null ? '-' : formatMoney(v, state.currency))
 
-  function summaryLines(code: boolean): [string, string][] {
+  function summaryLines(): [string, string][] {
     return [
       ['Portions made', summary.portions > 0 ? String(summary.portions) : '-'],
-      ['Ingredient cost per portion', fmt(summary.costPerPortion, code)],
-      ['Other cost per portion (packaging etc.)', fmt(summary.otherCost, code)],
-      ['Total cost per portion', fmt(summary.totalPerPortion, code)],
-      ['Selling price', summary.price > 0 ? fmt(summary.price, code) : '-'],
+      ['Ingredient cost per portion', fmt(summary.costPerPortion)],
+      ['Other cost per portion (packaging etc.)', fmt(summary.otherCost)],
+      ['Total cost per portion', fmt(summary.totalPerPortion)],
+      ['Selling price', summary.price > 0 ? fmt(summary.price) : '-'],
       ['Food cost %', summary.foodCostPct !== null ? formatPct(summary.foodCostPct) : '-'],
       [
         'Gross margin per portion',
         summary.marginAmount !== null && summary.marginPct !== null
-          ? `${fmt(summary.marginAmount, code)} (${formatPct(summary.marginPct)})`
+          ? `${fmt(summary.marginAmount)} (${formatPct(summary.marginPct)})`
           : '-',
       ],
       [
         `Suggested price at ${summary.targetPct > 0 ? formatPct(summary.targetPct) : '-'} food cost`,
-        fmt(summary.suggestedPrice, code),
+        fmt(summary.suggestedPrice),
       ],
     ]
   }
@@ -125,121 +111,52 @@ export default function FoodCostCalculator() {
     .map((r, i) => ({ r, res: summary.results[i] }))
     .filter(({ r }) => r.name.trim() || r.packPrice || r.packSize || r.usedQty)
 
-  async function submitGate(e: React.FormEvent) {
-    e.preventDefault()
-    setGate('loading')
-    setError('')
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(sendEmail.trim())
+  const canSend = consent && sendName.trim() !== '' && emailOk
+
+  async function handleSend() {
+    if (!canSend) return
+    setModal('loading')
+    setErrorMsg('')
     try {
-      const res = await fetch('/api/free-template', {
+      const res = await fetch('/api/send-cogs', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ tool: 'cogs', email, consent, company }),
+        body: JSON.stringify({
+          state,
+          name: sendName.trim(),
+          email: sendEmail.trim(),
+          consent,
+          marketing,
+          company,
+        }),
       })
-      const data = await res.json().catch(() => ({}))
-      if (!res.ok) throw new Error(data.error || 'Something went wrong. Please try again.')
-      setGate('sent')
-    } catch (err) {
-      setGate('idle')
-      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
+      if (!res.ok) {
+        const j = await res.json().catch(() => null)
+        throw new Error(j?.error || 'Something went wrong. Please try again.')
+      }
+      setModal('sent')
+      setConsent(false)
+      setMarketing(false)
+    } catch (e: unknown) {
+      setErrorMsg(e instanceof Error ? e.message : 'Something went wrong. Please try again.')
+      setModal('error')
     }
   }
 
-  async function downloadPdf() {
-    setPdfBusy(true)
-    setPdfError('')
-    try {
-      const { jsPDF } = await import('jspdf')
-      const autoTable = (await import('jspdf-autotable')).default
-      const doc = new jsPDF({ unit: 'pt', format: 'a4' })
-      const left = 40
-
-      doc.setFont('helvetica', 'bold')
-      doc.setFontSize(20)
-      doc.setTextColor(15, 23, 42)
-      doc.text('Food Cost Sheet', left, 56)
-      doc.setFont('helvetica', 'normal')
-      doc.setFontSize(12)
-      doc.setTextColor(71, 85, 105)
-      doc.text(state.menuName.trim() || 'Untitled dish', left, 78)
-      doc.setFontSize(10)
-      doc.text(
-        new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
-        left,
-        94
-      )
-
-      const body = shownRows.map(({ r, res }, i) => [
-        r.name.trim() || `Ingredient ${i + 1}`,
-        `${r.usedQty || '-'} ${unitLabel(r.usedUnit)}`,
-        `${r.packSize || '-'} ${unitLabel(r.packUnit)} @ ${num(r.packPrice) ? fmt(num(r.packPrice), true) : '-'}`,
-        res.error ? 'check' : fmt(res.cost, true),
-      ])
-
-      autoTable(doc, {
-        startY: 112,
-        margin: { left, right: left },
-        head: [['Ingredient', 'Amount used', 'Purchase pack', 'Cost']],
-        body,
-        foot: [['Recipe total', '', '', fmt(summary.recipeCost, true)]],
-        theme: 'striped',
-        styles: { fontSize: 10 },
-        headStyles: { fillColor: [22, 163, 74] },
-        footStyles: { fillColor: [241, 245, 249], textColor: [15, 23, 42] },
-        columnStyles: { 3: { halign: 'right' } },
-      })
-
-      const lastY =
-        (doc as unknown as { lastAutoTable?: { finalY: number } }).lastAutoTable?.finalY ?? 300
-
-      autoTable(doc, {
-        startY: lastY + 24,
-        margin: { left, right: left },
-        body: summaryLines(true),
-        theme: 'plain',
-        styles: { fontSize: 11, cellPadding: 5 },
-        columnStyles: { 0: { fontStyle: 'bold' }, 1: { halign: 'right' } },
-      })
-
-      doc.setFontSize(9)
-      doc.setTextColor(120, 120, 120)
-      doc.text(
-        'Created with the free Food Cost Calculator - pixelorid.biz.id/tools/food-cost-calculator',
-        left,
-        doc.internal.pageSize.getHeight() - 30
-      )
-
-      const slug =
-        (state.menuName || 'sheet')
-          .toLowerCase()
-          .replace(/[^a-z0-9]+/g, '-')
-          .replace(/^-+|-+$/g, '') || 'sheet'
-      doc.save(`food-cost-${slug}.pdf`)
-    } catch {
-      setPdfError('Could not create the PDF. Please try again.')
-    } finally {
-      setPdfBusy(false)
-    }
+  function openModal() {
+    setModal('open')
   }
 
   function closeModal() {
-    setModalOpen(false)
-    setError('')
+    setModal('idle')
+    setConsent(false)
+    setMarketing(false)
+    setErrorMsg('')
   }
 
   return (
     <div>
-      {justConfirmed && (
-        <div className="mb-6 rounded-xl border-l-4 border-[#16a34a] bg-[#f0fdf4] px-5 py-4 text-sm text-[#166534]">
-          <strong>Your email is confirmed.</strong> Your PDF is ready to download below.
-          {!restored && (
-            <p className="mt-1 text-[#92400e]">
-              We could not find your figures in this browser (for example, if you opened the email on another
-              device). Enter them below, then download.
-            </p>
-          )}
-        </div>
-      )}
-
       <div className="grid gap-6 lg:grid-cols-2">
         {/* ── INPUT ── */}
         <div className="space-y-6">
@@ -448,7 +365,7 @@ export default function FoodCostCalculator() {
           </section>
         </div>
 
-        {/* ── PREVIEW + DOWNLOAD ── */}
+        {/* ── PREVIEW + SEND ── */}
         <div className="lg:sticky lg:top-24 lg:self-start">
           <h2 className="mb-3 text-lg font-extrabold text-[#0f172a]">3. Preview your PDF</h2>
           <div className="rounded-xl border border-[#e2e8f0] bg-white p-6 shadow-sm" aria-label="PDF preview">
@@ -494,7 +411,7 @@ export default function FoodCostCalculator() {
               </tfoot>
             </table>
             <dl className="mt-3 space-y-1.5 border-t border-[#e2e8f0] pt-3 text-[13px]">
-              {summaryLines(false).map(([k, v]) => (
+              {summaryLines().map(([k, v]) => (
                 <div key={k} className="flex justify-between gap-4">
                   <dt className="font-semibold text-[#0f172a]">{k}</dt>
                   <dd className="text-right text-[#475467]">{v}</dd>
@@ -510,125 +427,122 @@ export default function FoodCostCalculator() {
           )}
 
           <div className="mt-4">
-            {unlocked ? (
-              <button
-                type="button"
-                onClick={downloadPdf}
-                disabled={pdfBusy}
-                className="w-full rounded-xl bg-[#16a34a] px-6 py-3.5 text-[15px] font-bold text-white transition-colors hover:bg-[#15803d] disabled:opacity-70"
-              >
-                {pdfBusy ? 'Preparing PDF...' : 'Download PDF'}
-              </button>
+            {modal === 'sent' ? (
+              <div className="rounded-2xl border border-[#16a34a] bg-[#f0fdf4] px-6 py-5">
+                <p className="font-extrabold text-[#16a34a]">PDF sent!</p>
+                <p className="mt-1 text-sm text-[#475467]">
+                  Check your inbox at <strong>{sendEmail}</strong>. The PDF is attached.
+                </p>
+              </div>
             ) : (
               <>
                 <button
                   type="button"
-                  onClick={() => setModalOpen(true)}
-                  aria-label="Download PDF (locked, enter your email to unlock)"
-                  className="w-full cursor-pointer rounded-xl bg-[#16a34a] px-6 py-3.5 text-[15px] font-bold text-white transition-colors hover:bg-[#15803d]"
+                  onClick={openModal}
+                  className="w-full rounded-xl bg-[#16a34a] px-6 py-3.5 text-[15px] font-bold text-white transition-colors hover:bg-[#15803d]"
                 >
-                  Download PDF
+                  Send PDF to My Email
                 </button>
-                <p className="mt-2 text-center text-xs text-[#6b7280]">
-                  Free. Confirm your email once to unlock the download.
-                </p>
+                <p className="mt-2 text-center text-xs text-[#6b7280]">Free. We send the PDF to your email.</p>
               </>
             )}
-            {pdfError && <p className="mt-2 text-center text-sm text-[#dc2626]">{pdfError}</p>}
           </div>
         </div>
       </div>
 
-      {/* ── EMAIL GATE ── */}
-      {modalOpen && (
-        <div
-          onClick={closeModal}
-          className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/50 px-4"
-        >
-          <div
-            role="dialog"
-            aria-modal="true"
-            onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-md rounded-2xl bg-white p-7"
-          >
-            <button
-              type="button"
-              onClick={closeModal}
-              aria-label="Close"
-              className="absolute right-4 top-3 text-2xl text-[#6b7280]"
-            >
-              &times;
-            </button>
+      {/* ── MODAL ── */}
+      {(modal === 'open' || modal === 'loading' || modal === 'error') && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4">
+          <div className="w-full max-w-md rounded-2xl bg-white p-7 shadow-xl">
+            <h3 className="mb-1 text-xl font-extrabold text-[#0f172a]">Send food cost sheet to your email</h3>
+            <p className="mb-5 text-sm text-[#475467]">
+              Enter your name and email. We will send the PDF to this address.
+            </p>
 
-            {gate === 'sent' ? (
-              <div>
-                <h3 className="text-xl font-extrabold text-[#0f172a]">Check your email</h3>
-                <p className="mt-2 text-sm text-[#4b5563]">
-                  We sent a confirmation link to {email}. Click it and you will come back to this page with your
-                  PDF ready to download. Your figures are saved in this browser. If you do not see the email
-                  within a few minutes, check your spam folder.
-                </p>
-                <button
-                  type="button"
-                  onClick={closeModal}
-                  className="mt-4 rounded-lg bg-[#16a34a] px-6 py-3 text-sm font-bold text-white"
-                >
-                  Close
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={submitGate}>
-                <h3 className="text-xl font-extrabold text-[#0f172a]">Unlock your PDF</h3>
-                <p className="mb-4 mt-2 text-sm text-[#4b5563]">
-                  Enter your email. We will send you a confirmation link. Click it and your download unlocks.
-                </p>
-                <input
-                  type="email"
-                  required
-                  placeholder="Your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className={inputCls}
-                />
-                <input
-                  type="text"
-                  tabIndex={-1}
-                  autoComplete="off"
-                  value={company}
-                  onChange={(e) => setCompany(e.target.value)}
-                  aria-hidden="true"
-                  style={{ position: 'absolute', left: '-9999px', opacity: 0 }}
-                />
-                <label className="mt-4 flex items-start gap-2.5 text-[13px] leading-snug text-[#4b5563]">
-                  <input
-                    type="checkbox"
-                    required
-                    checked={consent}
-                    onChange={(e) => setConsent(e.target.checked)}
-                    className="mt-0.5"
-                  />
-                  <span>
-                    {TOOL_CONSENT_TEXT}{' '}
-                    <a
-                      href="/privacy"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-semibold text-[#16a34a] underline"
-                    >
-                      Privacy Policy
-                    </a>
-                  </span>
-                </label>
-                {error && <p className="mt-3 text-sm text-[#dc2626]">{error}</p>}
-                <button
-                  type="submit"
-                  disabled={gate === 'loading'}
-                  className="mt-4 w-full rounded-lg bg-[#16a34a] px-6 py-3.5 text-[15px] font-bold text-white disabled:opacity-70"
-                >
-                  {gate === 'loading' ? 'Sending...' : 'Send confirmation link'}
-                </button>
-              </form>
+            {modal === 'error' && (
+              <p className="mb-4 rounded-lg bg-[#fef2f2] px-4 py-3 text-sm font-semibold text-[#ef4444]">{errorMsg}</p>
             )}
+
+            <div className="space-y-3">
+              <div>
+                <label className={labelCls}>Your name *</label>
+                <input
+                  className={inputCls}
+                  value={sendName}
+                  onChange={(e) => setSendName(e.target.value)}
+                  placeholder="Your name"
+                  autoComplete="name"
+                />
+              </div>
+              <div>
+                <label className={labelCls}>Your email *</label>
+                <input
+                  className={inputCls}
+                  type="email"
+                  value={sendEmail}
+                  onChange={(e) => setSendEmail(e.target.value)}
+                  placeholder="you@email.com"
+                  autoComplete="email"
+                />
+              </div>
+            </div>
+
+            <input
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
+              aria-hidden="true"
+              style={{ position: 'absolute', left: '-9999px', opacity: 0 }}
+            />
+
+            <label className="mt-4 flex cursor-pointer items-start gap-3 text-sm text-[#475467]">
+              <input
+                type="checkbox"
+                checked={consent}
+                onChange={(e) => setConsent(e.target.checked)}
+                className="mt-0.5 h-4 w-4 shrink-0 accent-[#16a34a]"
+              />
+              <span>
+                I agree that Pixelorid may email me the food cost PDF I requested. I have read the{' '}
+                <Link href="/privacy" target="_blank" className="font-semibold text-[#16a34a] underline">
+                  Privacy Policy
+                </Link>
+                .
+              </span>
+            </label>
+
+            <label className="mt-3 flex cursor-pointer items-start gap-3 text-sm text-[#475467]">
+              <input
+                type="checkbox"
+                checked={marketing}
+                onChange={(e) => setMarketing(e.target.checked)}
+                className="mt-0.5 h-4 w-4 shrink-0 accent-[#16a34a]"
+              />
+              <span>
+                (Optional) Yes, send me free templates and occasional tips from Pixelorid by email. I can
+                unsubscribe at any time.
+              </span>
+            </label>
+
+            <div className="mt-5 flex gap-3">
+              <button
+                type="button"
+                onClick={closeModal}
+                className="flex-1 rounded-xl border border-[#e2e8f0] px-4 py-3 text-sm font-semibold text-[#475467] hover:bg-[#f8fafc]"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={handleSend}
+                disabled={!canSend || modal === 'loading'}
+                className="flex-1 rounded-xl bg-[#16a34a] px-4 py-3 text-sm font-bold text-white hover:bg-[#15803d] disabled:opacity-50"
+              >
+                {modal === 'loading' ? 'Sending...' : 'Send PDF'}
+              </button>
+            </div>
           </div>
         </div>
       )}

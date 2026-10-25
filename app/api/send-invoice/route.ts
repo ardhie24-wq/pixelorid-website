@@ -7,7 +7,7 @@ import { clientIp, rateLimit } from '../../lib/rate-limit'
 export const runtime = 'nodejs'
 
 const DEFAULT_TOOLS_LIST_ID = 4 // daftar "Tools Leads"
-const INVOICE_CONSENT_VERSION = 'v1-invoice-2026-10-24'
+const INVOICE_CONSENT_VERSION = 'v2-invoice-2026-10-25'
 
 type RGB = [number, number, number]
 const GREEN: RGB = [22, 163, 74]
@@ -280,6 +280,7 @@ export async function POST(req: Request) {
     name?: unknown
     email?: unknown
     consent?: unknown
+    marketing?: unknown
   } | null
   const d = body?.data
   if (!d || typeof d !== 'object') {
@@ -384,7 +385,10 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Could not send the email. Please try again.' }, { status: 502 })
   }
 
-  // Simpan otomatis ke list Brevo. Invoice sudah terkirim, jadi gagal simpan tidak membatalkan.
+  // Tambah ke list Brevo hanya jika pengguna mencentang email pemasaran (opsional).
+  if (body?.marketing !== true) return NextResponse.json({ ok: true })
+
+  // Gagal simpan kontak tidak membatalkan invoice yang sudah terkirim.
   const listId = Number(process.env.BREVO_TOOLS_LIST_ID) || DEFAULT_TOOLS_LIST_ID
   try {
     const saved = await fetch('https://api.brevo.com/v3/contacts', {
