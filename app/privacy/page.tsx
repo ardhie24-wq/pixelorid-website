@@ -190,9 +190,9 @@ export default function PrivacyPage() {
               Where privacy law requires a legal basis (for example in the EU and UK), we rely on
               your consent for our email list and for analytics cookies, on the need to provide the
               service or file you request, and on our legitimate interest in keeping our website and
-              forms secure. For our free tools and templates, agreeing to receive our emails is a
-              condition of getting the file.
-            </p>            <div className="mt-3 rounded-lg border-l-4 border-[#16a34a] bg-[#f0fdf4] px-4 py-3 text-sm text-[#166534]">
+              forms secure. For our free tools, your email address is used to send you the file you request. Agreeing to receive our marketing emails is optional and does not affect whether you get the file.
+            </p>
+            <div className="mt-3 rounded-lg border-l-4 border-[#16a34a] bg-[#f0fdf4] px-4 py-3 text-sm text-[#166534]">
               🚫 We do <strong>not</strong> sell, rent, or share your personal data with third
               parties for marketing or advertising purposes.
             </div>
@@ -203,7 +203,7 @@ export default function PrivacyPage() {
               Your account data is stored on <strong>Supabase</strong>, a cloud database platform
               implementing industry-standard security including encryption at rest and in transit.
               Our websites and applications are hosted with infrastructure providers such as
-              Cloudflare (Pixelorid POS website) and Vercel (Pixelorid Loop and the Pixelorid website).
+              Cloudflare (Pixelorid POS website) and Vercel (Pixelorid Loop and the Pixelorid website). Pixelorid Growth and Pixelorid Invoice Generator are hosted on Vercel and store their data on Supabase.
             </p>
             <p>
               Our email list, and the emails we send, are handled by <strong>Brevo</strong>, an
@@ -212,7 +212,8 @@ export default function PrivacyPage() {
               confirmation emails, the invoice PDFs you request, and our marketing emails. It may
               keep delivery records of those emails under its own policies. Every marketing email
               includes an unsubscribe link.
-            </p>            <p>
+            </p>
+            <p>
               We operate from Indonesia, and our service providers may process data in other
               countries. Where personal data is transferred across borders, we take steps to
               ensure it stays protected, such as relying on contractual commitments from our
@@ -266,7 +267,8 @@ export default function PrivacyPage() {
               When you confirm your email for the Food Cost Calculator, we set a small cookie
               (<strong>pxl_unlock_cogs</strong>) that lasts 30 days and remembers that you have
               confirmed, so your download is unlocked. It is not used for tracking.
-            </p>            <p>
+            </p>
+            <p>
               <strong>Analytics (optional).</strong> If you click &quot;Accept&quot; in our cookie
               banner, we use Google Analytics, a service provided by Google, to understand how
               visitors use our website, for example which pages are viewed, approximate location,
