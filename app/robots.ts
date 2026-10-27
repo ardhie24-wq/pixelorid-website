@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/studio/",
     },
-    sitemap: "https://www.pixelorid.biz.id/sitemap.xml",
+    sitemap: "https://pixelorid.biz.id/sitemap.xml",
   };
 }
