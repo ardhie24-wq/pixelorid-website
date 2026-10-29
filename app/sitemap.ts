@@ -2,7 +2,7 @@
 import { client } from '@/sanity/lib/client'
 import { POSTS_QUERY } from '@/sanity/lib/queries'
 
-const BASE_URL = 'https://pixelorid.biz.id'
+const BASE_URL = 'https://www.pixelorid.biz.id'
 const LAST_UPDATED = new Date('2026-10-29')
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -58,3 +58,4 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [...staticRoutes, ...blogRoutes]
 }
+

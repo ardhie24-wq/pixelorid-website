@@ -13,7 +13,8 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: "https://pixelorid.biz.id/sitemap.xml",
-    host: "https://pixelorid.biz.id",
+    sitemap: "https://www.pixelorid.biz.id/sitemap.xml",
+    host: "https://www.pixelorid.biz.id",
   };
 }
+
