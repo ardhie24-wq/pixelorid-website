@@ -1,9 +1,8 @@
-import { pageMeta } from "../../_lib/seo";
+﻿import { pageMeta } from "../../_lib/seo";
 import JsonLd from "../../_components/JsonLd";
 export const metadata = pageMeta({
-  title: "Restaurant POS & COGS Software for Small Restaurants",
-  description:
-    "Run orders, tables, reservations and staff from one system, and see the real cost of every dish with a built-in COGS calculator.",
+  title: "Restaurant Management Software for Multi-Location Restaurants",
+  description: "Manage orders, tables, reservations, staff and COGS across multiple locations from one account. Pixelorid Resto is restaurant software built for growing multi-location restaurants, cafes and bakeries.",
   path: "/products/pixelorid-resto",
 });
 
@@ -262,7 +261,7 @@ export default function PixeloridRestoPage() {
               </span>
 
               <h1 className="mt-6 text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
-                Restaurant Software with Built-In COGS Calculator
+                Restaurant Management Software for Multi-Location Restaurants
               </h1>
 
               <p className="mt-5 text-2xl font-bold leading-tight text-pixel-dark-green">
@@ -567,5 +566,7 @@ export default function PixeloridRestoPage() {
     </main>
   );
 }
+
+
 
 
